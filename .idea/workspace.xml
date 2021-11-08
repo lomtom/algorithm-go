@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad75cc1d-4236-4765-9709-6020d98134ad" name="Changes" comment="110. 平衡二叉树">
+    <list default="true" id="ad75cc1d-4236-4765-9709-6020d98134ad" name="Changes" comment="110 平衡二叉树">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -113,7 +114,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="二叉树最大深度" />
     <MESSAGE value="110. 平衡二叉树" />
-    <option name="LAST_COMMIT_MESSAGE" value="110. 平衡二叉树" />
+    <MESSAGE value="110 平衡二叉树" />
+    <option name="LAST_COMMIT_MESSAGE" value="110 平衡二叉树" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
