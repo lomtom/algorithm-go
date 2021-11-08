@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>前言 · GitBook</title>
+        <title>前言 · 基于Go的常用算法</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
-        
+        <meta name="author" content="lomtom">
         
         
     
@@ -85,7 +85,7 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="datastruct/tree.html" />
+    <link rel="next" href="bTree/bTree.html" />
     
     
 
@@ -146,19 +146,12 @@
             
         </li>
     
-
-    
-        
-        <li class="header">数据结构</li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="datastruct/tree.html">
+        <li class="chapter " data-level="1.2" data-path="bTree/bTree.html">
             
-                <a href="datastruct/tree.html">
+                <a href="bTree/bTree.html">
             
                     
-                    二叉树
+                    基础知识
             
                 </a>
             
@@ -250,7 +243,7 @@
 		
 		
 		
-		<a href="datastruct/tree.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 二叉树">
+		<a href="bTree/bTree.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 基础知识">
 			<i class="fa fa-angle-right"></i>
 		</a>
 		
@@ -260,7 +253,7 @@
 	<script>
 		var gitbook = gitbook || [];
 		gitbook.push(function() {
-			gitbook.page.hasChanged({"page":{"title":"前言","level":"1.1","depth":1,"next":{"title":"二叉树","level":"2.1","depth":1,"path":"datastruct/tree.md","ref":"datastruct/tree.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"themeFexa":{"nav":[{"url":"/","target":"_blank","name":"首页"},{"url":"https://lomtom.cn","target":"_blank","name":"博客"}]}},"plugins":["back-to-top-button","chapter-fold","code","splitter","-lunr","-search","search-pro","custom-favicon","tbfed-pagefooter","lightbox","-sharing","sharing-plus","hide-element","github","theme-fexa","livereload"],"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/zero028/algorithm-go"},"livereload":{},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./img/logoko.png","favicon":"./img/logo.ico"},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link",".copyright",".book-summary-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"https://lomtom.cn/img/logo.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"custom-favicon":{},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"twitter":false,"pocket":false,"google":false,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2021-11-08T07:30:43.518Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T08:53:28.986Z"},"basePath":".","book":{"language":""}});
+			gitbook.page.hasChanged({"page":{"title":"前言","level":"1.1","depth":1,"next":{"title":"基础知识","level":"1.2","depth":1,"path":"bTree/bTree.md","ref":"bTree/bTree.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","code","splitter","-lunr","-search","search-pro","custom-favicon","tbfed-pagefooter","lightbox","-sharing","sharing-plus","hide-element","github","theme-fexa"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"modify_label":"文章修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"github":{"url":"https://github.com/zero028/algorithm-go"},"splitter":{},"search-pro":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-fexa":{"search-placeholder":"输入关键字搜索","logo":"./img/logoko.png","favicon":"./img/logo.ico"},"code":{"copyButtons":true},"hide-element":{"elements":[".gitbook-link",".copyright",".book-summary-title"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":"https://lomtom.cn/img/logo.ico","lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"custom-favicon":{},"sharing":{"qq":false,"all":[],"douban":false,"facebook":false,"weibo":false,"twitter":false,"pocket":false,"google":false,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lomtom","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"themeFexa":{"nav":[{"url":"/","target":"_blank","name":"首页"},{"url":"https://lomtom.cn","target":"_blank","name":"博客"}]}},"title":"基于Go的常用算法","gitbook":"*","description":"基于Go的常用算法总结"},"file":{"path":"README.md","mtime":"2021-11-08T07:30:43.518Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-11-08T10:11:52.057Z"},"basePath":".","book":{"language":""}});
 		});
 	</script>
 </div>
@@ -307,10 +300,6 @@
     
         
         <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
