@@ -187,12 +187,3 @@ func maxDepth(root *TreeNode) int {
 	}
 	return right + 1
 }
-
-// https://leetcode-cn.com/problems/balanced-binary-tree/
-func TestIsBalanced(t *testing.T) {
-
-}
-
-func isBalanced(root *TreeNode) bool {
-	return false
-}
