@@ -1,0 +1,37 @@
+name: auto-generate-gitbook
+on:                                 #在main分支上进行push时触发
+  push:
+    branches:
+      - main
+
+jobs:
+  main-to-gh-pages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout main
+        uses: actions/checkout@v2.3.4
+        with:
+          ref: main
+
+      - name: install nodejs
+        uses: actions/setup-node@v1
+
+      - name: configue gitbook
+        run: |
+          cd gitbook
+          npm install -g gitbook-cli
+          gitbook install
+          npm install -g gitbook-summary
+
+      - name: generate _book folder
+        run: |
+          book sm
+          gitbook build
+          cp SUMMARY.md _book
+
+      - name: push _book to branch gh-pages
+        uses: JamesIves/github-pages-deploy-action@4.0.0
+        with:
+          branch: gh-pages
+          folder: _book
