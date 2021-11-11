@@ -6,61 +6,57 @@
   <component name="ChangeListManager">
     <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="排序算法文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/CNAME" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/bTree/bTree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/datastruct/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/datastruct/bTree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/datastruct/tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/fonts/fontawesome/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-back-to-top-button/plugin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-back-to-top-button/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-chapter-fold/chapter-fold.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-chapter-fold/chapter-fold.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-code/plugin.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-code/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-fontsettings/fontsettings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-fontsettings/website.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-github/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-hide-element/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-highlight/ebook.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-highlight/website.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/images/close.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/images/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/images/next.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/images/prev.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/js/jquery.slim.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-lightbox/js/lightbox.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-livereload/plugin.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-search-pro/search.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-search-pro/search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-sharing-plus/buttons.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-splitter/splitter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-splitter/splitter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-theme-fexa/fexa.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-theme-fexa/fexa.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook-plugin-theme-fexa/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/gitbook.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/images/apple-touch-icon-precomposed-152.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/images/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/gitbook/theme.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/logo.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/logoko.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img/logoko1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/method/bfs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/method/dac.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/method/dfs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/method/sort.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/search_plus_index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/datastruct/bTree.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/FontAwesome.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/fontawesome-webfont.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/fontawesome-webfont.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/fontawesome-webfont.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/fontawesome-webfont.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/fonts/fontawesome/fontawesome-webfont.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-back-to-top-button/plugin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-back-to-top-button/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-chapter-fold/chapter-fold.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-chapter-fold/chapter-fold.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-code/plugin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-code/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-fontsettings/fontsettings.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-fontsettings/website.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-github/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-hide-element/plugin.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-highlight/ebook.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-highlight/website.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/images/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/images/loading.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/images/next.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/images/prev.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/js/jquery.slim.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-lightbox/js/lightbox.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-search-pro/jquery.mark.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-search-pro/search.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-search-pro/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-sharing-plus/buttons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-splitter/splitter.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-splitter/splitter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-theme-fexa/fexa.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-theme-fexa/fexa.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook-plugin-theme-fexa/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/gitbook.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/images/apple-touch-icon-precomposed-152.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/images/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/gitbook/theme.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/img/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/img/logoko.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/img/logoko1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/method/bfs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/method/dac.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/method/dfs.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/method/sort.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/_book/search_plus_index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sort/sort_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/sort_test.go" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +78,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -90,6 +87,7 @@
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
+    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -98,6 +96,25 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/gitbook/method" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestBubbleSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestBubbleSort\E$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Test.TestBubbleSort in algorithm/sort" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">

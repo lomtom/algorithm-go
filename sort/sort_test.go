@@ -5,6 +5,23 @@ import (
 	"testing"
 )
 
+func TestBubbleSort(t *testing.T) {
+	nums := []int{3, 4, 2, 1, 5, 7, 6}
+	bubbleSort(nums)
+	fmt.Println(nums)
+}
+
+func bubbleSort(nums []int) {
+	len := len(nums)
+	for i := 0; i < len; i++ {
+		for j := i; j < len; j++ {
+			if nums[i] >= nums[j] {
+				nums[i], nums[j] = nums[j], nums[i]
+			}
+		}
+	}
+}
+
 func TestMergeSort(t *testing.T) {
 	nums := []int{3, 4, 2, 1, 5, 7, 6}
 	res := mergeSort(nums)
