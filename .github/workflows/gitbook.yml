@@ -27,9 +27,9 @@ jobs:
 
       - name: generate
         run: |
-          book sm
+#          book sm
           gitbook build
-          cp SUMMARY.md _book
+#          cp SUMMARY.md _book
 
       - name: push
         uses: JamesIves/github-pages-deploy-action@4.1.5
