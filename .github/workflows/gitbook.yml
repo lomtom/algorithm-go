@@ -34,7 +34,7 @@ jobs:
       - name: push
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
+          folder: gitbook/_book
           branch: gh-pages
           repository-name: algorithm-go
-          folder: gitbook/_book
           clean: true
