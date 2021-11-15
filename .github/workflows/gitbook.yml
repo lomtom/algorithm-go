@@ -36,5 +36,5 @@ jobs:
         with:
           folder: gitbook/_book
           branch: gh-pages
-          repository-name: algorithm-go
+#          repository-name: algorithm-go
           clean: true
