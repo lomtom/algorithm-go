@@ -28,7 +28,6 @@ jobs:
       - name: generate
         run: |
           ls
-#          book sm
           gitbook build
 #          cp SUMMARY.md _book
 
