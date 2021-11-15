@@ -3,35 +3,36 @@ on:                                 #在main分支上进行push时触发
   push:
     branches:
       - main
-
+defaults:
+  run:
+    working-directory: gitbook
 jobs:
   main-to-gh-pages:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout main
+      - name: checkout
         uses: actions/checkout@v2.3.4
         with:
           ref: main
 
-      - name: install nodejs
+      - name: install
         uses: actions/setup-node@v1
 
-      - name: configue gitbook
+      - name: configue
         run: |
-          cd gitbook
           npm install -g gitbook-cli
           gitbook install
           npm install -g gitbook-summary
 
-      - name: generate _book folder
+      - name: generate
         run: |
           book sm
           gitbook build
           cp SUMMARY.md _book
 
-      - name: push _book to branch gh-pages
-        uses: JamesIves/github-pages-deploy-action@4.0.0
+      - name: push
+        uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages
-          folder: gitbook/_book
+          folder: _book
