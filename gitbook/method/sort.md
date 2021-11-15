@@ -161,3 +161,50 @@ func insertionSort(nums []int) {
 	}
 }
 ```
+
+## 归并排序
+归并排序相对于前几种排序来说，复杂多了，当然他理解起来，也并不复杂。
+
+归并排序的核心算法是[分治法](dac.md)。
+
+![](../img/sort/mergeSort.gif)
+
+核心过程：
+1. 分：使用递归的方法，将数组每次切成两部分，直到数组的大小为1，即不可再切割，此时，每个子数组都是有序的。
+2. 治：从底层合并两个排好序的数组，因为是有序的，所以从数组的第一个元素开始比较即可，小的放入一个新的数组。
+
+上动图并不能直观的的表达归并排序的核心思想，可以参考下图。
+
+![](../img/sort/mergeSort.webp)
+
+```go
+func mergeSort(nums []int) []int {
+	if len(nums) <= 1 {
+		return nums
+	}
+	mid := len(nums) / 2
+	left := mergeSort(nums[:mid])
+	right := mergeSort(nums[mid:])
+	res := merge(left, right)
+	return res
+}
+
+func merge(left []int, right []int) (res []int) {
+	leftLen := len(left)
+	rightLen := len(right)
+	i := 0
+	j := 0
+	for i < leftLen && j < rightLen {
+		if left[i] <= right[j] {
+			res = append(res, left[i])
+			i++
+		} else {
+			res = append(res, right[j])
+			j++
+		}
+	}
+	res = append(res, left[i:]...)
+	res = append(res, right[j:]...)
+	return res
+}
+```
