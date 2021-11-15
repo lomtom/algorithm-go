@@ -6,22 +6,97 @@ import (
 )
 
 func TestBubbleSort(t *testing.T) {
-	nums := []int{3, 4, 2, 1, 5, 7, 6}
-	bubbleSort(nums)
+	//nums := []int{3, 4, 2, 1, 5, 7, 6}
+	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	bubbleSort2(nums)
 	fmt.Println(nums)
 }
 
+// 冒泡算排序
 func bubbleSort(nums []int) {
 	len := len(nums)
 	for i := 0; i < len; i++ {
-		for j := i; j < len; j++ {
-			if nums[i] >= nums[j] {
-				nums[i], nums[j] = nums[j], nums[i]
+		for j := 0; j < len-1; j++ {
+			if nums[j] >= nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
 			}
 		}
 	}
 }
 
+// 冒泡算排序
+func bubbleSort1(nums []int) {
+	len := len(nums)
+	for i := 0; i < len; i++ {
+		for j := 0; j < len-1-i; j++ {
+			if nums[j] >= nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
+			}
+		}
+	}
+}
+
+// 冒泡算排序
+func bubbleSort2(nums []int) {
+	len := len(nums)
+	for i := 0; i < len; i++ {
+		flag := false
+		for j := 0; j < len-1-i; j++ {
+			if nums[j] >= nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
+				flag = true
+			}
+		}
+		if !flag {
+			break
+		}
+	}
+}
+
+func TestSelectionSort(t *testing.T) {
+	//nums := []int{3, 4, 2, 1, 5, 7, 6}
+	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	selectionSort(nums)
+	fmt.Println(nums)
+}
+
+// 选择排序
+func selectionSort(nums []int) {
+	l := len(nums)
+	for i := 0; i < l; i++ {
+		min := i
+		for j := i; j < l; j++ {
+			if nums[min] > nums[j] {
+				min = j
+			}
+		}
+		if min != i {
+			nums[i], nums[min] = nums[min], nums[i]
+		}
+	}
+}
+
+func TestInsertionSort(t *testing.T) {
+	//nums := []int{3, 4, 2, 1, 5, 7, 6}
+	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	insertionSort(nums)
+	fmt.Println(nums)
+}
+
+// 插入排序
+func insertionSort(nums []int) {
+	l := len(nums)
+	for i := 0; i < l; i++ {
+		temp := nums[i]
+		index := i
+		for index > 0 && nums[index] >= temp {
+			nums[index] = nums[index-1]
+		}
+		nums[index] = temp
+	}
+}
+
+// 归并排序
 func TestMergeSort(t *testing.T) {
 	nums := []int{3, 4, 2, 1, 5, 7, 6}
 	res := mergeSort(nums)
