@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="修改流水线配置">
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="归并排序">
+      <change afterPath="$PROJECT_DIR$/gitbook/method/window.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/method/dac.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/dac.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/method/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sort/sort_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/sort_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/SUMMARY.md" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +89,8 @@
     <MESSAGE value="排序算法文档" />
     <MESSAGE value="选择、插入排序" />
     <MESSAGE value="修改流水线配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改流水线配置" />
+    <MESSAGE value="归并排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="归并排序" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
