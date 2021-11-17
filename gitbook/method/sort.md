@@ -162,6 +162,8 @@ func insertionSort(nums []int) {
 }
 ```
 
+[对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
+
 ## 归并排序
 归并排序相对于前几种排序来说，复杂多了，当然他理解起来，也并不复杂。
 
@@ -206,5 +208,149 @@ func merge(left []int, right []int) (res []int) {
 	res = append(res, left[i:]...)
 	res = append(res, right[j:]...)
 	return res
+}
+```
+
+### 例题
+1. [排序数组](https://leetcode-cn.com/problems/sort-an-array/)
+
+2. [排序链表](https://leetcode-cn.com/problems/sort-list/)
+
+3. [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
+
+4. [翻转对](https://leetcode-cn.com/problems/reverse-pairs/)
+
+5. [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
+
+### 题解
+2. 排序链表
+```go
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil{
+		return head
+	}
+	slow := head
+	fast := head
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	mid := slow.Next
+	slow.Next = nil
+	left := sortList(head)
+	right := sortList(mid)
+	res := mergeList(left,right)
+	return res
+}
+
+func mergeList(left *ListNode, right *ListNode) *ListNode {
+	var head = &ListNode{
+		0,
+		nil,
+	}
+	temp := head
+	for left != nil && right != nil {
+		if left.Val < right.Val {
+			temp.Next = left
+			left = left.Next
+		} else{
+			temp.Next = right
+			right = right.Next
+		}
+		temp = temp.Next
+
+	}
+	if left != nil {
+		temp.Next = left
+	}
+	if right != nil {
+		temp.Next = right
+	}
+	return head.Next
+}
+
+```
+
+3. 剑指 Offer 51. 数组中的逆序对
+```go
+
+func reversePairs(nums []int) int {
+	_,res :=mergeSortPairs(nums)
+	return res
+}
+
+func mergeSortPairs(nums []int) ([]int,int) {
+	if len(nums) <= 1 {
+		return nums,0
+	}
+	mid := len(nums)/2
+	left,countL := mergeSortPairs(nums[:mid])
+	right,countR := mergeSortPairs(nums[mid:])
+	res,count := mergePairs(left,right)
+	return res,countL + countR + count
+}
+
+func mergePairs(left,right []int) (res []int,count int) {
+	leftL := len(left)
+	rightL := len(right)
+	indexL, indexR := 0, 0
+	for indexL < leftL && indexR < rightL {
+		if left[indexL] <= right[indexR] {
+			res = append(res, left[indexL])
+			indexL++
+		} else {
+			count += leftL - indexL
+			res = append(res, right[indexR])
+			indexR++
+		}
+	}
+	res = append(res, left[indexL:]...)
+	res = append(res, right[indexR:]...)
+	return
+}
+```
+
+
+4. 翻转对代码
+```go
+func reversePairs(nums []int) int {
+	_, res := mergeSort(nums)
+	return res
+}
+
+func mergeSort(nums []int) ([]int, int) {
+	if len(nums) <= 1 {
+		return nums, 0
+	}
+	mid := len(nums) / 2
+	left, countL := mergeSort(nums[:mid])
+	right, countR := mergeSort(nums[mid:])
+	res, count := merge(left, right)
+	return res, count + countL + countR
+}
+
+func merge(left, right []int) (res []int, count int) {
+	leftL := len(left)
+	rightL := len(right)
+	indexL, indexR := 0, 0
+	j := 0
+	for _, v := range left {
+		for j < rightL && v > 2*right[j] {
+			j++
+		}
+		count += j
+	}
+	for indexL < leftL && indexR < rightL {
+		if left[indexL] <= right[indexR] {
+			res = append(res, left[indexL])
+			indexL++
+		} else {
+			res = append(res, right[indexR])
+			indexR++
+		}
+	}
+	res = append(res, left[indexL:]...)
+	res = append(res, right[indexR:]...)
+	return
 }
 ```

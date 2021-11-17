@@ -12,6 +12,7 @@
 * [广度优先搜索](method/bfs.md)
 * [分治法](method/dac.md)
 * [滑动窗口](method/window.md)
+* [二叉搜索树](method/bst.md)
 
 
   

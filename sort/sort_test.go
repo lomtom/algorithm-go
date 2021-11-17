@@ -110,27 +110,142 @@ func mergeSort(nums []int) []int {
 	mid := len(nums) / 2
 	left := mergeSort(nums[:mid])
 	right := mergeSort(nums[mid:])
-	res := merge(left, right)
+	return merge(left, right)
+}
+
+func merge(left, right []int) (res []int) {
+	leftL := len(left)
+	rightL := len(right)
+	indexL, indexR := 0, 0
+	for indexL < leftL && indexR < rightL {
+		if left[indexL] < right[indexR] {
+			res = append(res, left[indexL])
+			indexL++
+		} else {
+			res = append(res, right[indexR])
+			indexR++
+		}
+	}
+	res = append(res, left[indexL:]...)
+	res = append(res, right[indexR:]...)
+	return
+}
+
+// 排序链表
+func TestSortList(t *testing.T) {
+	root := &ListNode{
+		4,
+		&ListNode{
+			2,
+			&ListNode{
+				1,
+				&ListNode{
+					3,
+					nil,
+				},
+			},
+		},
+	}
+	res := sortList(root)
+	fmt.Println(res)
+}
+
+type ListNode struct {
+	Val  int
+	Next *ListNode
+}
+
+func sortList(head *ListNode) *ListNode {
+	if head == nil || head.Next == nil {
+		return head
+	}
+	slow := head
+	fast := head
+	for fast.Next != nil && fast.Next.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	mid := slow.Next
+	slow.Next = nil
+	left := sortList(head)
+	right := sortList(mid)
+	res := mergeList(left, right)
 	return res
 }
 
-func merge(left []int, right []int) (res []int) {
-	leftLen := len(left)
-	rightLen := len(right)
-	i := 0
-	j := 0
-	for i < leftLen && j < rightLen {
-		if left[i] <= right[j] {
-			res = append(res, left[i])
-			i++
+func mergeList(left *ListNode, right *ListNode) *ListNode {
+	var head = &ListNode{
+		0,
+		nil,
+	}
+	temp := head
+	for left != nil && right != nil {
+		if left.Val < right.Val {
+			temp.Next = left
+			left = left.Next
 		} else {
-			res = append(res, right[j])
-			j++
+			temp.Next = right
+			right = right.Next
+		}
+		temp = temp.Next
+
+	}
+	if left != nil {
+		temp.Next = left
+	}
+	if right != nil {
+		temp.Next = right
+	}
+	return head.Next
+}
+
+// 剑指 Offer 51. 数组中的逆序对
+// 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。输入一个数组，求出这个数组中的逆序对的总数。
+// 示例 1:
+//
+// 输入: [7,5,6,4]
+// 输出: 5
+func TestReversePairs(t *testing.T) {
+	//nums := []int{4,5,6,7}
+	//nums := []int{7,5,6,4}
+	nums := []int{1, 3, 2, 3, 1}
+	res := reversePairs(nums)
+	fmt.Println(res)
+}
+
+func reversePairs(nums []int) int {
+	_, res := mergeSortPairs(nums)
+	return res
+}
+
+func mergeSortPairs(nums []int) ([]int, int) {
+	if len(nums) <= 1 {
+		return nums, 0
+	}
+	mid := len(nums) / 2
+	left, countL := mergeSortPairs(nums[:mid])
+	right, countR := mergeSortPairs(nums[mid:])
+	res, count := mergePairs(left, right)
+	return res, countL + countR + count
+}
+
+func mergePairs(left, right []int) (res []int, count int) {
+	leftL := len(left)
+	rightL := len(right)
+	indexL, indexR := 0, 0
+	for indexL < leftL && indexR < rightL {
+		if left[indexL] <= right[indexR] {
+			res = append(res, left[indexL])
+			indexL++
+		} else {
+			count += leftL - indexL
+			res = append(res, right[indexR])
+			indexR++
 		}
 	}
-	res = append(res, left[i:]...)
-	res = append(res, right[j:]...)
-	return res
+	res = append(res, left[indexL:]...)
+	res = append(res, right[indexR:]...)
+	return
 }
 
 func TestQuickSort(t *testing.T) {
