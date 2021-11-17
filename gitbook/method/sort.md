@@ -28,7 +28,7 @@
 
 
 ## 冒泡排序
-### 基本
+### 冒泡排序
 冒泡排序是与插入排序拥有相等的渐近时间复杂度，但是两种算法在需要的交换次数却很大地不同。
 
 
@@ -141,7 +141,7 @@ func selectionSort(nums []int)  {
 选择排序相对于冒泡排序，并不需要进行多余的交换，所以性能上优于冒泡排序（仅限于数组规模较小时）。
 
 ## 插入排序
-
+### 插入排序
 插入排序也比较简单，其核心思想就是找到第一个未排序的元素，插入到该元素前排序好的元素当中去（与前面的元素进行比较，如果大于当前元素，将其往后挪一个，否则，插入到当前位置）。
 
 ![](../img/sort/insertionSort.gif)
@@ -161,10 +161,11 @@ func insertionSort(nums []int) {
 	}
 }
 ```
-
+### 例题
 [对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list/)
 
 ## 归并排序
+### 归并排序
 归并排序相对于前几种排序来说，复杂多了，当然他理解起来，也并不复杂。
 
 归并排序的核心算法是[分治法](dac.md)。
@@ -223,9 +224,9 @@ func merge(left []int, right []int) (res []int) {
 5. [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
 
 ### 题解
-1. 排序数组：略
+1、排序数组：略
 
-2. 排序链表
+2、排序链表
 
 ```go
 func sortList(head *ListNode) *ListNode {
@@ -274,7 +275,7 @@ func mergeList(left *ListNode, right *ListNode) *ListNode {
 
 ```
 
-3. 剑指 Offer 51. 数组中的逆序对
+3、剑指 Offer 51. 数组中的逆序对
 
 ```go
 
@@ -315,7 +316,7 @@ func mergePairs(left,right []int) (res []int,count int) {
 ```
 
 
-4. 翻转对代码
+4、翻转对
 
 ```go
 func reversePairs(nums []int) int {
