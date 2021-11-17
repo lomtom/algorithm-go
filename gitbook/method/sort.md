@@ -223,7 +223,10 @@ func merge(left []int, right []int) (res []int) {
 5. [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/)
 
 ### 题解
+1. 排序数组：略
+
 2. 排序链表
+
 ```go
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil{
@@ -272,6 +275,7 @@ func mergeList(left *ListNode, right *ListNode) *ListNode {
 ```
 
 3. 剑指 Offer 51. 数组中的逆序对
+
 ```go
 
 func reversePairs(nums []int) int {
@@ -312,6 +316,7 @@ func mergePairs(left,right []int) (res []int,count int) {
 
 
 4. 翻转对代码
+
 ```go
 func reversePairs(nums []int) int {
 	_, res := mergeSort(nums)
