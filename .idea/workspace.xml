@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="归并排序">
-      <change afterPath="$PROJECT_DIR$/gitbook/method/window.md" afterDir="false" />
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="归并排序用例">
+      <change afterPath="$PROJECT_DIR$/gitbook/method/ps.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/bfs.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/bfs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/dfs.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/dfs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/sort.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sort/sort_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/sort_test.go" afterDir="false" />
     </list>
-    <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="" />
+    <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,8 +27,34 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="6" end1="8" start2="6" end2="8" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="9" end1="9" start2="9" end2="10" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="10" end1="10" start2="11" end2="18" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="11" end1="12" start2="19" end2="19" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="22" end1="22" start2="29" end2="37" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="24" end1="24" start2="39" end2="57" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="40" end1="41" start2="73" end2="74" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="50" end1="52" start2="83" end2="133" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="60" end1="61" start2="141" end2="142" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="65" end1="66" start2="146" end2="151" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
+        <range start1="92" end1="93" start2="177" end2="179" changelist="15363b47-a162-464c-9949-2f3d7023bd7b" />
+        <range start1="96" end1="96" start2="182" end2="203" changelist="15363b47-a162-464c-9949-2f3d7023bd7b" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectId" id="20dB1nQJfMVQsWE4w5MU8MBiMFG" />
   <component name="ProjectViewState">
@@ -38,7 +71,7 @@
     <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pathVariables" />
+    <property name="settings.editor.selected.configurable" value="leetcode.id" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -48,8 +81,8 @@
       <recent name="$PROJECT_DIR$/gitbook/method" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="TestBubbleSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestHeapSort in algorithm/sort">
+    <configuration name="TestHeapSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <working_directory value="$PROJECT_DIR$/sort" />
       <root_directory value="$PROJECT_DIR$" />
@@ -58,12 +91,64 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestBubbleSort\E$" />
+      <pattern value="^\QTestHeapSort\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestMergeSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestMergeSort\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestName in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestName\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestQuickSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestQuickSort\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestReversePairs in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestReversePairs\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestBubbleSort in algorithm/sort" />
+        <item itemvalue="Go Test.TestHeapSort in algorithm/sort" />
+        <item itemvalue="Go Test.TestQuickSort in algorithm/sort" />
+        <item itemvalue="Go Test.TestName in algorithm/sort" />
+        <item itemvalue="Go Test.TestReversePairs in algorithm/sort" />
+        <item itemvalue="Go Test.TestMergeSort in algorithm/sort" />
       </list>
     </recent_temporary>
   </component>

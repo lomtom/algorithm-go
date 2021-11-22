@@ -228,6 +228,8 @@ func merge(left []int, right []int) (res []int) {
 
 2、排序链表
 
+难点在于怎么进行拆分，链表没办法像数组那样直接获取中间节点，那么我们可以采用快慢指针找到中间节点。
+
 ```go
 func sortList(head *ListNode) *ListNode {
 	if head == nil || head.Next == nil{
@@ -276,6 +278,10 @@ func mergeList(left *ListNode, right *ListNode) *ListNode {
 ```
 
 3、剑指 Offer 51. 数组中的逆序对
+
+这题很难想到会用归并排序的思想来解题，然而这道题确实归并排序的经典题。
+
+拆分后，只需对前后两个数组进行对比即可，left数组的第indexL个对比right的的第indexR个，如果符合条件，逆序对加leftL - indexL即可。
 
 ```go
 
@@ -360,3 +366,8 @@ func merge(left, right []int) (res []int, count int) {
 	return
 }
 ```
+
+## 快速排序
+
+
+

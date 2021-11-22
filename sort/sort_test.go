@@ -248,13 +248,14 @@ func mergePairs(left, right []int) (res []int, count int) {
 	return
 }
 
+// 快速排序
 func TestQuickSort(t *testing.T) {
 	nums := []int{3, 4, 2, 1, 5, 7, 6}
 	quickSort(nums, 0, len(nums)-1)
 	fmt.Println(nums)
 }
 
-func quickSort(nums []int, start, end int) {
+func quickSort(nums []int, start int, end int) {
 	if start < end {
 		index := quick(nums, start, end)
 		quickSort(nums, start, index-1)
@@ -262,22 +263,54 @@ func quickSort(nums []int, start, end int) {
 	}
 }
 
-func quick(nums []int, start, end int) int {
-	p := nums[end]
-	i := start
-	for j := start; j < end; j++ {
-		if nums[j] < p {
-			swap(nums, i, j)
-			i++
+func quick(nums []int, start int, end int) int {
+	num := nums[end]
+	index := start
+	for i := start; i < end; i++ {
+		if nums[i] < num {
+			nums[index], nums[i] = nums[i], nums[index]
+			index++
 		}
 	}
-	// 把中间的值换为用于比较的基准值
-	swap(nums, i, end)
-	return i
+	nums[index], nums[end] = nums[end], nums[index]
+	return index
 }
 
-func swap(nums []int, i, j int) {
-	t := nums[i]
-	nums[i] = nums[j]
-	nums[j] = t
+// 堆排序
+func TestHeapSort(t *testing.T) {
+	nums := []int{3, 4, 2, 1, 5, 7, 6}
+	heapSort(nums)
+	fmt.Println(nums)
+}
+
+func heapSort(nums []int) {
+	l := len(nums)
+	buildMaxHeap(nums, l)
+	for i := l - 1; i >= 0; i-- {
+		nums[0], nums[i] = nums[i], nums[0]
+		l -= 1
+		heapify(nums, 0, l)
+	}
+}
+
+func buildMaxHeap(nums []int, l int) {
+	for i := l / 2; i >= 0; i-- {
+		heapify(nums, i, l)
+	}
+}
+
+func heapify(nums []int, i int, l int) {
+	left := 2*i + 1
+	right := 2*i + 2
+	index := i
+	if left < l && nums[left] > nums[index] {
+		index = left
+	}
+	if right < l && nums[right] > nums[index] {
+		index = right
+	}
+	if index != i {
+		nums[index], nums[i] = nums[i], nums[index]
+		heapify(nums, index, l)
+	}
 }
