@@ -12,3 +12,9 @@
 2. 该问题可以分解为若干个规模较小的相同问题，即该问题具有最优子结构性质。 
 3. 利用该问题分解出的子问题的解可以合并为该问题的解； 
 4. 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。
+
+分治法应用:
+
+104 [二叉树的最大深度](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/) ⭐
+
+110 [平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) ⭐
