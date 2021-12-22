@@ -12,7 +12,7 @@ func TestBubbleSort(t *testing.T) {
 	fmt.Println(nums)
 }
 
-// 冒泡算排序
+// 冒泡排序
 func bubbleSort(nums []int) {
 	len := len(nums)
 	for i := 0; i < len; i++ {
@@ -24,7 +24,7 @@ func bubbleSort(nums []int) {
 	}
 }
 
-// 冒泡算排序
+// 冒泡排序
 func bubbleSort1(nums []int) {
 	len := len(nums)
 	for i := 0; i < len; i++ {
@@ -36,7 +36,7 @@ func bubbleSort1(nums []int) {
 	}
 }
 
-// 冒泡算排序
+// 冒泡排序
 func bubbleSort2(nums []int) {
 	len := len(nums)
 	for i := 0; i < len; i++ {
@@ -77,8 +77,8 @@ func selectionSort(nums []int) {
 }
 
 func TestInsertionSort(t *testing.T) {
-	//nums := []int{3, 4, 2, 1, 5, 7, 6}
-	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	nums := []int{3, 4, 2, 1, 5, 7, 6}
+	//nums := []int{1, 2, 3, 4, 5, 6, 7}
 	insertionSort(nums)
 	fmt.Println(nums)
 }
@@ -88,11 +88,12 @@ func insertionSort(nums []int) {
 	l := len(nums)
 	for i := 0; i < l; i++ {
 		temp := nums[i]
-		index := i
-		for index > 0 && nums[index] >= temp {
-			nums[index] = nums[index-1]
+		index := i - 1
+		for index >= 0 && nums[index] >= temp {
+			nums[index+1] = nums[index]
+			index--
 		}
-		nums[index] = temp
+		nums[index+1] = temp
 	}
 }
 

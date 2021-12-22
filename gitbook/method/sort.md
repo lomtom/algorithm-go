@@ -149,16 +149,17 @@ func selectionSort(nums []int)  {
 
 ```go
 // 插入排序
-func insertionSort(nums []int) {
-	l := len(nums)
-	for i := 0; i < l; i++ {
-		temp := nums[i]
-		index := i
-		for  index > 0 && nums[index] >= temp {
-			nums[index] = nums[index - 1]
-		}
-		nums[index] = temp
-	}
+func insertionSort(nums []int)  {
+    l := len(nums)
+    for i := 0; i < l; i++ {
+        temp := nums[i]
+        index := i - 1
+        for  index >= 0 && nums[index] >= temp {
+            nums[index + 1] = nums[index]
+            index--
+        }
+        nums[index + 1] = temp
+    }
 }
 ```
 ### 例题
