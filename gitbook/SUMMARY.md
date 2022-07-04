@@ -16,7 +16,8 @@
 * [二叉索引树](method/bit.md)
 * [前缀和](method/ps.md)
 
-[leetcode](leetcode/README.md)
+### 力扣
+* [1200、最小绝对差](leetcode/1200最小绝对差_readme.md)
 
 
   
