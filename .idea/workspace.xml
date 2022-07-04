@@ -4,25 +4,27 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="归并排序用例">
-      <change afterPath="$PROJECT_DIR$/gitbook/method/ps.md" afterDir="false" />
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="修改插入排序">
+      <change afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcode/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/method/bfs.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/bfs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/method/dfs.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/dfs.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/method/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/method/sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sort/sort_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sort/sort_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
     </list>
-    <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="GOROOT" url="file:///usr/local/go" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" url="file:///opt/homebrew/Cellar/go/1.18.3/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
@@ -38,41 +40,31 @@
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/.idea/workspace.xml">
-      <ranges>
-        <range start1="6" end1="8" start2="6" end2="8" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="9" end1="9" start2="9" end2="10" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="10" end1="10" start2="11" end2="18" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="11" end1="12" start2="19" end2="19" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="22" end1="22" start2="29" end2="37" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="24" end1="24" start2="39" end2="57" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="40" end1="41" start2="73" end2="74" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="50" end1="52" start2="83" end2="133" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="60" end1="61" start2="141" end2="142" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="65" end1="66" start2="146" end2="151" changelist="ea2ace05-1d7c-4282-ad92-b004b2d0688f" />
-        <range start1="92" end1="93" start2="177" end2="179" changelist="15363b47-a162-464c-9949-2f3d7023bd7b" />
-        <range start1="96" end1="96" start2="182" end2="203" changelist="15363b47-a162-464c-9949-2f3d7023bd7b" />
-      </ranges>
-    </file>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="20dB1nQJfMVQsWE4w5MU8MBiMFG" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="go.formatter.settings.were.checked" value="true" />
-    <property name="go.import.settings.migrated" value="true" />
-    <property name="go.modules.go.list.on.any.changes.was.set" value="true" />
-    <property name="go.sdk.automatically.set" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
-    <property name="settings.editor.selected.configurable" value="leetcode.id" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultGoTemplateProperty": "Go File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
+    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "go.import.settings.migrated": "true",
+    "last_opened_file_path": "/Users/lomtom/company/项目/go/algorithm",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "go.sdk"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
@@ -81,20 +73,29 @@
       <recent name="$PROJECT_DIR$/gitbook/method" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.TestHeapSort in algorithm/sort">
-    <configuration name="TestHeapSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.Test in algorithm/leetcode">
+    <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="algorithm" />
-      <working_directory value="$PROJECT_DIR$/sort" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="algorithm/sort" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestHeapSort\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestMergeSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="Test in algorithm/leetcode" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/leetcode" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/leetcode" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTest\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestBubble in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
       <working_directory value="$PROJECT_DIR$/sort" />
       <root_directory value="$PROJECT_DIR$" />
@@ -103,7 +104,31 @@
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestMergeSort\E$" />
+      <pattern value="^\QTestBubble\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestInsertionSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/sort" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/sort" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestInsertionSort\E$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestName in algorithm/bit" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="algorithm" />
+      <working_directory value="$PROJECT_DIR$/bit" />
+      <root_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="algorithm/bit" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$" />
+      <framework value="gotest" />
+      <pattern value="^\QTestName\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestName in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -118,37 +143,23 @@
       <pattern value="^\QTestName\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestQuickSort in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
       <module name="algorithm" />
-      <working_directory value="$PROJECT_DIR$/sort" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="algorithm/sort" />
+      <working_directory value="$PROJECT_DIR$" />
+      <go_parameters value="-i" />
+      <kind value="DIRECTORY" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestQuickSort\E$" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestReversePairs in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="algorithm" />
-      <working_directory value="$PROJECT_DIR$/sort" />
-      <root_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <package value="algorithm/sort" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$" />
-      <framework value="gotest" />
-      <pattern value="^\QTestReversePairs\E$" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Test.TestHeapSort in algorithm/sort" />
-        <item itemvalue="Go Test.TestQuickSort in algorithm/sort" />
+        <item itemvalue="Go Test.Test in algorithm/leetcode" />
         <item itemvalue="Go Test.TestName in algorithm/sort" />
-        <item itemvalue="Go Test.TestReversePairs in algorithm/sort" />
-        <item itemvalue="Go Test.TestMergeSort in algorithm/sort" />
+        <item itemvalue="Go Test.TestBubble in algorithm/sort" />
+        <item itemvalue="Go Test.TestInsertionSort in algorithm/sort" />
+        <item itemvalue="Go Test.TestName in algorithm/bit" />
       </list>
     </recent_temporary>
   </component>
@@ -166,7 +177,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加 gitbook" />
@@ -175,9 +185,59 @@
     <MESSAGE value="选择、插入排序" />
     <MESSAGE value="修改流水线配置" />
     <MESSAGE value="归并排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="归并排序" />
+    <MESSAGE value="归并排序用例" />
+    <MESSAGE value="堆排序代码" />
+    <MESSAGE value="树状数组" />
+    <MESSAGE value="修改插入排序" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改插入排序" />
   </component>
   <component name="VgoProject">
-    <integration-enabled>true</integration-enabled>
+    <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/sort/sort_test.go</url>
+          <line>150</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file:///usr/local/go/src/sort/sort.go</url>
+          <line>240</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/sort/sort_test.go</url>
+          <line>228</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/dfs/dfs_test.go</url>
+          <line>33</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/dfs/dfs_test.go</url>
+          <line>25</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bit/bit_test.go</url>
+          <line>106</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bit/bit_test.go</url>
+          <line>66</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/bit/bit_test.go</url>
+          <line>113</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
