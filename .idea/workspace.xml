@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="最小绝对差">
-      <change beforePath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/SUMMARY.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/README.md" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
