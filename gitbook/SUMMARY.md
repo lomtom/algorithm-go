@@ -16,6 +16,8 @@
 * [二叉索引树](method/bit.md)
 * [前缀和](method/ps.md)
 
+[leetcode](leetcode/README.md)
+
 
   
 
