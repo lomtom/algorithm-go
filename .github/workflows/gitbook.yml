@@ -22,6 +22,7 @@ jobs:
       - name: configue
         run: |
           npm install -g gitbook-cli
+          npm install  gitbook-plugin-lightbox 
           gitbook install
           npm install -g gitbook-summary
 
