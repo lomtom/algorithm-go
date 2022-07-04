@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="修改插入排序">
-      <change afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="最小绝对差">
+      <change beforePath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +185,8 @@
     <MESSAGE value="堆排序代码" />
     <MESSAGE value="树状数组" />
     <MESSAGE value="修改插入排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改插入排序" />
+    <MESSAGE value="最小绝对差" />
+    <option name="LAST_COMMIT_MESSAGE" value="最小绝对差" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
