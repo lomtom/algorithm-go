@@ -119,7 +119,7 @@ return true
 ```
 
 
-最后代码：[我的日程安排表I](https://github.com/lomtom/algorithm-go/leetcode/729我的日程安排表I_test.go.go)
+最后代码：[我的日程安排表I](https://github.com/lomtom/algorithm-go/blob/main/leetcode/729我的日程安排表I_test.go)
 
 **复杂度：**
 > 时间复杂度：O(n^2)，遍历切片所需时间
