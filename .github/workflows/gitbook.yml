@@ -25,7 +25,7 @@ jobs:
           npm install  gitbook-plugin-lightbox 
           gitbook install
           npm install -g gitbook-summary
-
+    
       - name: generate
         run: |
           ls

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="lightbox 无法安装">
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="目录">
+      <change afterPath="$PROJECT_DIR$/gitbook/leetcode/729我的日程安排表I_readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gitbook/leetcode/example.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leetcode/729我的日程安排表I_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/gitbook.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/gitbook.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/SUMMARY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/book.json" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/book.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode/1200最小绝对差_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/1200最小绝对差_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode/1200最小绝对差_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode/1200最小绝对差_test.go" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,23 +49,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultGoTemplateProperty": "Go File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "RunOnceActivity.go.modules.go.list.on.any.changes.was.set": "true",
-    "RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/Users/lomtom/company/项目/go/algorithm",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "go.sdk"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultGoTemplateProperty&quot;: &quot;Go File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.modules.go.list.on.any.changes.was.set&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.watchers.conflict.with.on.save.actions.check.performed&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/lomtom/company/项目/go/algorithm&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;go.sdk&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/docs" />
@@ -74,7 +75,7 @@
       <recent name="$PROJECT_DIR$/gitbook/method" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Test.Test in algorithm/leetcode">
+  <component name="RunManager" selected="Go Test.TestMyCalendar in algorithm/leetcode">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="algorithm" />
       <working_directory value="$PROJECT_DIR$" />
@@ -120,16 +121,16 @@
       <pattern value="^\QTestInsertionSort\E$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestName in algorithm/bit" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+    <configuration name="TestMyCalendar in algorithm/leetcode" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="algorithm" />
-      <working_directory value="$PROJECT_DIR$/bit" />
+      <working_directory value="$PROJECT_DIR$/leetcode" />
       <root_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
-      <package value="algorithm/bit" />
+      <package value="algorithm/leetcode" />
       <directory value="$PROJECT_DIR$" />
       <filePath value="$PROJECT_DIR$" />
       <framework value="gotest" />
-      <pattern value="^\QTestName\E$" />
+      <pattern value="^\QTestMyCalendar\E$" />
       <method v="2" />
     </configuration>
     <configuration name="TestName in algorithm/sort" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -156,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestMyCalendar in algorithm/leetcode" />
         <item itemvalue="Go Test.Test in algorithm/leetcode" />
         <item itemvalue="Go Test.TestName in algorithm/sort" />
         <item itemvalue="Go Test.TestBubble in algorithm/sort" />
         <item itemvalue="Go Test.TestInsertionSort in algorithm/sort" />
-        <item itemvalue="Go Test.TestName in algorithm/bit" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +204,8 @@
     <MESSAGE value="最小绝对差" />
     <MESSAGE value="leetcode" />
     <MESSAGE value="lightbox 无法安装" />
-    <option name="LAST_COMMIT_MESSAGE" value="lightbox 无法安装" />
+    <MESSAGE value="目录" />
+    <option name="LAST_COMMIT_MESSAGE" value="目录" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

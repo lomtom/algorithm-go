@@ -24,7 +24,7 @@ func minimumAbsDifference(arr []int) [][]int {
 	return res
 }
 
-func Test(t *testing.T) {
+func TestMinimumAbsDifference(t *testing.T) {
 	collections := []struct {
 		input  []int
 		output [][]int
