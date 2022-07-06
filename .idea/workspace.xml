@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="729我的日程安排表I">
-      <change afterPath="$PROJECT_DIR$/gitbook/leetcode/736Lisp语法解析_readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/leetcode/736Lisp语法解析_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="736Lisp语法解析">
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/736Lisp语法解析_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/736Lisp语法解析_readme.md" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +202,8 @@
     <MESSAGE value="lightbox 无法安装" />
     <MESSAGE value="目录" />
     <MESSAGE value="729我的日程安排表I" />
-    <option name="LAST_COMMIT_MESSAGE" value="729我的日程安排表I" />
+    <MESSAGE value="736Lisp语法解析" />
+    <option name="LAST_COMMIT_MESSAGE" value="736Lisp语法解析" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
