@@ -54,9 +54,9 @@
 
 唯一需要注意的是怎么在一个单词中（例如`another`）找出它的最短词根（例如`an`），可以考虑使用`strings`工具包中的`strings.HasPrefix`方法进行判断。
 
-那么，我们直接遍历`sentence`分割后的字符数组，判断`dictionary`是否含有词根。
+找到最短词根：那么，我们直接遍历`sentence`分割后的字符数组，判断`dictionary`是否含有词根，再将其与临时变量比较长度，如果长度小于临时变量，即替换临时变量，这样就可以找到最短词根了。
 
-为了减少判断次数，可以事先将`dictionary`进行排序，可以使用`sort.Slice`方法对`dictionary`根据长度进行排序。这样，在判断是否含有词根时，如果找到了，直接停止比较。
+优化：为了减少判断次数，可以事先将`dictionary`进行排序，可以使用`sort.Slice`方法对`dictionary`根据长度进行排序。这样，在判断是否含有词根时，如果找到了，直接停止比较。
 
 
 **代码分析：**
@@ -94,7 +94,7 @@ for index := range words {
 
 
 
-最后代码：[单词替换](https://github.com/lomtom/algorithm-go/leetcode/648单词替换_test.go)
+最后代码：[单词替换](https://github.com/lomtom/algorithm-go/leetcode/blob/main/648单词替换_test.go)
 
 **复杂度：**
 
