@@ -11,13 +11,13 @@
     "-search",
     "search-pro",
     "custom-favicon",
-    "tbfed-pagefooter",
-    "lightbox",
+    "-tbfed-pagefooter",
     "-sharing",
     "sharing-plus",
     "hide-element",
     "github",
-    "theme-fexa"
+    "theme-fexa",
+    "copyright"
   ],
   "variables": {
     "themeFexa": {
@@ -55,6 +55,12 @@
     "tbfed-pagefooter": {
       "modify_label": "文章修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
+    },
+    "copyright": {
+      "site": "https://algorithm.lomtom.cn",
+      "author": "lomtom",
+      "website": "algorithm-go",
+      "copyProtect": false
     },
     "sharing": {
       "douban": false,
