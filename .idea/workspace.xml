@@ -6,7 +6,40 @@
   <component name="ChangeListManager">
     <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="文档类型修改为docsify">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/home.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/home.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/1200最小绝对差_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/1200最小绝对差_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/648单词替换_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/648单词替换_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/729我的日程安排表I_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/729我的日程安排表I_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/736Lisp语法解析_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/736Lisp语法解析_readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/leetcode/example.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/leetcode/example.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/SUMMARY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/book.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/datastruct/bTree.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/logo.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/logoko.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/logoko1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/sort/bubbleSort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/sort/insertionSort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/img/sort/selectionSort.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/1200最小绝对差_readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/648单词替换_readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/729我的日程安排表I_readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/736Lisp语法解析_readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/example.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/bfs.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/bit.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/bst.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/dac.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/dfs.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/ps.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/sort.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/method/window.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitbook/package.json" beforeDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +80,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultGoTemplateProperty": "Go File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",

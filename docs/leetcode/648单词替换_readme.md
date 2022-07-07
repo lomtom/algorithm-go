@@ -1,6 +1,3 @@
- **648. 单词替换**
-
----
 **题目难度：**[中等](https://leetcode.cn/problems/replace-words/)
 
 **题目描述：**

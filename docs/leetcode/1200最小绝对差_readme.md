@@ -1,6 +1,4 @@
- 1200. 最小绝对差
 
----
 **题目难度：**[简单](https://leetcode.cn/problems/minimum-absolute-difference/)
 
 **题目描述：**

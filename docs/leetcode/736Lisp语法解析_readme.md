@@ -1,6 +1,4 @@
- 736. Lisp 语法解析
 
----
 **题目难度：**[困难](https://leetcode.cn/problems/parse-lisp-expression/)
 
 **题目描述：**
