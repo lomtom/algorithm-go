@@ -292,6 +292,8 @@
         plugins: [
             function (hook, vm) {
                 hook.beforeEach(function (html) {
+                    var main = document.getElementById("main").getElementsByTagName("h1")
+                    console.log(main)
                     var footer = [
                         '\n\n<div class="article-licensing box">\n' +
                         '    <div class="licensing-title">\n' +
@@ -302,14 +304,14 @@
                         '                <div><h6>作者</h6>\n' +
                         '                    <p>lomtom</p></div>\n' +
                         '            </div>\n' +
-                        '            <div class="level-item is-narrow">\n' +
-                        '                <div><h6>发布于</h6>\n' +
-                        '                    <p>{docsify-updated}</p></div>\n' +
-                        '            </div>\n' +
-                        '            <div class="level-item is-narrow">\n' +
-                        '                <div><h6>更新于</h6>\n' +
-                        '                    <p>{docsify-updated}</p></div>\n' +
-                        '            </div>\n' +
+                        // '            <div class="level-item is-narrow">\n' +
+                        // '                <div><h6>发布于</h6>\n' +
+                        // '                    <p>{docsify-updated}</p></div>\n' +
+                        // '            </div>\n' +
+                        // '            <div class="level-item is-narrow">\n' +
+                        // '                <div><h6>更新于</h6>\n' +
+                        // '                    <p>{docsify-updated}</p></div>\n' +
+                        // '            </div>\n' +
                         '        </div>\n' +
                         '    </div>\n' +
                         '</div>\n' +
