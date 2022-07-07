@@ -94,7 +94,7 @@ for index := range words {
 
 
 
-最后代码：[单词替换](https://github.com/lomtom/algorithm-go/leetcode/blob/main/648单词替换_test.go)
+最后代码：[单词替换](https://github.com/lomtom/algorithm-go/blob/main/leetcode/648单词替换_test.go)
 
 **复杂度：**
 

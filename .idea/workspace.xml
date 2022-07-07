@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea2ace05-1d7c-4282-ad92-b004b2d0688f" name="Changes" comment="648单词替换">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gitbook/leetcode/648单词替换_readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/648单词替换_readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gitbook/leetcode/example.md" beforeDir="false" afterPath="$PROJECT_DIR$/gitbook/leetcode/example.md" afterDir="false" />
     </list>
     <list id="15363b47-a162-464c-9949-2f3d7023bd7b" name="no need" comment="no need" />
     <option name="SHOW_DIALOG" value="false" />
