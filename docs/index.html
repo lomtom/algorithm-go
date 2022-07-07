@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="Description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <style>
+        a {
+            text-decoration: none
+        }
+
+        a:hover {
+            color: #39efbd;
+        !important;
+        }
+
+        body .docsify-pagination-container {
+            border-width: 0em;
+            margin-top: 0em;
+            margin-bottom: 5em;
+        }
+
+
+        body .pagination-item-label svg {
+            height: 0.8em;
+            stroke-linecap: square;
+            stroke-width: 3px;
+        }
+
+        body .pagination-item-title {
+            color: #7A7A7A;
+        !important;
+            font-size: 1.3em;
+        }
+
+
+        /*    版权*/
+        .article-licensing {
+            position: relative;
+            z-index: 1;
+            box-shadow: none;
+            background: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .article-licensing:after {
+            position: absolute;
+            z-index: -1;
+            right: -50px;
+            top: -87.87px;
+            content: '\f25e';
+            font-size: 200px;
+            font-family: 'Font Awesome 5 Brands';
+            opacity: 0.1;
+        }
+
+        .article-licensing .level-left {
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        .article-licensing .licensing-title {
+            margin-bottom: 1rem !important;
+            line-height: 1.2;
+        }
+
+        .article-licensing .licensing-title p {
+            margin: 0;
+        }
+
+        .article-licensing .licensing-title p:not(:last-child) {
+            margin-bottom: 0.25rem !important;
+        }
+
+        .article-licensing .licensing-title a {
+            color: #7a7a7a !important;
+            font-size: 0.85rem !important;
+        }
+
+        .article-licensing .licensing-meta .icons .icon {
+            width: 1.2em;
+            height: 1.2em;
+            font-size: 1.2em;
+            vertical-align: bottom;
+        }
+
+        .article-licensing .licensing-meta a {
+            width: 1.2em;
+            height: 1.2em;
+        }
+
+        .article-licensing .licensing-meta a {
+            color: inherit;
+        }
+
+        .article-licensing .licensing-meta h6 {
+            font-size: 0.85rem !important;
+            padding: 0;
+            margin: 0;
+        }
+
+        .article-licensing .licensing-title p:not(:last-child) {
+            margin-bottom: 0.25rem !important;
+        }
+
+        .box {
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+            color: #4a4a4a;
+            display: block;
+            padding: 1.25rem;
+        }
+
+        a.box:hover,
+        a.box:focus {
+            box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px #3273dc;
+        }
+
+        a.box:active {
+            box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.2), 0 0 0 1px #3273dc;
+        }
+
+        .level {
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .level code {
+            border-radius: 4px;
+        }
+
+        .level img {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .level.is-mobile {
+            display: flex;
+        }
+
+        .level.is-mobile .level-left,
+        .level.is-mobile .level-right {
+            display: flex;
+        }
+
+        .level.is-mobile .level-left + .level-right {
+            margin-top: 0;
+        }
+
+        .level.is-mobile .level-item:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 0.75rem;
+        }
+
+        .level.is-mobile .level-item:not(.is-narrow) {
+            flex-grow: 1;
+        }
+
+        @media screen and (min-width: 769px), print {
+            .level {
+                display: flex;
+            }
+
+            .level > .level-item:not(.is-narrow) {
+                flex-grow: 1;
+            }
+        }
+
+        .level-item {
+            align-items: center;
+            display: flex;
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+            justify-content: center;
+        }
+
+        .level-item p {
+            margin: 0;
+        }
+
+        .level-item .title,
+        .level-item .subtitle {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .level-item:not(:last-child) {
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        .level-left,
+        .level-right {
+            flex-basis: auto;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+
+        .level-left .level-item.is-flexible,
+        .level-right .level-item.is-flexible {
+            flex-grow: 1;
+        }
+
+        @media screen and (min-width: 769px), print {
+            .level-left .level-item:not(:last-child),
+            .level-right .level-item:not(:last-child) {
+                margin-right: 0.75rem;
+            }
+        }
+
+        .level-left {
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        @media screen and (max-width: 768px) {
+            .level-left + .level-right {
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media screen and (min-width: 769px), print {
+            .level-left {
+                display: flex;
+            }
+        }
+
+        .level-right {
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        @media screen and (min-width: 769px), print {
+            .level-right {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        name: '<img src="/img/logoko1.png" width="50%">',
+        routerMode: 'history',
+        themeColor: '#00c58e',
+        autoHeader: true,
+        loadSidebar: true,
+        subMaxLevel: 2,
+        onlyCover: true,
+        formatUpdated: '{YYYY}-{MM}-{DD}',
+        coverpage: true,
+        loadNavbar: true,
+        auto2top: true,
+        search: {
+            maxAge: 86400000,//过期时间,单位毫秒,默认一天
+            paths: [],
+            placeholder: '请输入搜索关键字',
+            noData: '没有搜到呦!',
+            depth: 1,
+            hideOtherSidebarContent: true, // whether or not to hide other sidebar content
+        },
+        count: {
+            countable: true,
+            // fontsize:'0.9em',
+            // color:'rgb(90,90,90)',
+            // language:'chinese'
+        },
+        copyCode: {
+            buttonText: 'Copy',
+            errorText: 'Error',
+            successText: 'Copied'
+        },
+        pagination: {
+            // previousText: '上一章节',
+            // or
+            // nextText: {
+            //     '/en/': 'NEXT',
+            //     '/': '下一章节'
+            // },
+            crossChapter: true,
+            crossChapterText: true,
+        },
+        plugins: [
+            function (hook, vm) {
+                hook.beforeEach(function (html) {
+                    var footer = [
+                        '\n\n<div class="article-licensing box">\n' +
+                        '    <div class="licensing-title">\n' +
+                        '        <p><a href="https://lomtom.cn/ffa3efb0.html"> https://algorithm.lomtom.cn' + vm.route.file + '</a></p></div>\n' +
+                        '    <div class="licensing-meta level is-mobile">\n' +
+                        '        <div class="level-left">\n' +
+                        '            <div class="level-item is-narrow">\n' +
+                        '                <div><h6>作者</h6>\n' +
+                        '                    <p>lomtom</p></div>\n' +
+                        '            </div>\n' +
+                        '            <div class="level-item is-narrow">\n' +
+                        '                <div><h6>发布于</h6>\n' +
+                        '                    <p>{docsify-updated}</p></div>\n' +
+                        '            </div>\n' +
+                        '            <div class="level-item is-narrow">\n' +
+                        '                <div><h6>更新于</h6>\n' +
+                        '                    <p>{docsify-updated}</p></div>\n' +
+                        '            </div>\n' +
+                        '        </div>\n' +
+                        '    </div>\n' +
+                        '</div>\n' +
+                        '\n'].join('');
+                    if (vm.route.path === '/home') {
+                        return html
+                    } else {
+                        return html + footer
+                    }
+                })
+
+
+                var footer = [
+                    '<hr>' +
+                    '<footer class="footer" style="transition: opacity 0.3s ease-out 0s, transform 0.3s ease-out 0s, box-shadow 0.3s ease-in-out 0s; opacity: 1;"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">' +
+                    '<img src="/img/logoko.png" alt="lomtom" height="28"></a><p class="is-size-7">' +
+                    '<span>© 2019 - 2022  Made with love By lomtom</span>&nbsp;&nbsp;' +
+                    '</p>' +
+                    '</div>' +
+                    '</div></div></footer>'
+                ].join('');
+
+                hook.afterEach(function (html) {
+                    return html + footer;
+                });
+            }
+        ]
+    }
+</script>
+<script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+<!--search-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+<!--code copy-->
+<script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<!--page-->
+<script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+<!--counter-->
+<script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+<!--pop image-->
+<script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+
+</body>
+</html>
