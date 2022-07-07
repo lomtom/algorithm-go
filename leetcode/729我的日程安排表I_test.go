@@ -94,6 +94,6 @@ func TestMyCalendar(t *testing.T) {
 	s := assert.NewAssert(t)
 	obj := Constructor()
 	for index := range collections {
-		s.Equal(obj.Book(collections[index].input[0], collections[index].input[1]), collections[index].output)
+		s.Equal(collections[index].output, obj.Book(collections[index].input[0], collections[index].input[1]))
 	}
 }

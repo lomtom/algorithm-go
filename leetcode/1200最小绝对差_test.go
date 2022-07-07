@@ -41,6 +41,6 @@ func TestMinimumAbsDifference(t *testing.T) {
 
 	s := assert.NewAssert(t)
 	for index := range collections {
-		s.Equal(minimumAbsDifference(collections[index].input), collections[index].output)
+		s.Equal(collections[index].output, minimumAbsDifference(collections[index].input))
 	}
 }

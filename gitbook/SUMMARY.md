@@ -17,6 +17,7 @@
 * [前缀和](method/ps.md)
 
 ### 力扣
+* [648、单词替换](leetcode/648单词替换_readme.md)
 * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
 * [736、Lisp语法解析](leetcode/736Lisp语法解析_readme.md)
 * [1200、最小绝对差](leetcode/1200最小绝对差_readme.md)

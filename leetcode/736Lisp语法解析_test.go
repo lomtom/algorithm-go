@@ -115,6 +115,6 @@ func TestEvaluate(t *testing.T) {
 	}
 	s := assert.NewAssert(t)
 	for index := range collections {
-		s.Equal(evaluate(collections[index].input), collections[index].output)
+		s.Equal(collections[index].output, evaluate(collections[index].input))
 	}
 }
