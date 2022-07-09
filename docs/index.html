@@ -15,7 +15,7 @@
         }
 
         a:hover {
-            color: #39efbd;
+            color: var(--theme-color);
         !important;
         }
 
@@ -245,9 +245,161 @@
         }
 
     </style>
+    <style>
+
+
+        .markdown-section > div > img, .markdown-section pre {
+            box-shadow: 2px 2px 20px 6px rgb(255, 255, 255) !important;
+        }
+
+        .markdown-section a:not(:hover) {
+            text-decoration: none;
+        }
+
+        /*侧边栏*/
+
+        aside.sidebar ul li {
+            position: relative;
+        }
+
+
+        aside.sidebar ul li.active > a:before {
+            content: '' !important;
+            position: absolute !important;
+            margin: 0 !important;
+            width: 0.8em !important;
+            height: 0.8em !important;
+            top: 0.5em !important;
+            left: -1.4em !important;
+            border-radius: 50% !important;
+            background-color: var(--theme-color) !important;
+            box-shadow: 0 0 0 3px #caf6eb !important;
+        }
+
+        /*以上调侧边栏*/
+
+        .markdown-section h1 span {
+            display: inline-block;
+            border-bottom: 2px solid var(--theme-color);
+        }
+
+        /*代码块背景*/
+        p code {
+            background-color: rgb(255, 255, 255) !important;
+        }
+
+        .markdown-section p.tip,
+        .markdown-section tr:nth-child(1n) {
+        }
+
+        .markdown-section h1 {
+            margin: 3rem 0 2rem 0;
+        }
+
+        .markdown-section h2 {
+            margin: 2rem 0 1rem;
+        }
+
+        img,
+        pre {
+            border-radius: 5px;
+        }
+
+        /* 代码块头部图标 start */
+        .markdown-section pre:before {
+            content: '';
+            display: block;
+            background: url(/img/code.png);
+            height: 30px;
+            background-size: 40px;
+            background-repeat: no-repeat;
+            background-color: #efeeee;
+            background-position: 10px 10px;
+        }
+
+        /*代码块头部图标 end*/
+
+
+        section.cover h1 {
+            margin: 0;
+        }
+
+        @media (min-width: 600px) {
+            pre code {
+                padding-left: 20px !important;
+            }
+
+        }
+
+        @media (max-width: 600px) {
+            pre {
+                padding-left: 3px !important;
+                padding-right: 3px !important;
+                margin-left: -20px !important;
+                margin-right: -20px !important;
+                box-shadow: 0px 0px 20px 0px #f7f7f7 !important;
+            }
+
+
+            .advertisement {
+                display: none;
+            }
+
+        }
+
+        .markdown-section pre {
+            padding-left: 0 !important;
+            padding-right: 0px !important;
+        }
+
+
+
+        .aside_container{
+            z-index: -1;
+        }
+
+
+        .advertisement {
+            position: fixed;
+            right: 20px;
+            top: 100px;
+            width: 110px;
+            box-shadow: -1px 0 2px 0px #c5ebda;
+            padding: 10px;
+            z-index: 99;
+            background-color: #fff;
+            text-align: center;
+            z-index: -1;
+        }
+
+        .advertisement p,
+        h4 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .advertisement .Tencent_code h4 {
+            font-size: 15px;
+            color: var(--theme-color);
+            margin-bottom: 10px;
+        }
+
+
+
+    </style>
 </head>
 <body>
+<div class="aside_container">
+    <div class="advertisement">
+        <div class="Tencent_code">
+            <h4>关注公众号</h4>
+            <p style="font-size: 12px;">共同进步</p>
+            <img src="/img/qr.jpg" alt="EnjoyToShare">
+        </div>
+    </div>
+</div>
 <div id="app"></div>
+
 <script>
     window.$docsify = {
         name: '<a href="/"><img src="/img/logoko1.png" width="50%"></a>',
@@ -355,6 +507,7 @@
 <!--pop image-->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
-
+<!--code-->
+<script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-go.min.js"></script>
 </body>
 </html>
