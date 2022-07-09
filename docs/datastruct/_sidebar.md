@@ -16,5 +16,6 @@
     * [648、单词替换](leetcode/648单词替换_readme.md)
     * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
     * [736、Lisp语法解析](leetcode/736Lisp语法解析_readme.md)
+    * [873、最长的斐波那契子序列的长度](leetcode/873最长的斐波那契子序列的长度_readme.md)
     * [1200、最小绝对差](leetcode/1200最小绝对差_readme.md)
     * [1217、玩筹码](leetcode/1217玩筹码_readme.md)
