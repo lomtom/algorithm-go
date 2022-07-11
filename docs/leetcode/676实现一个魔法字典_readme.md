@@ -1,0 +1,134 @@
+
+**题目难度：**[中等](https://leetcode.cn/problems/implement-magic-dictionary/)
+
+**题目描述：**
+
+> 设计一个使用单词列表进行初始化的数据结构，单词列表中的单词 互不相同 。 如果给出一个单词，请判定能否只将这个单词中一个字母换成另一个字母，使得所形成的新单词存在于你构建的字典中。
+> 
+> 实现 MagicDictionary 类：
+> 
+> - MagicDictionary() 初始化对象
+> - void buildDict(String[] dictionary) 使用字符串数组 dictionary 设定该数据结构，dictionary 中的字符串互不相同
+> - bool search(String searchWord) 给定一个字符串 searchWord ，判定能否只将字符串中 一个 字母换成另一个字母，使得所形成的新字符串能够与字典中的任一字符串匹配。如果可以，返回 true ；否则，返回 false 。
+
+
+**测试用例：**
+
+> 示例 :
+>
+> 输入
+> 
+> ["MagicDictionary", "buildDict", "search", "search", "search", "search"]
+> 
+> [[], [["hello", "leetcode"]], ["hello"], ["hhllo"], ["hell"], ["leetcoded"]]
+> 
+> 输出
+> 
+> [null, null, false, true, false, false]
+> 
+> 解释
+> 
+> MagicDictionary magicDictionary = new MagicDictionary();
+> 
+> magicDictionary.buildDict(["hello", "leetcode"]);
+> 
+> magicDictionary.search("hello"); // 返回 False
+> 
+> magicDictionary.search("hhllo"); // 将第二个 'h' 替换为 'e' 可以匹配 "hello" ，所以返回 True
+> 
+> magicDictionary.search("hell"); // 返回 False
+> 
+> magicDictionary.search("leetcoded"); // 返回 False
+
+**限制及提示：**
+> - 1 <= dictionary.length <= 100
+> 
+> - 1 <= dictionary[i].length <= 100
+> 
+> - dictionary[i] 仅由小写英文字母组成
+> 
+> - dictionary 中的所有字符串 互不相同
+> 
+> - 1 <= searchWord.length <= 100
+> 
+> - searchWord 仅由小写英文字母组成
+> 
+> - buildDict 仅在 search 之前调用一次
+> 
+> - 最多调用 100 次 search
+
+---
+**解题分析及思路：**
+
+_Hash + 枚举_
+
+本题的重点在于如何构建一个适合`search`的`MagicDictionary`结构，并且在`search`时怎么搜索才能符合条件。
+
+可以将字典 `dictionary`的放入到数组内，然后每次`search`时，可以遍历整个数组，当长度相等时，并且两个字符串只有一个字母不相同时，返回true。
+
+为了优化比较的次数，可以将字典 `dictionary`的元素按照长度放在一个`map`中，每次只要比较相同长度的值即可。
+
+那么怎么判断两个字符串只有一个字母不相同呢？
+
+可以两个字符串的每一个字符比较，并且计算两个字符串不相同的字母的个数，如果只有一个时，则满足题目中的条件，返回`true`即可。遍历完，还没有找到符合条件的字符串，返回`false`。
+
+
+
+**代码分析：**
+
+定义`MagicDictionary`结构体，包含一个属性`m`，是一个`key`为`int`（长度），`value`为`[]string`的`map`。
+```go
+type MagicDictionary struct {
+	m map[int][]string
+}
+
+func Constructor() MagicDictionary {
+	return MagicDictionary{
+		make(map[int][]string),
+	}
+}
+```
+
+构建`MagicDictionary`结构体，将`dictionary`中的元素按照自身长度放入`map`中，方便后续搜索。
+```go
+func (this *MagicDictionary) BuildDict(dictionary []string) {
+	for index := range dictionary {
+		this.m[len(dictionary[index])] = append(this.m[len(dictionary[index])], dictionary[index])
+	}
+}
+```
+
+`search`函数，先从`map`中查找是否有相同长度`l`的值，如果没有返回false，有的话继续遍历`this.m[l]`所对应的值。
+
+遍历每一个元素时，对比每一个字母，并且统计不同字母的个数，统计完一个字符串时，判断不同字母个数是否符合条件即可。
+```go
+func (this *MagicDictionary) Search(searchWord string) bool {
+	l := len(searchWord)
+	if values, ok := this.m[l]; ok {
+		for _, value := range values {
+			var count int
+			for index := 0; index < l; index++ {
+				if value[index] != searchWord[index] {
+					count++
+				}
+			}
+			if count == 1 {
+				return true
+			}
+		}
+	}
+	return false
+}
+```
+
+最后代码：[实现一个魔法字典](https://github.com/lomtom/algorithm-go/blob/main/leetcode/676/676实现一个魔法字典_test.go)
+
+**复杂度：**
+
+- 时间复杂度：O(nl)，其中 n 是数组 `dictionary` 的长度，l 是数组 `dictionary` 中字符串的平均长度，q 是函数 search(searchWord) 的调用次数
+- 空间复杂度：O(n)，数组所需空间
+
+**执行结果：**
+
+- 执行用时：8 ms, 在所有 Go 提交中击败了100.00%的用户
+- 内存消耗：6.8 MB, 在所有 Go 提交中击败了74.42%的用户
