@@ -14,6 +14,7 @@
 
 * 力扣
     * [648、单词替换](leetcode/648单词替换_readme.md)
+    * [676、实现一个魔法字典](leetcode/676实现一个魔法字典_readme.md)
     * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
     * [736、Lisp语法解析](leetcode/736Lisp语法解析_readme.md)
     * [873、最长的斐波那契子序列的长度](leetcode/873最长的斐波那契子序列的长度_readme.md)
