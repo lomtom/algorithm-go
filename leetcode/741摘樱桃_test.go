@@ -22,17 +22,17 @@ import (
 //		if rawNow == rawLen-1 && colNow == colLen-1 {
 //			backDfs(rawNow, colNow, result)
 //		}
-//		for raw := rawNow; raw < rawLen; raw++ {
+//		for row := rawNow; row < rawLen; row++ {
 //			for col := colNow; col < colLen; col++ {
 //				flag := false
 //				for index := range goStep {
-//					if raw+goStep[index][0] < rawLen && col+goStep[index][1] < colLen {
-//						num := grid[raw+goStep[index][0]][col+goStep[index][1]]
+//					if row+goStep[index][0] < rawLen && col+goStep[index][1] < colLen {
+//						num := grid[row+goStep[index][0]][col+goStep[index][1]]
 //						if num == 1 || num == 0 {
 //							temp := num
-//							grid[raw+goStep[index][0]][col+goStep[index][1]] = 0
-//							goDfs(raw+goStep[index][0], col+goStep[index][1], result+temp)
-//							grid[raw+goStep[index][0]][col+goStep[index][1]] = temp
+//							grid[row+goStep[index][0]][col+goStep[index][1]] = 0
+//							goDfs(row+goStep[index][0], col+goStep[index][1], result+temp)
+//							grid[row+goStep[index][0]][col+goStep[index][1]] = temp
 //							flag = true
 //						} else {
 //							continue
@@ -54,16 +54,16 @@ import (
 //			ans = result
 //			return
 //		}
-//		for raw := rawNow; raw >= 0; raw-- {
+//		for row := rawNow; row >= 0; row-- {
 //			for col := colNow; col >= 0; col-- {
 //				for index := range backStep {
-//					if raw+backStep[index][0] >= 0 && col+backStep[index][1] >= 0 {
-//						num := grid[raw+backStep[index][0]][col+backStep[index][1]]
+//					if row+backStep[index][0] >= 0 && col+backStep[index][1] >= 0 {
+//						num := grid[row+backStep[index][0]][col+backStep[index][1]]
 //						if num == 1 || num == 0 {
 //							temp := num
-//							grid[raw+backStep[index][0]][col+backStep[index][1]] = 0
-//							backDfs(raw+backStep[index][0], col+backStep[index][1], result+temp)
-//							grid[raw+backStep[index][0]][col+backStep[index][1]] = temp
+//							grid[row+backStep[index][0]][col+backStep[index][1]] = 0
+//							backDfs(row+backStep[index][0], col+backStep[index][1], result+temp)
+//							grid[row+backStep[index][0]][col+backStep[index][1]] = temp
 //						} else {
 //							continue
 //						}
@@ -82,9 +82,9 @@ func cherryPickup(grid [][]int) int {
 	rawLen := len(grid)
 	colLen := len(grid[0])
 	dp := make([][]int, rawLen)
-	for raw := 0; raw < rawLen; raw++ {
+	for row := 0; row < rawLen; row++ {
 		for col := 0; col < colLen; col++ {
-			dp[raw][col] = math.MinInt32
+			dp[row][col] = math.MinInt32
 		}
 	}
 	min := func(a, b int) int {

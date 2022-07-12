@@ -45,11 +45,11 @@ func lenLongestFibSubseq(arr []int) (ans int) {
 		}
 		return a
 	}
-	for raw := l - 1; raw >= 0; raw-- {
-		for col := l - 1; col > raw; col-- {
-			if index, ok := m[arr[col]+arr[raw]]; ok {
-				dp[raw][col] = dp[col][index] + 1
-				ans = max(ans, dp[raw][col])
+	for row := l - 1; row >= 0; row-- {
+		for col := l - 1; col > row; col-- {
+			if index, ok := m[arr[col]+arr[row]]; ok {
+				dp[row][col] = dp[col][index] + 1
+				ans = max(ans, dp[row][col])
 			}
 		}
 	}
