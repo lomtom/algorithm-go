@@ -23,7 +23,7 @@
 5
 
 
-最后代码：[最小绝对差](https://github.com/lomtom/algorithm-go/blob/main/leetcode/example)
+源代码：[最小绝对差](https://github.com/lomtom/algorithm-go/blob/main/leetcode/example)
 
 **复杂度：**
 - 时间复杂度：O(nlogn)，排序所需时间
