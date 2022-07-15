@@ -13,6 +13,8 @@
     * [前缀和](method/ps.md)
 
 * 力扣
+    * [104、二叉树的最大深度](leetcode/104二叉树的最大深度_readme.md)
+    * [558、四叉树交集](leetcode/558四叉树交集_readme.md)
     * [648、单词替换](leetcode/648单词替换_readme.md)
     * [676、实现一个魔法字典](leetcode/676实现一个魔法字典_readme.md)
     * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
