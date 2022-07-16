@@ -42,7 +42,7 @@ l := maxDepth(root.Left)
 r := maxDepth(root.Right)
 ```
 
-- 治的操作：当前访问到的节点为空是，返回0值，代表此节点的子树深度为0。
+- 治的操作：当前访问到的节点为空时，返回0值，代表此节点的子树深度为0。
 ```go
 if root == nil {
 	return 0
