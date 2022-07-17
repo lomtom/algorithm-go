@@ -19,9 +19,6 @@
 4
 
 
-**代码分析：**
-5
-
 
 [源代码](https://github.com/lomtom/algorithm-go/blob/main/leetcode/example)
 
