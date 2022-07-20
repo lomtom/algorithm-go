@@ -17,6 +17,10 @@
 
 分治法应用:
 
+简单：
 - [104、二叉树的最大深度](../leetcode/104二叉树的最大深度_readme.md) ⭐
 - [110、平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) ⭐
+
+中等
+- [241、为运算表达式设计优先级](https://leetcode.cn/problems/different-ways-to-add-parentheses/)
 - [558、四叉树交集](../leetcode/558四叉树交集_readme.md)
