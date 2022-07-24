@@ -15,6 +15,7 @@
 * 力扣
   * [剑指 Offer II 041、滑动窗口的平均值](leetcode/剑指OfferII041滑动窗口的平均值_read.md)
   * [104、二叉树的最大深度](leetcode/104二叉树的最大深度_readme.md)
+  * [303、区域和检索 - 数组不可变](leetcode/303区域和检索-数组不可变_readme.md)
   * [558、四叉树交集](leetcode/558四叉树交集_readme.md)
   * [565、数组嵌套](leetcode/565数组嵌套_readme.md)
   * [648、单词替换](leetcode/648单词替换_readme.md)
