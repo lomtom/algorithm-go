@@ -5,6 +5,8 @@
 ### 数据结构
 
 * [二叉树](datastruct/bTree.md)
+* [二叉搜索树](datastruct/bst.md)
+* [二叉索引树](datastruct/bit.md)
 
 ### 算法方法
 
@@ -13,12 +15,12 @@
 * [广度优先搜索](method/bfs.md)
 * [分治法](method/dac.md)
 * [滑动窗口](method/window.md)
-* [二叉搜索树](method/bst.md)
 * [前缀和](method/ps.md)
 
 [//]: # (### 力扣)
 
 [//]: # ()
+
 [//]: # (- 2022-07-13 [735、行星碰撞]&#40;leetcode/735行星碰撞_readme.md&#41;)
 
 [//]: # (- 2022-07-15 [558、四叉树交集]&#40;leetcode/558四叉树交集_readme.md&#41;)
