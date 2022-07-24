@@ -15,13 +15,13 @@
 3. 利用该问题分解出的子问题的解可以合并为该问题的解；
 4. 该问题所分解出的各个子问题是相互独立的，即子问题之间不包含公共的子问题。
 
-分治法应用:
+## 分治法应用:
 
-简单：
+### 简单：
 - [104、二叉树的最大深度](../leetcode/104二叉树的最大深度_readme.md) ⭐
 - [110、平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) ⭐
 
-中等
+### 中等
 - [241、为运算表达式设计优先级](https://leetcode.cn/problems/different-ways-to-add-parentheses/)
 - [558、四叉树交集](../leetcode/558四叉树交集_readme.md)
 - [814、二叉树剪枝](../leetcode/814二叉树剪枝_readme.md)

@@ -181,16 +181,11 @@ func initTree(nums []int) []int {
 > 
 > [答案](https://github.com/lomtom/algorithm-go/blob/main/datastruct/linear_array/interval_sum/main.go)
 
-## 例题
+## 树状数组应用
 
-1. [区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/)
-2. [区域和检索 - 数组可修改](https://leetcode-cn.com/problems/range-sum-query-mutable/)
-3. [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) (选做)
-4. [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
+### 简单
+- [区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/)-
+- [区域和检索 - 数组可修改](https://leetcode-cn.com/problems/range-sum-query-mutable/)
+- [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) (选做)
+- [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
 
-## 题解
-
-1、[区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/)
-这一题使用树状数组并不能体现树状数组的优势，但是那这道题来练一下手也是不错的选择。（前使用缀和数组比较合适）
-2、[区域和检索 - 数组可修改](https://leetcode-cn.com/problems/range-sum-query-mutable/)
-是树状数组的经典题目之一，绝佳的练手题型。
