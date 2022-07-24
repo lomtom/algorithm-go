@@ -1,5 +1,3 @@
-# 二叉索引树（Binary Indexed Tree）
-
 ## 简介
 
 二叉索引树（Binary Indexed Tree）又称树状数组，其发明者又称为Fenwick树。
@@ -184,7 +182,7 @@ func initTree(nums []int) []int {
 ## 树状数组应用
 
 ### 简单
-- [区域和检索 - 数组不可变](https://leetcode-cn.com/problems/range-sum-query-immutable/)-
+- [303、区域和检索 - 数组不可变](../leetcode/303区域和检索-数组不可变_readme.md)
 - [区域和检索 - 数组可修改](https://leetcode-cn.com/problems/range-sum-query-mutable/)
 - [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) (选做)
 - [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
