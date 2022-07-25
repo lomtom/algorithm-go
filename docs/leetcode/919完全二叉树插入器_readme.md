@@ -136,7 +136,7 @@ func (this *CBTInserter) Insert(val int) int {
 
 优化：可以只将不完整的节点push到队列中
 
-[源代码](https://github.com/lomtom/algorithm-go/blob/main/leetcode/919完全二叉树插入器_test.go)
+[源代码](https://github.com/lomtom/algorithm-go/blob/main/leetcode/919/919完全二叉树插入器_test.go)
 
 **复杂度：**
 - 时间复杂度：O(n)
