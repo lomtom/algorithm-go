@@ -19,6 +19,8 @@
 
 > 示例 1:
 > 
+> ![](../img/leetcode/919完全二叉树插入器)
+> 
 > 输入 ["CBTInserter", "insert", "insert", "get_root"] [[[1, 2]], [3], [4], []] 
 > 
 > 输出 [null, 1, 2, [1, 2, 3, 4]] 
