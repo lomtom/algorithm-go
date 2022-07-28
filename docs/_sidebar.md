@@ -31,6 +31,7 @@
   * [1200、最小绝对差](leetcode/1200最小绝对差_readme.md)
   * [1206、设计跳表](leetcode/1206设计跳表.md)
   * [1217、玩筹码](leetcode/1217玩筹码_readme.md)
+  * [1221、数组序列号转换](leetcode/1221数组序列号转换.md)
   * [1252、奇数值单元格的数目](leetcode/1252奇数值单元格的数目_readme.md)
   * [1260、二维网格迁移](leetcode/1260二维网格迁移_readme.md)
   * [1876、长度为三且各字符不同的子字符串](leetcode/1876长度为三且各字符不同的子字符串_readme.md)
