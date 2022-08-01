@@ -11,6 +11,7 @@
   * [分治法](method/dac.md)
   * [滑动窗口](method/window.md)
   * [前缀和](method/ps.md)
+  * [数学方法](method/math.md)
 
 * 力扣
   * [剑指 Offer II 041、滑动窗口的平均值](leetcode/剑指OfferII041滑动窗口的平均值_read.md)
@@ -36,5 +37,5 @@
   * [1221、数组序列号转换](leetcode/1221数组序列号转换.md)
   * [1252、奇数值单元格的数目](leetcode/1252奇数值单元格的数目_readme.md)
   * [1260、二维网格迁移](leetcode/1260二维网格迁移_readme.md)
-  * [1374、生成美中字符都是奇数个的字符串](leetcode/1374生成美中字符都是奇数个的字符串_test.go)
+  * [1374、生成每种字符都是奇数个的字符串](leetcode/1374生成每种字符都是奇数个的字符串.md)
   * [1876、长度为三且各字符不同的子字符串](leetcode/1876长度为三且各字符不同的子字符串_readme.md)
