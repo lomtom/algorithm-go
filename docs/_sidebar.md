@@ -1,5 +1,6 @@
 * [首页](home.md)
 * 数据结构
+  * [数组](datastruct/array.md)
   * [二叉树](datastruct/bTree.md)
   * [二叉搜索树](datastruct/bst.md)
   * [二叉索引树](datastruct/bit.md)

@@ -7,6 +7,7 @@
 * [565、数组嵌套](leetcode/565数组嵌套_readme.md)
 * [592、分数加减运算](leetcode/592分数加减运算.md)
 * [593、有效的正方形](leetcode/593有效的正方形.md)
+* [622、设计循环队列](../leetcode/622设计循环队列.md)
 * [648、单词替换](leetcode/648单词替换_readme.md)
 * [676、实现一个魔法字典](leetcode/676实现一个魔法字典_readme.md)
 * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
