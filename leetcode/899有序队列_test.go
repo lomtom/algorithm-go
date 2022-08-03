@@ -1,6 +1,8 @@
 package leetcode
 
-import "sort"
+import (
+	"sort"
+)
 
 func orderlyQueue(s string, k int) string {
 	if k == 1 {

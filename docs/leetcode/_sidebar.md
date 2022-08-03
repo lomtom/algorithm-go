@@ -15,6 +15,7 @@
 * [736、Lisp语法解析](leetcode/736Lisp语法解析_readme.md)
 * [814、二叉树剪枝](leetcode/814二叉树剪枝_readme.md)
 * [873、最长的斐波那契子序列的长度](leetcode/873最长的斐波那契子序列的长度_readme.md)
+* [899、有序队列](../leetcode/899有序队列.md)
 * [919、完全二叉树插入器](leetcode/919完全二叉树插入器_readme.md)
 * [1161、最大层内元素和](leetcode/1161最大层内元素和.md)
 * [1200、最小绝对差](leetcode/1200最小绝对差_readme.md)
