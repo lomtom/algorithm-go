@@ -13,5 +13,6 @@
   * [滑动窗口](method/window.md)
   * [前缀和](method/ps.md)
   * [数学方法](method/math.md)
+  * [贪心](method/greedy.md)
 
 * [**力扣**](leetcode/_sidebar.md)
