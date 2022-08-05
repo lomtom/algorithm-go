@@ -212,3 +212,4 @@ func levelTraversal(root *TreeNode) {
 ### 层级遍历
 * [919、完全二叉树插入器](leetcode/919完全二叉树插入器_readme.md)
 * [1161、最大层内元素和](leetcode/1161最大层内元素和.md)
+* [623、在二叉树中增加一行](../leetcode/623在二叉树中增加一行.md)
