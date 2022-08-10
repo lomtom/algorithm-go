@@ -16,12 +16,7 @@ func solveEquation(equation string) string {
 			if ss[index] == "" {
 				continue
 			}
-			temp := ss[index]
-			var sign int = 1
-			var hasx bool
-			var num int
-			var valid bool
-
+			temp, sign, num, hasx, valid := ss[index], 1, 0, false, false
 			for i := range temp {
 				if temp[i] == '-' {
 					sign = -1
