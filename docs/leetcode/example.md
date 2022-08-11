@@ -23,8 +23,8 @@
 [源代码](https://github.com/lomtom/algorithm-go/blob/main/leetcode/example)
 
 **复杂度：**
-- 时间复杂度：O(nlogn)，排序所需时间
-- 空间复杂度：O(logn)，排序所需空间
+- 时间复杂度：O(n)
+- 空间复杂度：O(n)
 
 **执行结果：**
 
