@@ -1,5 +1,6 @@
 * [首页](home.md)
 * [剑指 Offer II 041、滑动窗口的平均值](leetcode/剑指OfferII041滑动窗口的平均值_read.md)
+* [41、设计循环双端队列](leetcode/41设计循环双端队列.md)
 * [104、二叉树的最大深度](leetcode/104二叉树的最大深度_readme.md)
 * [303、区域和检索 - 数组不可变](leetcode/303区域和检索-数组不可变_readme.md)
 * [307、区域和检索 - 数组可修改](leetcode/307区域和检索-数组可修改.md)
