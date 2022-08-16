@@ -16,9 +16,6 @@ func Constructor(n int) OrderedStream {
 
 func (this *OrderedStream) Insert(idKey int, value string) (ans []string) {
 	this.nums[idKey-1] = value
-	if this.index != idKey-1 {
-		return
-	}
 	for this.index < len(this.nums) {
 		if this.nums[this.index] == "" {
 			break
