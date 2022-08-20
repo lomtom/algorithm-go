@@ -26,29 +26,28 @@ func constructMaximumBinaryTree(nums []int) *TreeNode {
 	root := &TreeNode{
 		Val: nums[0],
 	}
-	for i := 1; i < l; i++ {
-		node := root
-		for {
-			if m[node.Val] > m[nums[i]] {
-				if node.Left == nil {
-					node.Left = &TreeNode{
-						Val: nums[i],
-					}
-					break
-				} else {
-					node = node.Left
+	var insertNode func(node *TreeNode, num int)
+	insertNode = func(node *TreeNode, num int) {
+		if m[node.Val] > m[num] {
+			if node.Left == nil {
+				node.Left = &TreeNode{
+					Val: num,
 				}
 			} else {
-				if node.Right == nil {
-					node.Right = &TreeNode{
-						Val: nums[i],
-					}
-					break
-				} else {
-					node = node.Right
+				insertNode(node.Left, num)
+			}
+		} else {
+			if node.Right == nil {
+				node.Right = &TreeNode{
+					Val: num,
 				}
+			} else {
+				insertNode(node.Right, num)
 			}
 		}
+	}
+	for i := 1; i < l; i++ {
+		insertNode(root, nums[i])
 	}
 	return root
 }
