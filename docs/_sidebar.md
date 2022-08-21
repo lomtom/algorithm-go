@@ -4,6 +4,7 @@
   * [二叉树](datastruct/bTree.md)
   * [二叉搜索树](datastruct/bst.md)
   * [二叉索引树](datastruct/bit.md)
+  * [单调栈](datastruct/MonotonicStack.md)
 
 * 算法方法
   * [排序](method/sort.md)
