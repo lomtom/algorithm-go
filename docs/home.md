@@ -4,9 +4,11 @@
 
 ### 数据结构
 
+* [数组](datastruct/array.md)
 * [二叉树](datastruct/bTree.md)
 * [二叉搜索树](datastruct/bst.md)
 * [二叉索引树](datastruct/bit.md)
+* [单调栈](datastruct/MonotonicStack.md)
 
 ### 算法方法
 
@@ -16,6 +18,9 @@
 * [分治法](method/dac.md)
 * [滑动窗口](method/window.md)
 * [前缀和](method/ps.md)
+* [数学方法](method/math.md)
+* [贪心](method/greedy.md)
 
+### [**力扣**](leetcode/_sidebar.md)
 
 如果你也想一起完善这个文档，请联系我吧！（扫描公众号即可联系我）
