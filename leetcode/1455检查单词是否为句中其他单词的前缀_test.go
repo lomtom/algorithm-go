@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+//方法一：分割后遍历
 //执行用时：4 ms, 在所有 Go 提交中击败了8.33%的用户
 //内存消耗：1.8 MB, 在所有 Go 提交中击败了91.67%的用户
 //func isPrefixOfWord(sentence string, searchWord string) int {
@@ -18,6 +19,7 @@ import (
 //	return -1
 //}
 
+//方法二
 //执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
 //内存消耗：1.9 MB, 在所有 Go 提交中击败了12.50%的用户
 func isPrefixOfWord(sentence string, searchWord string) int {

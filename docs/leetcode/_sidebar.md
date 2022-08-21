@@ -4,6 +4,7 @@
 * [104、二叉树的最大深度](leetcode/104二叉树的最大深度_readme.md)
 * [303、区域和检索 - 数组不可变](leetcode/303区域和检索-数组不可变_readme.md)
 * [307、区域和检索 - 数组可修改](leetcode/307区域和检索-数组可修改.md)
+* [503、下一个更大元素II](leetcode/503下一个更大元素II.md)
 * [558、四叉树交集](leetcode/558四叉树交集_readme.md)
 * [565、数组嵌套](leetcode/565数组嵌套_readme.md)
 * [592、分数加减运算](leetcode/592分数加减运算.md)
