@@ -7,5 +7,9 @@ DFS（深度优先搜索）
 如果还存在未被发现的结点，则选择其中一个作为源结点并重复以上过程，整个进程反复进行直到所有结点都被访问为止。
 
 
-### 例题
-[二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+## 应用
+
+
+### 中等题
+* [二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
+* [655、输出二叉树](../leetcode/655输出二叉树.md)
