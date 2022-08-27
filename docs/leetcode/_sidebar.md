@@ -15,6 +15,7 @@
 * [648、单词替换](leetcode/648单词替换_readme.md)
 * [654、最大二叉树](leetcode/654最大二叉树.md)
 * [655、输出二叉树](leetcode/655输出二叉树.md)
+* [662、二叉树最大宽度](leetcode/662二叉树最大宽度.md)
 * [676、实现一个魔法字典](leetcode/676实现一个魔法字典_readme.md)
 * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
 * [735、行星碰撞](leetcode/735行星碰撞_readme.md)
