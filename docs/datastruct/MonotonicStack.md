@@ -68,7 +68,7 @@ for _, num := range nums {
 fmt.Println(stack)
 ```
 
-### 模版
+## 模版
 
 
 其实以上的代码就可以作为一个模版，在实际应用的时候稍微修改一下即可。
@@ -80,10 +80,44 @@ fmt.Println(stack)
     入栈
 ```
 
-### 使用场景
+## 使用场景
 单调栈可以在时间复杂度为O(n)的情况下，求解出某个元素左边或者右边第一个比它大或者小的元素。
 
 
+## 例题
+
+[503、下一个更大元素II](leetcode/503下一个更大元素II.md)
+
+使用单调栈保存元素下标。
+
+每当遍历一个新的数组时，查看栈顶元素对应`nums`中的数值的是否小于当前元素值
+
+- 若小于，将栈顶元素所对应的下标`stack[len(stack)-1]`弹出，并且更新结果集`ans[stack[len(stack)-1]]`的值
+- 否则，将当前元素压入栈中。
+
+为了更新全部的结果，需要遍历两次数组，因为考虑到一些额外的情况，例如`[1,2,1]`，如果只遍历一次，那么只有第一个元素更新了相应的结果。而此时，栈中有2,1两个元素。其中1所对应的结果并不知道。
+```go
+func nextGreaterElements(nums []int) []int {
+	l := len(nums)
+	stack := make([]int, 0)
+	ans := make([]int, l)
+	for i := range ans {
+		ans[i] = -1
+	}
+	for i := 0; i < 2*l; i++ {
+		for len(stack) > 0 && nums[stack[len(stack)-1]] < nums[i%l] {
+			ans[stack[len(stack)-1]] = nums[i%l]
+			stack = stack[:len(stack)-1]
+		}
+		stack = append(stack, i%l)
+	}
+	return ans
+}
+```
+
+
+
+## 应用
 
 ### 中等题
 
