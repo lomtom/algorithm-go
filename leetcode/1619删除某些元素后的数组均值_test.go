@@ -8,7 +8,7 @@ import (
 )
 
 //执行耗时:4 ms,击败了94.87% 的Go用户
-//内存消耗:3.2 MB,击败了10.26% 的Go用户
+//内存消耗:3.2 MB,击败了92.31% 的Go用户
 func trimMean(arr []int) float64 {
 	sort.Ints(arr)
 	l := int(math.Floor(0.05*float64(len(arr)) + 0.5))
