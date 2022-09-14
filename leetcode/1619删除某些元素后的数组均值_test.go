@@ -12,15 +12,19 @@ import (
 func trimMean(arr []int) float64 {
 	sort.Ints(arr)
 	l := int(math.Floor(0.05*float64(len(arr)) + 0.5))
-	arr = arr[l : len(arr)-l]
 	var sum int
-	for index := range arr {
+	for index := l; index < len(arr)-l; index++ {
 		sum += arr[index]
 	}
-	return float64(sum) / float64(len(arr))
+	return float64(sum) / float64(len(arr)-2*l)
 }
 
 func TestTrimMean(t *testing.T) {
+	//2
+	//4
+	//4.777777777777778
+	//5.277777777777778
+	//5.291666666666667
 	fmt.Println(trimMean([]int{1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3}))
 	fmt.Println(trimMean([]int{6, 2, 7, 5, 1, 2, 0, 3, 10, 2, 5, 0, 5, 5, 0, 8, 7, 6, 8, 0}))
 	fmt.Println(trimMean([]int{6, 0, 7, 0, 7, 5, 7, 8, 3, 4, 0, 7, 8, 1, 6, 8, 1, 1, 2, 4, 8, 1, 9, 5, 4, 3, 8, 5, 10, 8, 6, 6, 1, 0, 6, 10, 8, 2, 3, 4}))
