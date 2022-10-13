@@ -20,6 +20,7 @@
 * [729、我的日程安排表 I](leetcode/729我的日程安排表I_readme.md)
 * [735、行星碰撞](leetcode/735行星碰撞_readme.md)
 * [736、Lisp语法解析](leetcode/736Lisp语法解析_readme.md)
+* [769、最多能完成排序的块](leetcode/769最多能完成排序的块.md)
 * [814、二叉树剪枝](leetcode/814二叉树剪枝_readme.md)
 * [873、最长的斐波那契子序列的长度](leetcode/873最长的斐波那契子序列的长度_readme.md)
 * [899、有序队列](leetcode/899有序队列.md)
