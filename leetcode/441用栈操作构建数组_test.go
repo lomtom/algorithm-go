@@ -35,7 +35,7 @@ func buildArray1(target []int, n int) (ans []string) {
 		if index >= len(target) || target[index] != i {
 			ans = append(ans, "Push", "Pop")
 		} else {
-			ans = append(ans, "ush")
+			ans = append(ans, "Push")
 			index++
 		}
 	}
