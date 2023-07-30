@@ -1,0 +1,48 @@
+{
+
+  "site": {
+    "title": "\uD83D\uDD2C基于GO的常用算法",
+    "base_url": "https://algorithm.lomtom.cn",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/img/logo.ico",
+    "logo": "/img/logoko.png",
+    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_width": "200",
+    "logo_height": "60",
+    "logo_text": "Astroplate"
+  },
+
+  "settings": {
+    "search": true,
+    "sticky_header": false,
+    "theme_switcher": false,
+    "default_theme": "system",
+    "pagination": 6,
+    "summary_length": 200,
+    "blog_folder": "leetcode"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "© 2021 - 2023 Made with love By lomtom"
+  },
+
+  "navigation_button": {
+    "enable": false,
+    "label": "Get Started",
+    "link": "https://github.com/zeon-studio/astroplate"
+  },
+
+  "disqus": {
+    "enable": false,
+    "shortname": "themefisher-template",
+    "settings": {}
+  },
+
+  "metadata": {
+    "meta_author": "lomtom",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "\uD83D\uDD2C基于GO的常用算法"
+  }
+}

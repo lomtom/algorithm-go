@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "github",
+      "icon": "FaGithub",
+      "link": "https://www.github.com/lomtom"
+    },
+    {
+      "name": "blog",
+      "icon": "FaEarthAsia",
+      "link": "https://blog.lomtom.top"
+    },
+    {
+      "name": "email",
+      "icon": "FaEnvelope",
+      "link": "mailto:lomtom@163.com"
+    },
+    {
+      "name": "address",
+      "icon": "GiPositionMarker",
+      "link": "https://goo.gl/maps/hazmXSJUEkZunZTW8"
+    }
+  ]
+}

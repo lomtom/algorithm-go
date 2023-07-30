@@ -1,0 +1,19 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/home"
+    },
+    {
+      "name": "Leetcode",
+      "url": "/leetcode"
+    },
+    {
+      "name": "blog",
+      "url": "https://lomtom.cn",
+      "target": true
+    }
+  ],
+  "footer": [
+  ]
+}
