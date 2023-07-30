@@ -16,4 +16,4 @@ DFS（深度优先搜索）
 
 ### 中等题
 * [二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
-* [655、输出二叉树](../leetcode/655输出二叉树.md)
+* [655、输出二叉树](../leetcode/655输出二叉树)

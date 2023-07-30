@@ -19,7 +19,6 @@ const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await post.render();
 const { title, description, author, categories, image, date, tags } = post.data;
-console.log(post.difficulty)
 ---
 
 <section class="section pt-7">

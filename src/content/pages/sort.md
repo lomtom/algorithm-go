@@ -171,7 +171,7 @@ func insertionSort(nums []int)  {
 ### 归并排序
 归并排序相对于前几种排序来说，复杂多了，当然他理解起来，也并不复杂。
 
-归并排序的核心算法是[分治法](dac.md)。
+归并排序的核心算法是[分治法](dac)。
 
 ![](../img/sort/mergeSort.gif)
 

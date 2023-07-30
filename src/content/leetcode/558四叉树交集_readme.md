@@ -130,7 +130,7 @@ BottomRight *Node
 
 题目讲解完毕，那就是怎么来计算了。
 
-对于这样的树的计算，很适合使用[分治法](../method/dac.md)。
+对于这样的树的计算，很适合使用[分治法](/dac)。
 
 - 分：将两棵树当前节点的四个子节点拆分来。即`quadTree1.TopLeft`对应`quadTree2.TopLeft`，`quadTree1.TopRight`对应 `quadTree2.TopRight`等
 - 治：判断当前节点是否满足临界终止，并进行计算返回。即当前的两棵树所访问到的当前节点有一个是叶子节点时，终止分的操作，通过计算 `quadTree1`|`quadTree2`操作来进行计算并返回值
