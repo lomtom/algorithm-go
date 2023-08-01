@@ -7,7 +7,7 @@
     "trailing_slash": false,
     "favicon": "/img/logo.ico",
     "logo": "/img/logoko.png",
-    "logo_darkmode": "/images/logo-darkmode.png",
+    "logo_darkmode": "/img/logoko-dark.png",
     "logo_width": "200",
     "logo_height": "60",
     "logo_text": "Astroplate"

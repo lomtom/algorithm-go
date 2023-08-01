@@ -74,7 +74,7 @@ const { pathname } = Astro.url;
                   {menu.children?.map((child) => (
                     <li class="nav-dropdown-item">
                       <a
-                        href={child.url} target="{menu.target == "true"?_blank:_self}"
+                        href={child.url}  target={menu.target == true?"_blank":"_self"}
                         class={`nav-dropdown-link block ${
                           (pathname === `${child.url}/` ||
                             pathname === child.url) &&
