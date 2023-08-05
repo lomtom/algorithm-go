@@ -14,7 +14,7 @@
   },
 
   "settings": {
-    "search": true,
+    "search": false,
     "sticky_header": false,
     "theme_switcher": false,
     "default_theme": "system",
