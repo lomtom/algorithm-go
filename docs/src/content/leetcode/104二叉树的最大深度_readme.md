@@ -4,6 +4,7 @@ categories:
   - 简单
 tags:
   - 二叉树
+number: 104
 ---
 **题目难度：**[简单](https://leetcode.cn/problems/maximum-depth-of-binary-tree/)
 

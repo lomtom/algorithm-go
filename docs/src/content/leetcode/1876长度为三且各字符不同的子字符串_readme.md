@@ -4,6 +4,7 @@ categories:
   - 简单
 tags:
   - 滑动窗口
+number: 1876
 ---
 
 **题目难度：**[长度为三且各字符不同的子字符串](https://leetcode.cn/problems/substrings-of-size-three-with-distinct-characters/) 简单

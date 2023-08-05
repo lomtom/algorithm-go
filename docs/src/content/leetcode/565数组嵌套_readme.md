@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 数组
+number: 565
 ---
 
 **题目难度：**[数组嵌套](https://leetcode.cn/problems/array-nesting/) 中等

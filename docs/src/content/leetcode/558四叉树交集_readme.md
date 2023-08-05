@@ -5,6 +5,7 @@ categories:
 tags:
   - 分治法
   - 树
+number: 558
 ---
 **题目难度：**[中等](https://leetcode.cn/problems/logical-or-of-two-binary-grids-represented-as-quad-trees/)
 

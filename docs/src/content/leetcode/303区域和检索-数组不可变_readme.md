@@ -4,6 +4,7 @@ categories:
   - 简单
 tags:
   - 数组
+number: 303
 ---
 
 **题目难度：**[区域和检索 - 数组不可变](https://leetcode.cn/problems/range-sum-query-immutable/) 简单

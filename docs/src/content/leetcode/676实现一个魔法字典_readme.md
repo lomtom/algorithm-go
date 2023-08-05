@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 枚举
+number: 676
 ---
 
 **题目难度：**[中等](https://leetcode.cn/problems/implement-magic-dictionary/)

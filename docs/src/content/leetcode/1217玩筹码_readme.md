@@ -5,6 +5,7 @@ categories:
 tags:
   - 数组
   - 数学
+number: 1217
 ---
 
 **题目难度：**[简单](https://leetcode.cn/problems/minimum-cost-to-move-chips-to-the-same-position/)

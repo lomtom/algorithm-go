@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 队列
+number: 1260
 ---
 
 **题目难度：**[二维网格迁移](https://leetcode.cn/problems/shift-2d-grid/) 简单

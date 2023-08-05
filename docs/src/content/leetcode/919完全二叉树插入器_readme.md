@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 二叉树
+number: 919
 ---
 
 **题目难度：**[完全二叉树插入器](https://leetcode.cn/problems/complete-binary-tree-inserter/) 中等

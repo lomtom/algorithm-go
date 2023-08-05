@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 栈
+number: 735
 ---
 **题目难度：**[中等](https://leetcode.cn/problems/asteroid-collision/)
 

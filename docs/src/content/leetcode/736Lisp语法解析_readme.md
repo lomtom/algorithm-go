@@ -4,6 +4,7 @@ categories:
   - 困难
 tags:
   - 递归
+number: 736
 ---
 
 **题目难度：**[困难](https://leetcode.cn/problems/parse-lisp-expression/)

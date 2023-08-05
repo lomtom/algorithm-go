@@ -7,6 +7,13 @@ export const sortByDate = (array: any[]) => {
   );
   return sortedArray;
 };
+// 根据number的大小排序
+export const sortByNumber = (array: any[]) => {
+  const sortedArray = array.sort(
+    (a: any, b: any) => a.data.number - b.data.number,
+  );
+  return sortedArray;
+};
 
 // sort product by weight
 export const sortByWeight = (array: any[]) => {

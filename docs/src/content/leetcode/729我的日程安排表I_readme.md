@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 线段树
+number: 729
 ---
 
 **题目难度：**[中等](https://leetcode.cn/problems/my-calendar-i/)

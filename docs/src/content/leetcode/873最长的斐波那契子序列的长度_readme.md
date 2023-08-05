@@ -5,6 +5,7 @@ categories:
 tags:
   - 深度优先便利
   - 动态规划
+number: 873
 ---
 
 **题目难度：**[中等](https://leetcode.cn/problems/length-of-longest-fibonacci-subsequence/)

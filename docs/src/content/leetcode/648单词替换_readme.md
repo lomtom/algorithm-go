@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 数组
+number: 648
 ---
 **题目难度：**[中等](https://leetcode.cn/problems/replace-words/)
 

@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 队列
+number: 1252
 ---
 
 **题目难度：**[简单](https://leetcode.cn/problems/cells-with-odd-values-in-a-matrix/)

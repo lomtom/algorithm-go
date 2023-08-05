@@ -4,6 +4,7 @@ categories:
   - 简单
 tags:
   - 滑动窗口
+number: 剑指Offer1417
 ---
 
 **题目难度：**[剑指 Offer II 041. 滑动窗口的平均值](https://leetcode.cn/problems/qIsx9U/) 简单

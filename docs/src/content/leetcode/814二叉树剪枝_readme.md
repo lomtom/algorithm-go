@@ -5,6 +5,7 @@ categories:
 tags:
   - 二叉树
   - 分治法
+number: 814
 ---
 
 **题目难度：**[二叉树剪枝](https://leetcode.cn/problems/binary-tree-pruning/) 中等

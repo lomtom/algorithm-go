@@ -4,6 +4,7 @@ categories:
   - 简单
 tags:
   - 排序
+number: 1200
 ---
 
 **题目难度：**[简单](https://leetcode.cn/problems/minimum-absolute-difference/)
