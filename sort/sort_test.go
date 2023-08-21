@@ -265,16 +265,16 @@ func quickSort(nums []int, start int, end int) {
 }
 
 func quick(nums []int, start int, end int) int {
-	num := nums[end]
-	index := start
-	for i := start; i < end; i++ {
+	num := nums[start]
+	index := start + 1
+	for i := start; i <= end; i++ {
 		if nums[i] < num {
 			nums[index], nums[i] = nums[i], nums[index]
 			index++
 		}
 	}
-	nums[index], nums[end] = nums[end], nums[index]
-	return index
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
 }
 
 // 堆排序

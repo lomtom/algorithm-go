@@ -372,5 +372,42 @@ func merge(left, right []int) (res []int, count int) {
 
 ## 快速排序
 
+快速排序（Quick Sort）是一种高效的、基于分治思想的排序算法，由英国计算机科学家 Tony Hoare 于1960年提出。它在平均情况下具有很好的性能，通常被认为是最快的排序算法之一。
+
+快速排序的基本思想如下：
+
+1. 选择基准元素： 从待排序的数组中选择一个基准元素，通常是数组中的第一个元素或者随机选择。基准元素的选择会影响快速排序的性能。
+
+2. 分割操作： 将数组中的元素分成两部分，一部分小于基准元素，另一部分大于基准元素。这个过程称为分割操作（Partition）。
+
+3. 递归排序： 对分割后的两个部分分别进行递归排序，即对小于基准的部分和大于基准的部分分别应用快速排序。
+
+4. 合并： 无需合并步骤，因为快速排序在原地进行排序，即直接在原始数组上进行元素交换，而不需要额外的内存空间。
+
+整个过程不断地递归进行，直到每个子数组只包含一个元素或没有元素为止，排序完成。
 
 
+![](../img/sort/quickSort.gif)
+
+```go
+func quickSort(nums []int, start int, end int) {
+	if start < end {
+		index := quick(nums, start, end)
+		quickSort(nums, start, index-1)
+		quickSort(nums, index+1, end)
+	}
+}
+
+func quick(nums []int, start int, end int) int {
+	num := nums[start]
+	index := start + 1
+	for i := start; i <= end; i++ {
+		if nums[i] < num {
+			nums[index], nums[i] = nums[i], nums[index]
+			index++
+		}
+	}
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
+}
+```
