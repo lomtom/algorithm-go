@@ -411,3 +411,53 @@ func quick(nums []int, start int, end int) int {
 	return index - 1
 }
 ```
+
+### 优化1
+上面的实现中，每次分割都需要遍历整个数组，这样会导致时间复杂度为 O(n^2)。可以通过优化分割操作来减少时间复杂度。
+```go
+// 优化
+func quick1(nums []int, start int, end int) int {
+	num := nums[start]
+	index := start + 1
+	for index <= end {
+		for index <= end && nums[index] > num {
+			index++
+		}
+		for index <= end && nums[end] < num {
+			end--
+		}
+		if index <= end {
+			nums[index], nums[end] = nums[end], nums[index]
+			index++
+		}
+	}
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
+}
+```
+
+### 优化2
+为了在极端情况下，比如数组已经有序，或者逆序，导致每次分割只能减少一个元素，这种情况下，快速排序的时间复杂度会退化为 O(n^2)。为了避免这种情况，可以在每次分割时，随机选择一个元素作为基准元素。
+```go
+// 优化
+func quick2(nums []int, start int, end int) int {
+	randomIndex := rand.Intn(end-start+1) + start                   // 随机选择基准元素的索引
+	nums[start], nums[randomIndex] = nums[randomIndex], nums[start] // 将随机选择的元素交换到数组起始位置
+	num := nums[start]
+	index := start + 1
+	for index <= end {
+		for index <= end && nums[index] < num {
+			index++
+		}
+		for index <= end && nums[end] > num {
+			end--
+		}
+		if index <= end {
+			nums[index], nums[end] = nums[end], nums[index]
+			index++
+		}
+	}
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
+}
+```

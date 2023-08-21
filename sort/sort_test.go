@@ -2,6 +2,7 @@ package sort
 
 import (
 	"fmt"
+	"math/rand"
 	"testing"
 )
 
@@ -270,6 +271,48 @@ func quick(nums []int, start int, end int) int {
 	for i := index; i <= end; i++ {
 		if nums[i] < num {
 			nums[index], nums[i] = nums[i], nums[index]
+			index++
+		}
+	}
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
+}
+
+// 优化
+func quick1(nums []int, start int, end int) int {
+	num := nums[start]
+	index := start + 1
+	for index <= end {
+		for index <= end && nums[index] < num {
+			index++
+		}
+		for index <= end && nums[end] > num {
+			end--
+		}
+		if index <= end {
+			nums[index], nums[end] = nums[end], nums[index]
+			index++
+		}
+	}
+	nums[index-1], nums[start] = nums[start], nums[index-1]
+	return index - 1
+}
+
+// 优化
+func quick2(nums []int, start int, end int) int {
+	randomIndex := rand.Intn(end-start+1) + start                   // 随机选择基准元素的索引
+	nums[start], nums[randomIndex] = nums[randomIndex], nums[start] // 将随机选择的元素交换到数组起始位置
+	num := nums[start]
+	index := start + 1
+	for index <= end {
+		for index <= end && nums[index] < num {
+			index++
+		}
+		for index <= end && nums[end] > num {
+			end--
+		}
+		if index <= end {
+			nums[index], nums[end] = nums[end], nums[index]
 			index++
 		}
 	}
