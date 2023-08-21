@@ -267,7 +267,7 @@ func quickSort(nums []int, start int, end int) {
 func quick(nums []int, start int, end int) int {
 	num := nums[start]
 	index := start + 1
-	for i := start; i <= end; i++ {
+	for i := index; i <= end; i++ {
 		if nums[i] < num {
 			nums[index], nums[i] = nums[i], nums[index]
 			index++
