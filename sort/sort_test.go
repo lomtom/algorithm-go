@@ -358,3 +358,46 @@ func heapify(nums []int, i int, l int) {
 		heapify(nums, index, l)
 	}
 }
+
+// 计数排序
+func TestCountingSort(t *testing.T) {
+	//nums := []int{3, 4, 2, 1, 5, 7, 6}
+	//nums := []int{3, 4, 2, 1, 5, 7, 6, -7}
+	nums := []int{-3, -4, -2, -1, -5, -7, -6, -7}
+	countingSort(nums)
+	fmt.Println(nums)
+}
+
+func countingSort(nums []int) {
+	if len(nums) == 0 {
+		return
+	}
+	// 寻找输入的范围
+	var max = nums[0]
+	var min = nums[0]
+	for index := range nums {
+		if nums[index] > max {
+			max = nums[index]
+		}
+		if nums[index] < min {
+			min = nums[index]
+		}
+	}
+	if min < 0 {
+		min = -min
+	}
+	// 创建计数数组
+	counts := make([]int, max+min+1)
+	// 累加计数数组
+	for index := range nums {
+		counts[nums[index]+min]++
+	}
+	// 排序操作
+	index := 0
+	for i := 0; i < len(counts); i++ {
+		for j := 0; j < counts[i]; j++ {
+			nums[index] = i - min
+			index++
+		}
+	}
+}
