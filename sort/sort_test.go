@@ -401,3 +401,30 @@ func countingSort(nums []int) {
 		}
 	}
 }
+
+// 希尔排序
+func TestShellSort(t *testing.T) {
+	//nums := []int{3, 4, 2, 1, 5, 7, 6}
+	//nums := []int{3, 4, 2, 1, 5, 7, 6, -7}
+	nums := []int{-3, -4, -2, -1, -5, -7, -6, -7}
+	shellSort(nums)
+	fmt.Println(nums)
+}
+
+func shellSort(arr []int) {
+	n := len(arr)
+	gap := n / 2
+
+	for gap > 0 {
+		for i := gap; i < n; i++ {
+			temp := arr[i]
+			j := i
+			for j >= gap && arr[j-gap] < temp {
+				arr[j] = arr[j-gap]
+				j -= gap
+			}
+			arr[j] = temp
+		}
+		gap /= 2
+	}
+}
