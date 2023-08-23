@@ -10,6 +10,7 @@ import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
 
 import vercel from "@astrojs/vercel/serverless";
+import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
 export default defineConfig({
@@ -33,7 +34,15 @@ export default defineConfig({
       theme: "one-dark-pro",
       wrap: true
     },
-    extendDefaultPlugins: true
+    extendDefaultPlugins: true,
+    rehypePlugins: [
+      [
+        rehypeExternalLinks,
+        {
+          content: { type: 'text', value: ' 🔗' }
+        }
+      ],
+    ],
   },
   output: "server",
   adapter: vercel()
