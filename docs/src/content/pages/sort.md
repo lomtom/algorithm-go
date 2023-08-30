@@ -197,7 +197,7 @@ func insertionSort(nums []int)  {
 
 归并排序的关键在于合并步骤，它要求在合并两个有序的子数组时保持它们的有序性。这可以通过比较两个子数组的第一个元素，选择较小的元素放入结果数组中，然后逐个向后移动指针，继续比较和合并元素。
 
-![](../img/sort/mergeSort.webp)
+![](../img/sort/mergeSort.png)
 
 ```go
 func mergeSort(nums []int) []int {
