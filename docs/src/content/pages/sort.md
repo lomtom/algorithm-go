@@ -29,6 +29,8 @@ slug: "sort"
 **所以，不会排序的赶快学起来吧。**
 
 
+> 本文所有代码均可在 [排序 Github](https://github.com/lomtom/algorithm-go/blob/main/sort/sort_test.go) 查看
+
 ## 冒泡排序
 ### 冒泡排序
 
