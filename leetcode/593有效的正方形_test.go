@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -32,8 +32,8 @@ func validSquare(p1 []int, p2 []int, p3 []int, p4 []int) bool {
 	return false
 }
 
-//执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
-//内存消耗：2.1 MB, 在所有 Go 提交中击败了100.00%的用户
+// 执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：2.1 MB, 在所有 Go 提交中击败了100.00%的用户
 func TestValidSquare(t *testing.T) {
 	type input struct {
 		p1 []int

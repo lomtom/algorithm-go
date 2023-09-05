@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"math"
 	"testing"
 )
@@ -39,8 +39,8 @@ func maxLevelSum(root *TreeNode) int {
 	return maxLevel
 }
 
-//执行用时：92 ms, 在所有 Go 提交中击败了94.00%的用户
-//内存消耗：8.5 MB, 在所有 Go 提交中击败了6.00%的用户
+// 执行用时：92 ms, 在所有 Go 提交中击败了94.00%的用户
+// 内存消耗：8.5 MB, 在所有 Go 提交中击败了6.00%的用户
 func TestMaxLevelSum(t *testing.T) {
 	collections := []struct {
 		input  []int

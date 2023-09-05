@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"sort"
 	"testing"
 )
@@ -52,8 +52,8 @@ func arrayRankTransform(arr []int) []int {
 //	return ans
 //}
 
-//执行耗时:72 ms,击败了29.17% 的Go用户
-//内存消耗:12.3 MB,击败了52.08% 的Go用户
+// 执行耗时:72 ms,击败了29.17% 的Go用户
+// 内存消耗:12.3 MB,击败了52.08% 的Go用户
 func TestArrayRankTransform(t *testing.T) {
 	collections := []struct {
 		input  []int

@@ -1,12 +1,12 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
-//执行用时：8 ms, 在所有 Go 提交中击败了67.76%的用户
-//内存消耗：6.2 MB, 在所有 Go 提交中击败了32.57%的用户
+// 执行用时：8 ms, 在所有 Go 提交中击败了67.76%的用户
+// 内存消耗：6.2 MB, 在所有 Go 提交中击败了32.57%的用户
 func frequencySort(s string) string {
 	m := make(map[uint8]int)
 	for index := range s {

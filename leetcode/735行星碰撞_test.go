@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -26,7 +26,7 @@ func asteroidCollision(asteroids []int) []int {
 	return queue
 }
 
-//注意 -2, -1, 1, 2，不会发生碰撞
+// 注意 -2, -1, 1, 2，不会发生碰撞
 func TestAsteroidCollision(t *testing.T) {
 	collections := []struct {
 		input  []int

@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -26,8 +26,8 @@ func removeDuplicateLetters(s string) string {
 	return string(stack)
 }
 
-//执行耗时:0 ms,击败了100.00% 的Go用户
-//内存消耗:1.9 MB,击败了82.21% 的Go用户
+// 执行耗时:0 ms,击败了100.00% 的Go用户
+// 内存消耗:1.9 MB,击败了82.21% 的Go用户
 func TestRemoveDuplicateLetters(t *testing.T) {
 	collections := []struct {
 		input  string

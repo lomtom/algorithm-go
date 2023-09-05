@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -26,8 +26,8 @@ func groupThePeople(groupSizes []int) [][]int {
 	return ans
 }
 
-//执行耗时:8 ms,击败了40.91% 的Go用户
-//内存消耗:5.6 MB,击败了18.18% 的Go用户
+// 执行耗时:8 ms,击败了40.91% 的Go用户
+// 内存消耗:5.6 MB,击败了18.18% 的Go用户
 func TestGroupThePeople(t *testing.T) {
 	collections := []struct {
 		input  []int

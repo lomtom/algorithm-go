@@ -2,11 +2,11 @@ package leetcode
 
 import (
 	"fmt"
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
-//-1/2+1/2+1/3
+// -1/2+1/2+1/3
 func fractionAddition(expression string) string {
 	l := len(expression)
 	denominator, numerator := 0, 1 // 分子，分母
@@ -55,8 +55,8 @@ func fractionAddition(expression string) string {
 	return fmt.Sprintf("%d/%d", denominator/g, numerator/g)
 }
 
-//执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
-//内存消耗：1.9 MB, 在所有 Go 提交中击败了60.00%的用户
+// 执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：1.9 MB, 在所有 Go 提交中击败了60.00%的用户
 func TestFractionAddition(t *testing.T) {
 	collections := []struct {
 		input  string

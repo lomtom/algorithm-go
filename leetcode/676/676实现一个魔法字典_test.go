@@ -1,7 +1,7 @@
 package _76
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -46,7 +46,8 @@ func (this *MagicDictionary) Search(searchWord string) bool {
  * param_2 := obj.Search(searchWord);
  */
 
-/**
+/*
+*
 执行用时：8 ms, 在所有 Go 提交中击败了100.00%的用户
 内存消耗：6.8 MB, 在所有 Go 提交中击败了74.42%的用户
 */

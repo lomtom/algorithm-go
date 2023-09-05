@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"strings"
 	"testing"
 )
@@ -23,8 +23,8 @@ func removeKdigits(num string, k int) string {
 	return ans
 }
 
-//执行耗时:0 ms,击败了100.00% 的Go用户
-//内存消耗:4.5 MB,击败了78.51% 的Go用户
+// 执行耗时:0 ms,击败了100.00% 的Go用户
+// 内存消耗:4.5 MB,击败了78.51% 的Go用户
 func TestRemoveKdigits(t *testing.T) {
 	type input struct {
 		num string

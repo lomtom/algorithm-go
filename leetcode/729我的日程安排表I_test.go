@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 )
 
@@ -42,8 +42,8 @@ func (this *MyCalendar) Book(start int, end int) bool {
  * param_1 := obj.Book(start,end);
  */
 
-//[47,50],[33,41],[39,45],[33,42],[25,32],[26,35],[19,25],[3,8],[8,13],[18,27]
-//[true,  true,	  false,  false,  true,    false,  true,  true,  true,  false]
+// [47,50],[33,41],[39,45],[33,42],[25,32],[26,35],[19,25],[3,8],[8,13],[18,27]
+// [true,  true,	  false,  false,  true,    false,  true,  true,  true,  false]
 func TestMyCalendar(t *testing.T) {
 	collections := []struct {
 		input  [2]int

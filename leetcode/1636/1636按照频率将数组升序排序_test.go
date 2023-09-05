@@ -1,13 +1,13 @@
 package _636
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"sort"
 	"testing"
 )
 
-//执行耗时:4 ms,击败了87.50% 的Go用户
-//内存消耗:3.4 MB,击败了17.50% 的Go用户
+// 执行耗时:4 ms,击败了87.50% 的Go用户
+// 内存消耗:3.4 MB,击败了17.50% 的Go用户
 func frequencySort(nums []int) (ans []int) {
 	m := make(map[int]int)
 	for index := range nums {

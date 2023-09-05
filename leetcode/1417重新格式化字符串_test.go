@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"testing"
 	"unicode"
 )
@@ -50,8 +50,8 @@ func reformat(s string) string {
 	return string(ans)
 }
 
-//执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
-//内存消耗：3.3 MB, 在所有 Go 提交中击败了31.43%的用户
+// 执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：3.3 MB, 在所有 Go 提交中击败了31.43%的用户
 func TestReformat(t *testing.T) {
 	collections := []struct {
 		input  string

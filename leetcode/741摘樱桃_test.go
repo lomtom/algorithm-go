@@ -1,7 +1,7 @@
 package leetcode
 
 import (
-	"github.com/lomtom/go-utils/v2/assert"
+	"github.com/lomtom/go-utils/assert"
 	"math"
 	"testing"
 )
@@ -76,8 +76,8 @@ import (
 //	return
 //}
 
-//执行用时：4 ms, 在所有 Go 提交中击败了100.00%的用户
-//内存消耗：4.1 MB, 在所有 Go 提交中击败了100.00%的用户
+// 执行用时：4 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：4.1 MB, 在所有 Go 提交中击败了100.00%的用户
 func cherryPickup(grid [][]int) int {
 	rawLen := len(grid)
 	colLen := len(grid[0])
