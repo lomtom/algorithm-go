@@ -13,21 +13,21 @@ import "math"
 // 输入：ranks = [5,1,8], cars = 6 输出：16
 func repairCars(ranks []int, cars int) int64 {
 	l, r := 1, ranks[0]*cars*cars
-	var check = func(m int) bool {
+
+	for l < r {
+		m := (l + r) >> 1 // 计算中间值
 		cnt := 0
+
+		// 计算在时间 m 内可以修理的汽车数量之和
 		for _, x := range ranks {
 			cnt += int(math.Sqrt(float64(m / x)))
 		}
-		return cnt >= cars
-	}
 
-	for l < r {
-		m := (l + r) >> 1
-		if check(m) {
+		if cnt >= cars {
 			r = m
 		} else {
 			l = m + 1
 		}
 	}
-	return int64(l)
+	return int64(l) // 返回最少时间
 }
