@@ -1,5 +1,5 @@
 ---
-import { humanize } from "@/lib/utils/textConverter";
+import { humanize,categoryStar } from "@/lib/utils/textConverter";
 
 const { tags, categories, allCategories } = Astro.props;
 ---
@@ -21,7 +21,7 @@ const { tags, categories, allCategories } = Astro.props;
                   class="flex justify-between hover:text-primary dark:hover:text-darkmode-primary"
                   href={`/categories/${category}`}
                 >
-                  {humanize(category)} <span>({count})</span>
+                  {categoryStar(humanize(category))} <span>({count})</span>
                 </a>
               </li>
             );

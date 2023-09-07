@@ -42,6 +42,16 @@ export const humanize = (content: string): string => {
     });
 };
 
+
+
+export const categoryStar = (content: string): string => {
+  if (content == "" || content == undefined) {
+    return ""
+  }
+  return content + " "+difficulty(content)
+}
+
+
 // plainify
 export const plainify = (content: string): string => {
   const filterBrackets = content.replace(/<\/?[^>]+(>|$)/gm, "");
