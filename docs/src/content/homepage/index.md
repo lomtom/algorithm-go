@@ -50,6 +50,8 @@ features:
         url: "/math"
       - name: "贪心"
         url: "/greedy"
+      - name: "动态规划"
+        url: "/dp"
     button:
       enable: false
       label: "Get Started Now"
