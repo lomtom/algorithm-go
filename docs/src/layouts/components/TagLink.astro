@@ -1,0 +1,60 @@
+---
+import DynamicIcon from "../helpers/DynamicIcon";
+import {getEntryBySlug} from "astro:content";
+
+
+import config from "@/config/config.json";
+import {getTaxonomy} from "@/lib/taxonomyParser.astro";
+
+const {blog_folder}: { blog_folder: string } = config.settings;
+const tags = await getTaxonomy(blog_folder, "tags");
+
+const {title = "", index = ""}: { title?: string } = Astro.props;
+const homepage = await getEntryBySlug("homepage", "index");
+
+const {features} = homepage.data
+
+// 从features的第一个元素或第二个元素中获取bulletpoints参数数组中的name是否匹配title，匹配则返回所对应的url以及features的下标
+const link = function () {
+  // 从tag获取到具体的方法
+  if (index === "1") {
+    for (let i = 0; i < features.length; i++) {
+      const {bulletpoints} = features[i]
+      for (let j = 0; j < bulletpoints.length; j++) {
+        const {name, url} = bulletpoints[j]
+        if (name === title) {
+          return url
+        }
+      }
+    }
+    return null
+  }
+  // 从方法获取到具体的tag
+  if (index === "2") {
+    for (let i = 0; i < tags.length; i++) {
+      if (tags[i] === title) {
+        return "/tags/"+tags[i]
+      }
+    }
+    return null
+  }
+}()
+---
+{ link && (
+<section>
+  <div class="container">
+    <div
+      class="border-l-4 border-green-600 rounded-2xl mt-12 bg-gradient-to-b from-body to-theme-light px-4 py-4 dark:from-darkmode-body dark:to-darkmode-theme-light">
+      <div>
+        <span class="flex items-center">
+          <DynamicIcon icon="FaRegLightbulb"/> <span class="pl-1">Tip</span>
+      </span>
+      </div>
+      <div class="mt-1"><p>
+        {( index === "1" ? "此方法或数据结构有详细说明，请点击" : "此方法或数据结构有更多算法实例，请点击" )}
+        <a class="text-green-600" href={link}>{title}</a> 查看更多</p></div>
+    </div>
+  </div>
+</section>
+  )
+  }
