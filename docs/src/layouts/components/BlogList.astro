@@ -1,9 +1,10 @@
 ---
 import config from "@/config/config.json";
 import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConverter"
-import {getQuestionOfToday} from "@/lib/utils/leetcode"
+import {getQuestionOfToday,getQuestionStats} from "@/lib/utils/leetcode"
 import {Image} from "@astrojs/image/components";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
+import {percent} from "../../lib/utils/textConverter";
 
 const todayData = await getQuestionOfToday()
 
@@ -16,7 +17,7 @@ const {currentPosts} = Astro.props;
   <div class="bg-body dark:bg-darkmode-body text-gray-500 font-bold">
     <div class="md:col-6 lg:col-5 inline-block">
       <p class="mb-3">
-        题目
+        题目(AC)
       </p>
     </div>
     <div class="md:col-2 lg:col-2 inline-block">
@@ -42,6 +43,7 @@ const {currentPosts} = Astro.props;
              class="hover:text-primary">
             <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
             {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
+            （{percent(todayData.todayRecord[0].question.acRate)}）
           </a>
         </p>
       </div>
@@ -86,6 +88,7 @@ const {currentPosts} = Astro.props;
           <a href={`/${blog_folder}/${data.slug}`} class="hover:text-primary">
             <FaLink className={"mr-2 -mt-1 inline-block"}/>
             {data.data.number}. {data.data.title}
+            {getQuestionStats(data.data.slug)}
           </a>
         </p>
       </div>

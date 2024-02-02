@@ -1,4 +1,3 @@
-
 interface QuestionOfTodayResponse {
   todayRecord: {
     date: string;
@@ -52,4 +51,60 @@ async function getQuestionOfToday(): Promise<QuestionOfTodayResponse|undefined> 
     .catch(error => console.error('Error:', error))
 }
 
-export { getQuestionOfToday};
+interface QuestionStatsResponse {
+  data: {
+    question: {
+      stats: string;
+    };
+  };
+}
+
+interface QuestionStats {
+  totalAccepted: string,
+  totalSubmission: string,
+  totalAcceptedRaw: string,
+  totalSubmissionRaw: string,
+  acRate: string,
+}
+
+async function getQuestionStatsInline(titleSlug: string): Promise<QuestionStats | void> {
+  if (!titleSlug) {
+    return;
+  }
+  return await fetch('https://leetcode.cn/graphql/', {
+    method: 'POST',
+    headers: {
+      'Accept-Language': 'zh-CN,zh;q=0.9',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      query: `
+          query questionStats($titleSlug: String) {
+            question(titleSlug: $titleSlug) {
+              stats
+            }
+          }
+        `,
+      variables: { titleSlug },
+      operationName: 'questionStats',
+    }),
+  }).then(response => response.json())
+    .then(data => {
+      return JSON.parse(data.data.question.stats)
+    })
+    .catch(error => console.error('Error:', error))
+}
+
+
+async function getQuestionStats(titleSlug: string): Promise<string | void> {
+  if (!titleSlug) {
+    return;
+  }
+  let data = await getQuestionStatsInline(titleSlug)
+  if (data) {
+    return `（${data.acRate}）`;
+  }
+  return ""
+}
+
+export { getQuestionOfToday,getQuestionStatsInline,getQuestionStats};

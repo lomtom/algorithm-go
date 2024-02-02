@@ -12,6 +12,14 @@ export const slugify = (content: string): string => {
   return slug(content);
 };
 
+// 百分比转换
+export const percent = (content: string): string => {
+  if (content == "" || content == undefined) {
+    return ""
+  }
+  return (parseFloat(content) * 100).toFixed(1) + "%"
+}
+
 // markdownify
 export const markdownify = (content: string, div?: boolean): string => {
   return div ? marked.parse(content) : marked.parseInline(content);

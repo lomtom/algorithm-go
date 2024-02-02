@@ -12,13 +12,15 @@ import {
   FaRegFolder,
   FaRegUserCircle,
 } from "react-icons/fa/index.js";
+import {getQuestionStatsInline} from "../lib/utils/leetcode";
 
 const { blog_folder } = config.settings;
 const posts = await getSinglePage(blog_folder);
 const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await post.render();
-const { title, description,number, author, categories, image, date, tags } = post.data;
+const { title, description,number,slug, author, categories, image, date, tags } = post.data;
+const status = await getQuestionStatsInline(slug);
 ---
 
 <section class="section pt-7">
@@ -72,7 +74,7 @@ const { title, description,number, author, categories, image, date, tags } = pos
         <div class="content mb-10">
           <Content />
         </div>
-        <div class="row items-start justify-between">
+        <div class="flex items-start justify-between">
           {tags.length ==0 ||(categories.length == 1 && categories[0] == "others") ?null:(
           <div class="mb-10 flex items-center lg:col-5 lg:mb-0">
             <h5 class="mr-3">Tags :</h5>
@@ -91,6 +93,18 @@ const { title, description,number, author, categories, image, date, tags } = pos
               }
             </ul>
           </div>
+          <div class="">{
+            status && (
+              <p>
+                <span class="text-gray-500 text-sm">通过次数</span>
+                {status.totalAccepted}
+                <span class="ml-3 text-gray-500 text-sm">提交次数</span>
+                {status.totalSubmission}
+                <span  class="ml-3 text-gray-500 text-sm">通过率</span>
+                {status.acRate}
+              </p>
+            )
+          }</div>
           )}
         </div>
         <Disqus className="mt-20" client:load />
