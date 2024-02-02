@@ -48,13 +48,12 @@ export const Undifficulty = (content: string): string => {
 }
 
 export const difficultyClass = (content: string): string => {
-  const a = "px-3 py-1 rounded"
   if (content == "简单" || content == "Easy") {
-    return "text-green-500 " + a
+    return "text-green-500 "
   } else if (content == "中等" || content == "Medium") {
-    return "text-amber-500 " + a
+    return "text-amber-500 "
   } else if (content == "困难" || content == "Hard") {
-    return "text-red-500 " + a
+    return "text-red-500 "
   }
   return humanize(content)
 }

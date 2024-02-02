@@ -21,6 +21,7 @@ const {post} = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const {Content} = await post.render();
 const {title, description, number, slug, link, author, categories, image, date, tags} = post.data;
+
 const status = await getQuestionStatsInline(slug);
 ---
 
@@ -44,7 +45,8 @@ const status = await getQuestionStatsInline(slug);
         }
         <h1 set:html={markdownify(number + ". " + title)} class="h2 mb-4"/>
         <ul class="mb-4">
-          {author == "Admin" || author == undefined || author == "" ? null : (
+          {
+            author == "Admin" || author == undefined || author == "" ? null : (
             <li class="mr-4 inline-block">
               <a href={`/authors/${slugify(author)}`}>
                 <FaRegUserCircle className={"mr-2 -mt-1 inline-block"}/>
@@ -52,17 +54,16 @@ const status = await getQuestionStatsInline(slug);
               </a>
             </li>
           )}
-          {categories.length == 0 || (categories.length == 1 && categories[0] == "others") ? null : (
-            <li class="mr-4 inline-block">
-              {
-                categories.map((category: string, index: number) => (
-                  <a href={`/categories/${slugify(category)}`}
-                     class={difficultyClass(category) + "  bg-theme-light  hover:bg-primary hover:text-white "}>
-                    {category}
-                  </a>
-                ))
-              }
-            </li>
+          {
+            categories.length == 0 || (categories.length == 1 && categories[0] == "others") ? null : (
+            categories.map((category: string, index: number) => (
+              <li class="mr-4 inline-block">
+                <a href={`/categories/${slugify(category)}`}
+                   class={difficultyClass(category) + " m-1 block rounded  bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark"}>
+                  {category}
+                </a>
+              </li>
+            ))
           )}
           {
             slug == undefined || slug == "" ? null :
@@ -122,8 +123,9 @@ const status = await getQuestionStatsInline(slug);
                 }
               </ul>
             </div>
-            <div class="">{
-              status && (
+            <div class="">
+              {
+              status != undefined && status.acRate != undefined && status.acRate != ""? (
                 <p>
                   <span class="text-gray-500 text-sm">通过次数</span>
                   {status.totalAccepted}
@@ -132,8 +134,9 @@ const status = await getQuestionStatsInline(slug);
                   <span class="ml-3 text-gray-500 text-sm">通过率</span>
                   {status.acRate}
                 </p>
-              )
-            }</div>
+              ):null
+            }
+            </div>
           )}
         </div>
         <Disqus className="mt-20" client:load/>

@@ -9,6 +9,10 @@
       "url": "/leetcode"
     },
     {
+      "name": "Lcr",
+      "url": "/categories/lcr"
+    },
+    {
       "name": "blog",
       "url": "https://lomtom.cn",
       "target": true

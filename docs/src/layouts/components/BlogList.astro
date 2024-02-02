@@ -1,15 +1,15 @@
 ---
 import config from "@/config/config.json";
 import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConverter"
-import {getQuestionOfToday,getQuestionStats} from "@/lib/utils/leetcode"
+import {getQuestionOfToday, getQuestionStats} from "@/lib/utils/leetcode"
 import {Image} from "@astrojs/image/components";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
 import {difficultyClass, percent} from "../../lib/utils/textConverter";
 
-const todayData = await getQuestionOfToday()
 
 const {blog_folder,}: { blog_folder: string } = config.settings;
-const {currentPosts} = Astro.props;
+const {currentPosts, index, showAc} = Astro.props;
+const todayData = await getQuestionOfToday()
 ---
 
 
@@ -17,14 +17,17 @@ const {currentPosts} = Astro.props;
   <div class="">
     <div class="md:col-6 lg:col-6 inline-block">
       <p class="mb-3">
-        题目(AC)
+        题目
       </p>
     </div>
-    <div class="md:col-1 lg:col-1 inline-block">
-      <ul class="mb-4">
-        AC
-      </ul>
-    </div>
+    {
+      showAc == "true"?
+      <div class="md:col-1 lg:col-1 inline-block">
+        <ul class="mb-4">
+          AC
+        </ul>
+      </div>:null
+    }
     <div class="md:col-1 lg:col-1 inline-block">
       <ul class="mb-4">
         难度
@@ -39,7 +42,7 @@ const {currentPosts} = Astro.props;
 </div>
 <!--today-->
 {
-  todayData && todayData.todayRecord && todayData.todayRecord.length > 0 ? (
+  index == "leetcode" && todayData && todayData.todayRecord && todayData.todayRecord.length > 0 ? (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
       <div class="md:col-6 lg:col-6 inline-block">
@@ -48,21 +51,25 @@ const {currentPosts} = Astro.props;
              target="_blank"
              class="hover:text-primary">
             <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
-            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
+            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn} （{percent(todayData.todayRecord[0].question.acRate)}）
           </a>
         </p>
       </div>
+      {
+        showAc == "true"?
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           <li class="mr-4 inline-block  text-gray-500 text-sm">
             {percent(todayData.todayRecord[0].question.acRate)}
           </li>
         </ul>
-      </div>
+      </div>:null
+      }
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           <li class="mr-4 inline-block">
-            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`} class={difficultyClass(todayData.todayRecord[0].question.difficulty)}>
+            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`}
+               class={difficultyClass(todayData.todayRecord[0].question.difficulty)}>
               {Undifficulty(todayData.todayRecord[0].question.difficulty)}
             </a>
           </li>
@@ -103,13 +110,16 @@ const {currentPosts} = Astro.props;
           </a>
         </p>
       </div>
+      {
+        showAc == "true"?
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           <li class="mr-4 inline-block text-gray-500 text-sm">
             {getQuestionStats(data.data.slug)}
           </li>
         </ul>
-      </div>
+      </div>:null
+      }
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           {data.data.author == "Admin" || data.data.author == undefined || data.data.author == "" ? null : (
@@ -124,10 +134,10 @@ const {currentPosts} = Astro.props;
             <li class="mr-4 inline-block">
               {
                 data.data.categories.map((category: string, index: number) => (
+                  index == 0?
                   <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
                     {category}
-                    {index !== data.data.categories.length - 1 && ","}
-                  </a>
+                  </a>:null
                 ))
               }
             </li>

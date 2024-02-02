@@ -3,10 +3,12 @@ import BlogCard from "@/components/BlogCard.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import TagLink from "@/layouts/components/TagLink.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
-import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import {getSinglePage} from "@/lib/contentParser.astro";
+import {getTaxonomy} from "@/lib/taxonomyParser.astro";
+import {sortByNumber} from "../../lib/utils/sortFunctions";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
 import PageHeader from "@/partials/PageHeader.astro";
+import BlogList from "../../layouts/components/BlogList.astro";
 
 export const prerender = true;
 export async function getStaticPaths() {
@@ -14,29 +16,26 @@ export async function getStaticPaths() {
 
   return tags.map((tag) => {
     return {
-      params: { tag },
+      params: {tag},
     };
   });
 }
 
-const { tag } = Astro.params;
+const {tag} = Astro.params;
 const posts = await getSinglePage(config.settings.blog_folder);
-const filterByCategories = taxonomyFilter(posts, "tags", tag!);
+const allTags = taxonomyFilter(posts, "tags", tag!);
+const sortedPosts = sortByNumber(allTags);
 ---
 
 <Base title={tag}>
-  <PageHeader title={tag} />
-  <TagLink title={tag}  index="1" />
-  <div class="section-sm pb-0">
+  <PageHeader title={tag} isShowBreadcrumbs={"no"}/>
+  <TagLink title={tag} index="1"/>
+  <div class="section">
     <div class="container">
-      <div class="row">
-        {
-          filterByCategories.map((post) => (
-            <div class="mb-14 md:col-6 lg:col-4">
-              <BlogCard data={post} />
-            </div>
-          ))
-        }
+      <div class="row gx-5">
+        <div class="row">
+          <BlogList currentPosts={sortedPosts}/>
+        </div>
       </div>
     </div>
   </div>

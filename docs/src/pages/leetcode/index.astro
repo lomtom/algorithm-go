@@ -34,7 +34,7 @@ const currentPosts = sortedPosts.slice(0, config.settings.pagination);
         <!-- blog posts -->
         <div class="lg:col-9">
           <div class="row">
-            <BlogList currentPosts={currentPosts} />
+            <BlogList currentPosts={currentPosts} index="leetcode"/>
           </div>
           <Pagination
             section={blog_folder}
