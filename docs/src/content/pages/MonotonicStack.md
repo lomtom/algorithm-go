@@ -90,7 +90,7 @@ fmt.Println(stack)
 
 ## 例题
 
-[503、下一个更大元素II](leetcode/503下一个更大元素II)
+[503、下一个更大元素II](leetcode/next-greater-element-ii)
 
 使用单调栈保存元素下标。
 
@@ -125,7 +125,7 @@ func nextGreaterElements(nums []int) []int {
 
 ### 中等题
 
-* [503、下一个更大元素II](leetcode/503下一个更大元素ii)
-* [654、最大二叉树](leetcode/654最大二叉树)
+* [503、下一个更大元素II](leetcode/next-greater-element-ii)
+* [654、最大二叉树](leetcode/maximum-binary-tree)
 
 

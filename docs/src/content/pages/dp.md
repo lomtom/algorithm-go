@@ -54,21 +54,21 @@ slug: "dp"
 9. 分组背包组合问题
 
 ### 简单题
-* 斐波那契数列 - [70、爬楼梯](../leetcode/70爬楼梯)
-* 股票问题- [121、买卖股票的最佳时机](../leetcode/121买卖股票的最佳时机)
+* 斐波那契数列 - [70、爬楼梯](../leetcode/climbing-stairs)
+* 股票问题- [121、买卖股票的最佳时机](../leetcode/best-time-to-buy-and-sell-stock)
 
 ### 中等题
 
-* 路径问题 - [53、最大字数组和](../leetcode/53最大字数组和)
-* 路径问题 - [62、不同路径](../leetcode/62不同路径)
-* 路径问题 - [63、不同路径II](../leetcode/63不同路径ii)
-* 路径问题 - [64、最小路径和](../leetcode/64最小路径和)
-* 路径问题 - [120、三角形最小路径和](../leetcode/120三角形最小路径和)
-* 路径问题 - [LCR 166、珠宝的最高价值](../leetcode/lcr166珠宝的最高价值)
-* 背包问题 - [198、打家劫舍](../leetcode/198打家劫舍)
-* 背包问题 - [213、打家劫舍ii](../leetcode/213打家劫舍ii)
-* 背包问题 - [337、打家劫舍iii](../leetcode/337打家劫舍iii)
+* 路径问题 - [53、最大字数组和](../leetcode/maximum-subarray)
+* 路径问题 - [62、不同路径](../leetcode/unique-paths)
+* 路径问题 - [63、不同路径II](../leetcode/unique-paths-ii)
+* 路径问题 - [64、最小路径和](../leetcode/minimum-path-sum)
+* 路径问题 - [120、三角形最小路径和](../leetcode/triangle)
+* 路径问题 - [LCR 166、珠宝的最高价值](../leetcode/li-wu-de-zui-da-jie-zhi-lcof)
+* 背包问题 - [198、打家劫舍](../leetcode/house-robber)
+* 背包问题 - [213、打家劫舍ii](../leetcode/house-robber-ii)
+* 背包问题 - [337、打家劫舍iii](../leetcode/house-robber-iii)
 
 ### 困难题
 
-* [42、接雨水](../leetcode/42接雨水)
+* [42、接雨水](../leetcode/trapping-rain-water)

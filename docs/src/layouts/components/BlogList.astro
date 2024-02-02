@@ -4,7 +4,7 @@ import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConve
 import {getQuestionOfToday,getQuestionStats} from "@/lib/utils/leetcode"
 import {Image} from "@astrojs/image/components";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
-import {percent} from "../../lib/utils/textConverter";
+import {difficultyClass, percent} from "../../lib/utils/textConverter";
 
 const todayData = await getQuestionOfToday()
 
@@ -13,19 +13,24 @@ const {currentPosts} = Astro.props;
 ---
 
 
-<div class="mb-2 md:col-12">
-  <div class="bg-body dark:bg-darkmode-body text-gray-500 font-bold">
-    <div class="md:col-6 lg:col-5 inline-block">
+<div class="mb-2 md:col-12 bg-body dark:bg-darkmode-body text-gray-500 font-bold">
+  <div class="">
+    <div class="md:col-6 lg:col-6 inline-block">
       <p class="mb-3">
         题目(AC)
       </p>
     </div>
-    <div class="md:col-2 lg:col-2 inline-block">
+    <div class="md:col-1 lg:col-1 inline-block">
+      <ul class="mb-4">
+        AC
+      </ul>
+    </div>
+    <div class="md:col-1 lg:col-1 inline-block">
       <ul class="mb-4">
         难度
       </ul>
     </div>
-    <div class="md:col-3 lg:col-4 inline-block">
+    <div class="md:col-end-4 lg:col-end-4 inline-block">
       <ul class="mb-4">
         标签
       </ul>
@@ -37,26 +42,33 @@ const {currentPosts} = Astro.props;
   todayData && todayData.todayRecord && todayData.todayRecord.length > 0 ? (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
-      <div class="md:col-6 lg:col-5 inline-block">
+      <div class="md:col-6 lg:col-6 inline-block">
         <p class="mb-3">
           <a href={`https://leetcode.cn/problems/${todayData.todayRecord[0].question.titleSlug}`}
+             target="_blank"
              class="hover:text-primary">
             <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
             {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
-            （{percent(todayData.todayRecord[0].question.acRate)}）
           </a>
         </p>
       </div>
-      <div class="md:col-2 lg:col-2 inline-block">
+      <div class="md:col-1 lg:col-1 inline-block">
+        <ul class="mb-4">
+          <li class="mr-4 inline-block  text-gray-500 text-sm">
+            {percent(todayData.todayRecord[0].question.acRate)}
+          </li>
+        </ul>
+      </div>
+      <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           <li class="mr-4 inline-block">
-            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`}>
-              {difficulty(todayData.todayRecord[0].question.difficulty)}
+            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`} class={difficultyClass(todayData.todayRecord[0].question.difficulty)}>
+              {Undifficulty(todayData.todayRecord[0].question.difficulty)}
             </a>
           </li>
         </ul>
       </div>
-      <div class="md:col-3 lg:col-4 inline-block">
+      <div class="md:col-end-4 lg:col-end-4 inline-block">
         <div class="mb-4">
           <div class="mr-4 inline-block">
             {
@@ -83,16 +95,22 @@ const {currentPosts} = Astro.props;
   currentPosts.map((data) => (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
-      <div class="md:col-6 lg:col-5 inline-block">
+      <div class="md:col-6 lg:col-6 inline-block">
         <p class="mb-3">
           <a href={`/${blog_folder}/${data.slug}`} class="hover:text-primary">
             <FaLink className={"mr-2 -mt-1 inline-block"}/>
             {data.data.number}. {data.data.title}
-            {getQuestionStats(data.data.slug)}
           </a>
         </p>
       </div>
-      <div class="md:col-2 lg:col-2 inline-block">
+      <div class="md:col-1 lg:col-1 inline-block">
+        <ul class="mb-4">
+          <li class="mr-4 inline-block text-gray-500 text-sm">
+            {getQuestionStats(data.data.slug)}
+          </li>
+        </ul>
+      </div>
+      <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           {data.data.author == "Admin" || data.data.author == undefined || data.data.author == "" ? null : (
             <li class="mr-4 inline-block">
@@ -106,8 +124,8 @@ const {currentPosts} = Astro.props;
             <li class="mr-4 inline-block">
               {
                 data.data.categories.map((category: string, index: number) => (
-                  <a href={`/categories/${slugify(category)}`}>
-                    {difficulty(category)}
+                  <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
+                    {category}
                     {index !== data.data.categories.length - 1 && ","}
                   </a>
                 ))
@@ -116,7 +134,7 @@ const {currentPosts} = Astro.props;
           )}
         </ul>
       </div>
-      <div class="md:col-3 lg:col-4 inline-block">
+      <div class="md:col-end-4 lg:col-end-4 inline-block">
         <div class="mb-4">
           {data.data.tags == undefined || data.data.tags.length == 0 || (data.data.tags.length == 1 && data.data.tags[0] == "others") ? null : (
             <div class="mr-4 inline-block">

@@ -42,9 +42,9 @@ slug: "greedy"
 
 
 ### 简单题
-- [1403、非递增顺序的最小子序列](../leetcode/1403非递增顺序的最小子序列)
+- [1403、非递增顺序的最小子序列](../leetcode/minimum-subsequence-in-non-increasing-order)
 ### 中等题
-- [2171、拿出最少数目的的魔法豆](../leetcode/2171拿出最少数目的的魔法豆)
+- [2171、拿出最少数目的的魔法豆](../leetcode/removing-minimum-number-of-magic-beans)
 
 
 

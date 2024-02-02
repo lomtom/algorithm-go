@@ -102,7 +102,7 @@ async function getQuestionStats(titleSlug: string): Promise<string | void> {
   }
   let data = await getQuestionStatsInline(titleSlug)
   if (data) {
-    return `（${data.acRate}）`;
+    return `${data.acRate}`;
   }
   return ""
 }

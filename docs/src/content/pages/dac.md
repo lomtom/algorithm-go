@@ -22,11 +22,11 @@ slug: "dac"
 ## 分治法应用:
 
 ### 简单：
-- [104、二叉树的最大深度](leetcode/104二叉树的最大深度_readme) ⭐
+- [104、二叉树的最大深度](leetcode/maximum-depth-of-binary-tree) ⭐
 - [110、平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/) ⭐
 
 ### 中等
 * [241、为运算表达式设计优先级](https://leetcode.cn/problems/different-ways-to-add-parentheses/)
-* [558、四叉树交集](leetcode/558四叉树交集_readme)
-* [814、二叉树剪枝](leetcode/814二叉树剪枝_readme)
-* [654、最大二叉树](leetcode/654最大二叉树)
+* [558、四叉树交集](leetcode/logical-or-of-two-binary-grids-represented-as-quad-trees)
+* [814、二叉树剪枝](leetcode/binary-tree-pruning)
+* [654、最大二叉树](leetcode/maximum-binary-tree)

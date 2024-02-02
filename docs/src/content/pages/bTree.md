@@ -214,7 +214,7 @@ func levelTraversal(root *TreeNode) {
 ## 二叉树应用
 
 ### 层级遍历
-* [623、在二叉树中增加一行](leetcode/623在二叉树中增加一行)
-* [662、二叉树最大宽度](leetcode/662二叉树最大宽度)
-* [919、完全二叉树插入器](leetcode/919完全二叉树插入器_readme)
-* [1161、最大层内元素和](leetcode/1161最大层内元素和)
+* [623、在二叉树中增加一行](leetcode/add-one-row-to-tree)
+* [662、二叉树最大宽度](leetcode/maximum-width-of-binary-tree)
+* [919、完全二叉树插入器](leetcode/complete-binary-tree-inserter)
+* [1161、最大层内元素和](leetcode/maximum-level-sum-of-a-binary-tree)

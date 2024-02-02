@@ -9,7 +9,7 @@ slug: "window"
 
 在算法中，滑动窗口也是类似的原理，需要维护一个数组/队列（可以看做tcp中缓存），然后不断的滑动窗口来计算结果。
 
-例如[1876、长度为三且各字符不同的子字符串](../leetcode/1876长度为三且各字符不同的子字符串_readme)
+例如[1876、长度为三且各字符不同的子字符串](../leetcode/1876长度为三且各字符不同的子字符串)
 
 对于这题，只需要维护一个大小为3的窗口，比较窗口内的字符各不相同即可。
 
@@ -31,8 +31,8 @@ func countGoodSubstrings(s string) (ans int) {
 
 简单题：
 
-- [1876、长度为三且各字符不同的子字符串](../leetcode/1876长度为三且各字符不同的子字符串_readme)
-- [剑指 Offer II 041、滑动窗口的平均值](../leetcode/剑指OfferII041滑动窗口的平均值_read)
+- [1876、长度为三且各字符不同的子字符串](../leetcode/substrings-of-size-three-with-distinct-characters)
+- [剑指 Offer II 041、滑动窗口的平均值](../offer/qIsx9U)
 
 
 

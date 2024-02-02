@@ -1,5 +1,5 @@
-import { slug } from "github-slugger";
-import { marked } from "marked";
+import {slug} from "github-slugger";
+import {marked} from "marked";
 import {html} from "mdast-util-to-markdown/lib/handle/html";
 
 marked.use({
@@ -29,9 +29,9 @@ export const markdownify = (content: string, div?: boolean): string => {
 export const difficulty = (content: string): string => {
   if (content == "简单" || content == "Easy") {
     return "🌟"
-  }else if (content == "中等" || content == "Medium") {
+  } else if (content == "中等" || content == "Medium") {
     return "🌟🌟🌟"
-  }else if (content == "困难" || content == "Hard") {
+  } else if (content == "困难" || content == "Hard") {
     return "🌟🌟🌟🌟🌟"
   }
   return humanize(content)
@@ -39,17 +39,43 @@ export const difficulty = (content: string): string => {
 export const Undifficulty = (content: string): string => {
   if (content == "简单" || content == "Easy") {
     return "简单"
-  }else if (content == "中等" || content == "Medium") {
+  } else if (content == "中等" || content == "Medium") {
     return "中等"
-  }else if (content == "困难" || content == "Hard") {
+  } else if (content == "困难" || content == "Hard") {
     return "困难"
   }
   return humanize(content)
 }
 
+export const difficultyClass = (content: string): string => {
+  const a = "px-3 py-1 rounded"
+  if (content == "简单" || content == "Easy") {
+    return "text-green-500 " + a
+  } else if (content == "中等" || content == "Medium") {
+    return "text-amber-500 " + a
+  } else if (content == "困难" || content == "Hard") {
+    return "text-red-500 " + a
+  }
+  return humanize(content)
+}
+
+
+export const difficultyClassBg = (content: string): string => {
+  const a = "text-white px-3 py-1 rounded"
+  if (content == "简单" || content == "Easy") {
+    return "bg-green-400 " + a
+  } else if (content == "中等" || content == "Medium") {
+    return "bg-amber-300 " + a
+  } else if (content == "困难" || content == "Hard") {
+    return "bg-red-500 " + a
+  }
+  return humanize(content)
+}
+
+
 // humanize
 export const humanize = (content: string): string => {
-  if (content == "" || content == undefined){
+  if (content == "" || content == undefined) {
     return ""
   }
   return content
@@ -61,12 +87,11 @@ export const humanize = (content: string): string => {
 };
 
 
-
 export const categoryStar = (content: string): string => {
   if (content == "" || content == undefined) {
     return ""
   }
-  return content + " "+difficulty(content)
+  return content + " " + difficulty(content)
 }
 
 

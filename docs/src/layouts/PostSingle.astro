@@ -2,24 +2,25 @@
 import BlogCard from "@/components/BlogCard.astro";
 import config from "@/config/config.json";
 import Disqus from "@/helpers/Disqus";
-import { getSinglePage } from "@/lib/contentParser.astro";
+import {getSinglePage} from "@/lib/contentParser.astro";
 import dateFormat from "@/lib/utils/dateFormat";
 import similerItems from "@/lib/utils/similarItems";
-import { difficulty,humanize, markdownify, slugify } from "@/lib/utils/textConverter";
-import { Image } from "@astrojs/image/components";
+import {difficulty, humanize, markdownify, slugify} from "@/lib/utils/textConverter";
+import {Image} from "@astrojs/image/components";
 import {
   FaRegClock,
   FaRegFolder,
   FaRegUserCircle,
 } from "react-icons/fa/index.js";
 import {getQuestionStatsInline} from "../lib/utils/leetcode";
+import {difficultyClass} from "../lib/utils/textConverter";
 
-const { blog_folder } = config.settings;
+const {blog_folder} = config.settings;
 const posts = await getSinglePage(blog_folder);
-const { post } = Astro.props;
+const {post} = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
-const { Content } = await post.render();
-const { title, description,number,slug, author, categories, image, date, tags } = post.data;
+const {Content} = await post.render();
+const {title, description, number, slug, link, author, categories, image, date, tags} = post.data;
 const status = await getQuestionStatsInline(slug);
 ---
 
@@ -41,90 +42,118 @@ const status = await getQuestionStatsInline(slug);
             </div>
           )
         }
-        <h1 set:html={markdownify(number+". "+title)} class="h2 mb-4" />
+        <h1 set:html={markdownify(number + ". " + title)} class="h2 mb-4"/>
         <ul class="mb-4">
-          {author == "Admin"  || author == undefined || author == "" ?null:(
-          <li class="mr-4 inline-block">
-            <a href={`/authors/${slugify(author)}`}>
-              <FaRegUserCircle className={"mr-2 -mt-1 inline-block"} />
-              {humanize(author)}
-            </a>
-          </li>
+          {author == "Admin" || author == undefined || author == "" ? null : (
+            <li class="mr-4 inline-block">
+              <a href={`/authors/${slugify(author)}`}>
+                <FaRegUserCircle className={"mr-2 -mt-1 inline-block"}/>
+                {humanize(author)}
+              </a>
+            </li>
           )}
-          {categories.length ==0 ||(categories.length == 1 && categories[0] == "others") ?null:(
-          <li class="mr-4 inline-block">
-            难度：
-            {
-              categories.map((category: string, index: number) => (
-                <a href={`/categories/${slugify(category)}`}>
-                  {difficulty(category)}
-                  {index !== categories.length - 1 && ","}
-                </a>
-              ))
-            }
-          </li>
-          )}
-          {dateFormat(date) ?(
-          <li class="mr-4 inline-block">
-            <FaRegClock className={"mr-2 -mt-1 inline-block"} />
-            {dateFormat(date)}
-          </li>
-          ): null}
-        </ul>
-        <div class="content mb-10">
-          <Content />
-        </div>
-        <div class="flex items-start justify-between">
-          {tags.length ==0 ||(categories.length == 1 && categories[0] == "others") ?null:(
-          <div class="mb-10 flex items-center lg:col-5 lg:mb-0">
-            <h5 class="mr-3">Tags :</h5>
-            <ul>
+          {categories.length == 0 || (categories.length == 1 && categories[0] == "others") ? null : (
+            <li class="mr-4 inline-block">
               {
-                tags.map((tag: string) => (
-                  <li class="inline-block">
-                    <a
-                      class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark"
-                      href={`/tags/${slugify(tag)}`}
-                    >
-                      {humanize(tag)}
-                    </a>
-                  </li>
+                categories.map((category: string, index: number) => (
+                  <a href={`/categories/${slugify(category)}`}
+                     class={difficultyClass(category) + "  bg-theme-light  hover:bg-primary hover:text-white "}>
+                    {category}
+                  </a>
                 ))
               }
-            </ul>
-          </div>
-          <div class="">{
-            status && (
-              <p>
-                <span class="text-gray-500 text-sm">通过次数</span>
-                {status.totalAccepted}
-                <span class="ml-3 text-gray-500 text-sm">提交次数</span>
-                {status.totalSubmission}
-                <span  class="ml-3 text-gray-500 text-sm">通过率</span>
-                {status.acRate}
-              </p>
-            )
-          }</div>
+            </li>
+          )}
+          {
+            slug == undefined || slug == "" ? null :
+              <li class="mr-4 inline-block">
+                <a href={`https://leetcode.cn/problems/${slug}`}
+                   target="_blank"
+                   class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                  原题
+                </a>
+              </li>
+          }
+
+          {
+            link == undefined || link == "" ?
+              <li class="mr-4 inline-block">
+                <a href={`https://github.com/lomtom/algorithm-go/blob/main/leetcode/${number}${title}_test.go`}
+                   target="_blank"
+                   class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                  源码
+                </a>
+              </li>
+              :
+              <li class="mr-4 inline-block">
+                <a href={`https://github.com/lomtom/algorithm-go/blob/main${link}`}
+                   target="_blank"
+                   class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                  源码
+                </a>
+              </li>
+          }
+          {dateFormat(date) ? (
+            <li class="mr-4 inline-block">
+              <FaRegClock className={"mr-2 -mt-1 inline-block"}/>
+              {dateFormat(date)}
+            </li>
+          ) : null}
+        </ul>
+        <div class="content mb-10">
+          <Content/>
+        </div>
+        <div class="flex items-start justify-between">
+          {tags.length == 0 || (categories.length == 1 && categories[0] == "others") ? null : (
+            <div class="mb-10 flex items-center lg:col-5 lg:mb-0">
+              <h5 class="mr-3">Tags :</h5>
+              <ul>
+                {
+                  tags.map((tag: string) => (
+                    <li class="inline-block">
+                      <a
+                        class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark"
+                        href={`/tags/${slugify(tag)}`}
+                      >
+                        {humanize(tag)}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <div class="">{
+              status && (
+                <p>
+                  <span class="text-gray-500 text-sm">通过次数</span>
+                  {status.totalAccepted}
+                  <span class="ml-3 text-gray-500 text-sm">提交次数</span>
+                  {status.totalSubmission}
+                  <span class="ml-3 text-gray-500 text-sm">通过率</span>
+                  {status.acRate}
+                </p>
+              )
+            }</div>
           )}
         </div>
-        <Disqus className="mt-20" client:load />
+        <Disqus className="mt-20" client:load/>
       </article>
     </div>
 
     <!-- Related posts -->
-    {similarPosts.length ==0?null:(
-    <div class="section pb-0">
-      <h2 class="h3 mb-12 text-center">Related Posts</h2>
-      <div class="row justify-center">
-        {
-          similarPosts.map((post) => (
-            <div class="mb-14  lg:col-4">
-              <BlogCard data={post} />
-            </div>
-          ))
-        }
+    {similarPosts.length == 0 ? null : (
+      <div class="section pb-0">
+        <h2 class="h3 mb-12 text-center">Related Posts</h2>
+        <div class="row justify-center">
+          {
+            similarPosts.map((post) => (
+              <div class="mb-14  lg:col-4">
+                <BlogCard data={post}/>
+              </div>
+            ))
+          }
+        </div>
       </div>
-    </div>
     )}
   </div>
 </section>

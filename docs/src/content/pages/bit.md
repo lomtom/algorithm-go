@@ -186,8 +186,8 @@ func initTree(nums []int) []int {
 ## 树状数组应用
 
 ### 简单
-- [303、区域和检索 - 数组不可变](../leetcode/303区域和检索-数组不可变_readme)
-- [307、区域和检索 - 数组可修改](../leetcode/307区域和检索-数组可修改)
+- [303、区域和检索 - 数组不可变](../leetcode/range-sum-query-immutable)
+- [307、区域和检索 - 数组可修改](../leetcode/range-sum-query-mutable)
 - [计算右侧小于当前元素的个数](https://leetcode-cn.com/problems/count-of-smaller-numbers-after-self/) (选做)
 - [剑指 Offer 51. 数组中的逆序对](https://leetcode-cn.com/problems/shu-zu-zhong-de-ni-xu-dui-lcof/)
 

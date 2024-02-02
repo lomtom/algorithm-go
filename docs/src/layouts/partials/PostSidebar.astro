@@ -4,32 +4,32 @@ import { humanize,categoryStar } from "@/lib/utils/textConverter";
 const { tags, categories, allCategories } = Astro.props;
 ---
 
-<div class="lg:col-4">
+<div class="lg:col-3">
   <!-- categories -->
-  <div class="mb-8">
-    <h5 class="mb-6">Difficulty</h5>
-    <div class="rounded bg-theme-light p-8 dark:bg-darkmode-theme-light">
-      <ul class="space-y-4">
-        {
-          categories.map((category: any) => {
-            const count = allCategories.filter(
-              (c: any) => c === category
-            ).length;
-            return (
-              <li>
-                <a
-                  class="flex justify-between hover:text-primary dark:hover:text-darkmode-primary"
-                  href={`/categories/${category}`}
-                >
-                  {categoryStar(humanize(category))} <span>({count})</span>
-                </a>
-              </li>
-            );
-          })
-        }
-      </ul>
-    </div>
-  </div>
+  <!--<div class="mb-8">-->
+  <!--  <h5 class="mb-6">Difficulty</h5>-->
+  <!--  <div class="rounded bg-theme-light p-8 dark:bg-darkmode-theme-light">-->
+  <!--    <ul class="space-y-4">-->
+  <!--      {-->
+  <!--        categories.map((category: any) => {-->
+  <!--          const count = allCategories.filter(-->
+  <!--            (c: any) => c === category-->
+  <!--          ).length;-->
+  <!--          return (-->
+  <!--            <li>-->
+  <!--              <a-->
+  <!--                class="flex justify-between hover:text-primary dark:hover:text-darkmode-primary"-->
+  <!--                href={`/categories/${category}`}-->
+  <!--              >-->
+  <!--                {categoryStar(humanize(category))} <span>({count})</span>-->
+  <!--              </a>-->
+  <!--            </li>-->
+  <!--          );-->
+  <!--        })-->
+  <!--      }-->
+  <!--    </ul>-->
+  <!--  </div>-->
+  <!--</div>-->
   <!-- tags -->
   <div class="mb-8">
     <h5 class="mb-6">Tags</h5>
