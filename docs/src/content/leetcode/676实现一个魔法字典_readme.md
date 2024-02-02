@@ -1,5 +1,5 @@
 ---
-title: 676实现一个魔法字典
+title: 实现一个魔法字典
 categories:
   - 中等
 tags:

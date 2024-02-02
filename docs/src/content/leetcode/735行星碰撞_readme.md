@@ -1,5 +1,5 @@
 ---
-title: 735行星碰撞
+title: 行星碰撞
 categories:
   - 中等
 tags:

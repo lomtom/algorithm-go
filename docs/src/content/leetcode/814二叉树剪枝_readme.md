@@ -1,5 +1,5 @@
 ---
-title: 814二叉树剪枝
+title: 二叉树剪枝
 categories:
   - 中等
 tags:

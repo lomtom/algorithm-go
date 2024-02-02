@@ -9,7 +9,7 @@ const {
   blog_folder,
 }: { summary_length: number; blog_folder: string } = config.settings;
 const { data } = Astro.props;
-const { title, image, date, author, categories } = data.data;
+const { title, image, number,date, author, categories } = data.data;
 ---
 
 <div class="bg-body dark:bg-darkmode-body">
@@ -27,7 +27,7 @@ const { title, image, date, author, categories } = data.data;
   }
   <h4 class="mb-3">
     <a href={`/${blog_folder}/${data.slug}`}>
-      {title}
+      {number}. {title}
     </a>
   </h4>
   <ul class="mb-4">

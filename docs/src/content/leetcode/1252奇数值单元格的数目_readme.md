@@ -1,5 +1,5 @@
 ---
-title: 1252奇数值单元格的数目
+title: 奇数值单元格的数目
 categories:
   - 中等
 tags:

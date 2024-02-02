@@ -1,5 +1,5 @@
 ---
-title: 736Lisp语法解析
+title: Lisp语法解析
 categories:
   - 困难
 tags:

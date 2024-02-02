@@ -1,5 +1,5 @@
 ---
-title: 558四叉树交集
+title: 四叉树交集
 categories:
   - 中等
 tags:

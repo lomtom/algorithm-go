@@ -18,7 +18,7 @@
     "sticky_header": false,
     "theme_switcher": false,
     "default_theme": "light",
-    "pagination": 6,
+    "pagination": 10,
     "summary_length": 200,
     "blog_folder": "leetcode"
   },

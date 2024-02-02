@@ -1,5 +1,5 @@
 ---
-title: 648单词替换
+title: 单词替换
 categories:
   - 中等
 tags:

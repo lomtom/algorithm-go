@@ -1,5 +1,5 @@
 ---
-title: 1200最小绝对差
+title: 最小绝对差
 categories:
   - 简单
 tags:

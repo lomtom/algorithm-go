@@ -19,12 +19,22 @@ export const markdownify = (content: string, div?: boolean): string => {
 
 // humanize
 export const difficulty = (content: string): string => {
-  if (content == "简单") {
+  if (content == "简单" || content == "Easy") {
     return "🌟"
-  }else if (content == "中等") {
+  }else if (content == "中等" || content == "Medium") {
     return "🌟🌟🌟"
-  }else if (content == "困难") {
+  }else if (content == "困难" || content == "Hard") {
     return "🌟🌟🌟🌟🌟"
+  }
+  return humanize(content)
+}
+export const Undifficulty = (content: string): string => {
+  if (content == "简单" || content == "Easy") {
+    return "简单"
+  }else if (content == "中等" || content == "Medium") {
+    return "中等"
+  }else if (content == "困难" || content == "Hard") {
+    return "困难"
   }
   return humanize(content)
 }

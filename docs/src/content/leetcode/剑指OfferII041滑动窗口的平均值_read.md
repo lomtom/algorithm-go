@@ -1,5 +1,5 @@
 ---
-title: 剑指OfferII041滑动窗口的平均值_read
+title: 滑动窗口的平均值
 categories:
   - 简单
 tags:

@@ -18,7 +18,7 @@ const posts = await getSinglePage(blog_folder);
 const { post } = Astro.props;
 const similarPosts = similerItems(post, posts, post.slug);
 const { Content } = await post.render();
-const { title, description, author, categories, image, date, tags } = post.data;
+const { title, description,number, author, categories, image, date, tags } = post.data;
 ---
 
 <section class="section pt-7">
@@ -39,7 +39,7 @@ const { title, description, author, categories, image, date, tags } = post.data;
             </div>
           )
         }
-        <h1 set:html={markdownify(title)} class="h2 mb-4" />
+        <h1 set:html={markdownify(number+". "+title)} class="h2 mb-4" />
         <ul class="mb-4">
           {author == "Admin"  || author == undefined || author == "" ?null:(
           <li class="mr-4 inline-block">

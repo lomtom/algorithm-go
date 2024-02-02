@@ -1,5 +1,5 @@
 ---
-import BlogCard from "@/components/BlogCard.astro";
+import BlogList from "@/components/BlogList.astro";
 import Pagination from "@/components/Pagination.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
@@ -52,15 +52,7 @@ export async function getStaticPaths() {
       <div class="row gx-5">
         <!-- blog posts -->
         <div class="lg:col-8">
-          <div class="row">
-            {
-              currentPosts.map((post) => (
-                <div class="mb-14 md:col-6">
-                  <BlogCard data={post} />
-                </div>
-              ))
-            }
-          </div>
+          <BlogList currentPosts={currentPosts} />
           <Pagination
             section={blog_folder}
             currentPage={currentPage}

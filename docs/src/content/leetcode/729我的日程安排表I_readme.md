@@ -1,5 +1,5 @@
 ---
-title: 729我的日程安排表I
+title: 我的日程安排表I
 categories:
   - 中等
 tags:

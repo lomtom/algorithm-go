@@ -1,5 +1,5 @@
 ---
-title: 919完全二叉树插入器
+title: 完全二叉树插入器
 categories:
   - 中等
 tags:

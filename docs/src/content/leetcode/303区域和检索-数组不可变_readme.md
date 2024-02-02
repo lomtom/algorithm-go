@@ -1,5 +1,5 @@
 ---
-title: 303区域和检索-数组不可变
+title: 区域和检索-数组不可变
 categories:
   - 简单
 tags:

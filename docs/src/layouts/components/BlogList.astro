@@ -1,0 +1,135 @@
+---
+import config from "@/config/config.json";
+import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConverter"
+import {getQuestionOfToday} from "@/lib/utils/leetcode"
+import {Image} from "@astrojs/image/components";
+import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
+
+const todayData = await getQuestionOfToday()
+
+const {blog_folder,}: { blog_folder: string } = config.settings;
+const {currentPosts} = Astro.props;
+---
+
+
+<div class="mb-2 md:col-12">
+  <div class="bg-body dark:bg-darkmode-body text-gray-500 font-bold">
+    <div class="md:col-6 lg:col-5 inline-block">
+      <p class="mb-3">
+        题目
+      </p>
+    </div>
+    <div class="md:col-2 lg:col-2 inline-block">
+      <ul class="mb-4">
+        难度
+      </ul>
+    </div>
+    <div class="md:col-3 lg:col-4 inline-block">
+      <ul class="mb-4">
+        标签
+      </ul>
+    </div>
+  </div>
+</div>
+<!--today-->
+{
+  todayData && todayData.todayRecord && todayData.todayRecord.length > 0 ? (
+  <div class="md:col-12">
+    <div class="bg-body dark:bg-darkmode-body">
+      <div class="md:col-6 lg:col-5 inline-block">
+        <p class="mb-3">
+          <a href={`https://leetcode.cn/problems/${todayData.todayRecord[0].question.titleSlug}`}
+             class="hover:text-primary">
+            <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
+            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
+          </a>
+        </p>
+      </div>
+      <div class="md:col-2 lg:col-2 inline-block">
+        <ul class="mb-4">
+          <li class="mr-4 inline-block">
+            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`}>
+              {difficulty(todayData.todayRecord[0].question.difficulty)}
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="md:col-3 lg:col-4 inline-block">
+        <div class="mb-4">
+          <div class="mr-4 inline-block">
+            {
+              todayData.todayRecord[0].question.topicTags && todayData.todayRecord[0].question.topicTags.length > 0 && todayData.todayRecord[0].question.topicTags.map((tag: {
+                name: string;
+                nameTranslated: string;
+                id: string;
+              }, index) => (
+                index <= 2 ? (
+                  <a href={`/tags/${slugify(tag.nameTranslated)}`}
+                     class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                    {difficulty(tag.nameTranslated)}
+                  </a>) : null
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    ) : null
+  }
+{
+  currentPosts.map((data) => (
+  <div class="md:col-12">
+    <div class="bg-body dark:bg-darkmode-body">
+      <div class="md:col-6 lg:col-5 inline-block">
+        <p class="mb-3">
+          <a href={`/${blog_folder}/${data.slug}`} class="hover:text-primary">
+            <FaLink className={"mr-2 -mt-1 inline-block"}/>
+            {data.data.number}. {data.data.title}
+          </a>
+        </p>
+      </div>
+      <div class="md:col-2 lg:col-2 inline-block">
+        <ul class="mb-4">
+          {data.data.author == "Admin" || data.data.author == undefined || data.data.author == "" ? null : (
+            <li class="mr-4 inline-block">
+              <a href={`/authors/${slugify(data.data.author)}`}>
+                <FaRegUserCircle className={"mr-2 -mt-1 inline-block"}/>
+                {humanize(data.data.author)}
+              </a>
+            </li>
+          )}
+          {data.data.categories == undefined || data.data.categories.length == 0 || (data.data.categories.length == 1 && data.data.categories[0] == "others") ? null : (
+            <li class="mr-4 inline-block">
+              {
+                data.data.categories.map((category: string, index: number) => (
+                  <a href={`/categories/${slugify(category)}`}>
+                    {difficulty(category)}
+                    {index !== data.data.categories.length - 1 && ","}
+                  </a>
+                ))
+              }
+            </li>
+          )}
+        </ul>
+      </div>
+      <div class="md:col-3 lg:col-4 inline-block">
+        <div class="mb-4">
+          {data.data.tags == undefined || data.data.tags.length == 0 || (data.data.tags.length == 1 && data.data.tags[0] == "others") ? null : (
+            <div class="mr-4 inline-block">
+              {
+                data.data.tags.map((tag: string, index: number) => (
+                  <a href={`/tags/${slugify(tag)}`}
+                     class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                    {difficulty(tag)}
+                  </a>
+                ))
+              }
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </div>
+    ))
+  }

@@ -1,5 +1,5 @@
 ---
-title: 1260二维网格迁移
+title: 二维网格迁移
 categories:
   - 中等
 tags:

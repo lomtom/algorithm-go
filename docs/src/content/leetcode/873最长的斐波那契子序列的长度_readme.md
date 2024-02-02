@@ -1,5 +1,5 @@
 ---
-title: 873最长的斐波那契子序列的长度
+title: 最长的斐波那契子序列的长度
 categories:
   - 中等
 tags:
