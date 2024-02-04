@@ -35,7 +35,7 @@ interface QuestionOfTodayResponse {
   }[];
 }
 
-async function getQuestionOfToday(): Promise<QuestionOfTodayResponse|undefined> {
+async function getQuestionOfToday(): Promise<QuestionOfTodayResponse | undefined> {
   return await fetch('https://leetcode.cn/graphql/', {
     method: 'POST',
     headers: {'Accept-Language': 'zh-CN,zh;q=0.9', 'Content-Type': 'application/json',},
@@ -50,6 +50,20 @@ async function getQuestionOfToday(): Promise<QuestionOfTodayResponse|undefined> 
     })
     .catch(error => console.error('Error:', error))
 }
+
+// 判断array中的data.slug是否包含titleSlug，包含返回data.slug
+export const getQuestionUrl = (titleSlug: string, blog_folder: string, array: any[]): string => {
+  if (!titleSlug) {
+    return '';
+  }
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].data.slug == titleSlug) {
+      return blog_folder + "/" + array[i].data.slug;
+    }
+  }
+  return "https://leetcode.cn/problems/" + titleSlug;
+}
+
 
 interface QuestionStatsResponse {
   data: {
@@ -85,7 +99,7 @@ async function getQuestionStatsInline(titleSlug: string): Promise<QuestionStats 
             }
           }
         `,
-      variables: { titleSlug },
+      variables: {titleSlug},
       operationName: 'questionStats',
     }),
   }).then(response => response.json())
@@ -107,4 +121,4 @@ async function getQuestionStats(titleSlug: string): Promise<string | void> {
   return ""
 }
 
-export { getQuestionOfToday,getQuestionStatsInline,getQuestionStats};
+export {getQuestionOfToday, getQuestionStatsInline, getQuestionStats};

@@ -5,11 +5,12 @@ import {getQuestionOfToday, getQuestionStats} from "@/lib/utils/leetcode"
 import {Image} from "@astrojs/image/components";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
 import {difficultyClass, percent} from "../../lib/utils/textConverter";
+import {getQuestionUrl} from "../../lib/utils/leetcode";
 
 
 const {blog_folder,}: { blog_folder: string } = config.settings;
-const {currentPosts, index, showAc} = Astro.props;
-const todayData = await getQuestionOfToday()
+const {currentPosts, index, showAc, posts} = Astro.props;
+const todayData = await getQuestionOfToday(posts)
 ---
 
 
@@ -21,12 +22,12 @@ const todayData = await getQuestionOfToday()
       </p>
     </div>
     {
-      showAc == "true"?
-      <div class="md:col-1 lg:col-1 inline-block">
-        <ul class="mb-4">
-          AC
-        </ul>
-      </div>:null
+      showAc == "true" ?
+        <div class="md:col-1 lg:col-1 inline-block">
+          <ul class="mb-4">
+            AC
+          </ul>
+        </div> : null
     }
     <div class="md:col-1 lg:col-1 inline-block">
       <ul class="mb-4">
@@ -47,23 +48,25 @@ const todayData = await getQuestionOfToday()
     <div class="bg-body dark:bg-darkmode-body">
       <div class="md:col-6 lg:col-6 inline-block">
         <p class="mb-3">
-          <a href={`https://leetcode.cn/problems/${todayData.todayRecord[0].question.titleSlug}`}
+
+          <a href={getQuestionUrl(todayData.todayRecord[0].question.titleSlug,blog_folder,posts)}
              target="_blank"
              class="hover:text-primary">
             <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
-            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn} （{percent(todayData.todayRecord[0].question.acRate)}）
+            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
+            （{percent(todayData.todayRecord[0].question.acRate)}）
           </a>
         </p>
       </div>
       {
-        showAc == "true"?
-      <div class="md:col-1 lg:col-1 inline-block">
-        <ul class="mb-4">
-          <li class="mr-4 inline-block  text-gray-500 text-sm">
-            {percent(todayData.todayRecord[0].question.acRate)}
-          </li>
-        </ul>
-      </div>:null
+        showAc == "true" ?
+          <div class="md:col-1 lg:col-1 inline-block">
+            <ul class="mb-4">
+              <li class="mr-4 inline-block  text-gray-500 text-sm">
+                {percent(todayData.todayRecord[0].question.acRate)}
+              </li>
+            </ul>
+          </div> : null
       }
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
@@ -111,14 +114,14 @@ const todayData = await getQuestionOfToday()
         </p>
       </div>
       {
-        showAc == "true"?
-      <div class="md:col-1 lg:col-1 inline-block">
-        <ul class="mb-4">
-          <li class="mr-4 inline-block text-gray-500 text-sm">
-            {getQuestionStats(data.data.slug)}
-          </li>
-        </ul>
-      </div>:null
+        showAc == "true" ?
+          <div class="md:col-1 lg:col-1 inline-block">
+            <ul class="mb-4">
+              <li class="mr-4 inline-block text-gray-500 text-sm">
+                {getQuestionStats(data.data.slug)}
+              </li>
+            </ul>
+          </div> : null
       }
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
@@ -134,10 +137,10 @@ const todayData = await getQuestionOfToday()
             <li class="mr-4 inline-block">
               {
                 data.data.categories.map((category: string, index: number) => (
-                  index == 0?
-                  <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
-                    {category}
-                  </a>:null
+                  index == 0 ?
+                    <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
+                      {category}
+                    </a> : null
                 ))
               }
             </li>
