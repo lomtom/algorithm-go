@@ -50,7 +50,7 @@ func TestPreTraversal(t *testing.T) {
 	fmt.Println(dfs(root))
 }
 
-//1	 2	4	5	3	6	7
+// 前序遍历（递归）
 func preTraversal(root *TreeNode) {
 	if root == nil {
 		return
@@ -60,6 +60,7 @@ func preTraversal(root *TreeNode) {
 	preTraversal(root.Right)
 }
 
+// 前序遍历（非递归）
 func preTraversal1(root *TreeNode) {
 	if root == nil {
 		return
@@ -77,6 +78,7 @@ func preTraversal1(root *TreeNode) {
 	}
 }
 
+// 中序遍历（递归）
 func miTraversal(root *TreeNode) {
 	if root == nil {
 		return
@@ -86,6 +88,7 @@ func miTraversal(root *TreeNode) {
 	miTraversal(root.Right)
 }
 
+// 中序遍历（非递归）
 func miTraversal1(root *TreeNode) {
 	if root == nil {
 		return
@@ -103,6 +106,7 @@ func miTraversal1(root *TreeNode) {
 	}
 }
 
+// 后序遍历（递归）
 func nextTraversal(root *TreeNode) {
 	if root == nil {
 		return
@@ -112,6 +116,7 @@ func nextTraversal(root *TreeNode) {
 	fmt.Print(root.Val, "\t")
 }
 
+// 后序遍历（非递归）
 func nextTraversal1(root *TreeNode) {
 	if root == nil {
 		return
