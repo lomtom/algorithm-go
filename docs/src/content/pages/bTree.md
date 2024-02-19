@@ -212,6 +212,8 @@ func levelTraversal(root *TreeNode) {
 ```
 
 ## 二叉树应用
+### 后序遍历
+* [590、N叉树的后序遍历](../leetcode/n-ary-tree-postorder-traversal)
 
 ### 层级遍历
 * [623、在二叉树中增加一行](leetcode/add-one-row-to-tree)

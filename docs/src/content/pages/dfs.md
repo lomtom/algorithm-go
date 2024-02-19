@@ -13,6 +13,8 @@ DFS（深度优先搜索）
 
 ## 应用
 
+### 简单题
+* [590、N叉树的后序遍历](../leetcode/n-ary-tree-postorder-traversal)
 
 ### 中等题
 * [二叉树的右视图](https://leetcode-cn.com/problems/binary-tree-right-side-view/)
