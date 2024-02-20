@@ -8,6 +8,9 @@ type ListNode struct {
 }
 
 func constructListNode(nums []int) *ListNode {
+	if len(nums) == 0 {
+		return nil
+	}
 	root := &ListNode{
 		Val: nums[0],
 	}
@@ -23,6 +26,15 @@ func constructListNode(nums []int) *ListNode {
 	}
 	Func(root, 1)
 	return root
+}
+
+func antiConstructListNode(root *ListNode) []int {
+	var nums []int
+	for root != nil {
+		nums = append(nums, root.Val)
+		root = root.Next
+	}
+	return nums
 }
 
 type TreeNode struct {
