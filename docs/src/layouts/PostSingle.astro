@@ -6,6 +6,7 @@ import {getSinglePage} from "@/lib/contentParser.astro";
 import dateFormat from "@/lib/utils/dateFormat";
 import similerItems from "@/lib/utils/similarItems";
 import {difficulty, humanize, markdownify, slugify} from "@/lib/utils/textConverter";
+import {getDir} from "@/lib/utils/dir";
 import {Image} from "@astrojs/image/components";
 import {
   FaRegClock,
@@ -77,17 +78,8 @@ const status = await getQuestionStatsInline(slug);
           }
 
           {
-            link == undefined || link == "" ?
               <li class="mr-4 inline-block">
-                <a href={`https://github.com/lomtom/algorithm-go/blob/main/leetcode/${number}${title}_test.go`}
-                   target="_blank"
-                   class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark">
-                  源码
-                </a>
-              </li>
-              :
-              <li class="mr-4 inline-block">
-                <a href={`https://github.com/lomtom/algorithm-go/blob/main${link}`}
+                <a href={`https://github.com/lomtom/algorithm-go/blob/main/${getDir(categories)}/${number}${title}/solution.go`}
                    target="_blank"
                    class="m-1 block rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-theme-light dark:hover:bg-darkmode-primary dark:hover:text-dark">
                   源码
