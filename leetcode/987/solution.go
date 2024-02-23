@@ -5,6 +5,8 @@ import (
 	"sort"
 )
 
+// 执行耗时:0 ms,击败了100.00% 的Go用户
+// 内存消耗:2.6 MB,击败了22.32% 的Go用户
 func verticalTraversal(root *TreeNode) (ans [][]int) {
 	type Pair struct {
 		val, row, col int
