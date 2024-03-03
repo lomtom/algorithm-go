@@ -1,9 +1,9 @@
 package leetcode
 
 // 执行耗时:0 ms,击败了100.00% 的Go用户
-// 内存消耗:1.8 MB,击败了28.92% 的Go用户
+// 内存消耗:1.8 MB,击败了75.48% 的Go用户
 type MyStack struct {
-	stack []int
+	queue []int
 }
 
 func Constructor() MyStack {
@@ -11,21 +11,25 @@ func Constructor() MyStack {
 }
 
 func (this *MyStack) Push(x int) {
-	this.stack = append(this.stack, x)
+	queue := []int{x}
+	for index := range this.queue {
+		queue = append(queue, this.queue[index])
+	}
+	this.queue = queue
 }
 
 func (this *MyStack) Pop() int {
-	pop := this.stack[len(this.stack)-1]
-	this.stack = this.stack[:len(this.stack)-1]
+	pop := this.queue[0]
+	this.queue = this.queue[1:]
 	return pop
 }
 
 func (this *MyStack) Top() int {
-	return this.stack[len(this.stack)-1]
+	return this.queue[0]
 }
 
 func (this *MyStack) Empty() bool {
-	return len(this.stack) == 0
+	return len(this.queue) == 0
 }
 
 /**
