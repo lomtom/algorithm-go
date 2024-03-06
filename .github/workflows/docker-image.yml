@@ -2,7 +2,7 @@ name: ci
 
 on:
   push:
-    branches: [ static ]
+    branches: [ main ]
 jobs:
   build:
     runs-on: ubuntu-latest
