@@ -19,7 +19,7 @@ slug: "bit"
 
 二叉索引树之所以又称为树状数组，是因为这棵树只是逻辑上的树结构，实际上仍然是一个数组的形式存在。
 
-![](../img/datastruct/bit/img.png)
+![](/img/datastruct/bit/img.png)
 
 可以看到上图，实际上是一个空间为8的数组，只是逻辑上是一棵拥有八个节点的二叉树。而每个节点都管理着他的子节点。
 
@@ -120,7 +120,7 @@ func sum(index int, a []int) (ans int) {
 
 那么怎么去计算已经知道，那么怎么去构建这样的一棵树呢？
 
-![](../img/datastruct/bit/img.png)
+![](/img/datastruct/bit/img.png)
 
 再看这张图，对于数组a 其值为`[1,2,3,4,5,6,7,8]`，以及每个节点保存的值：
 ```

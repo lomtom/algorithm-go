@@ -2,7 +2,7 @@
 import config from "@/config/config.json";
 import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConverter"
 import {getQuestionOfToday, getQuestionStats} from "@/lib/utils/leetcode"
-import {Image} from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
 import {difficultyClass, percent} from "../../lib/utils/textConverter";
 import {getQuestionUrl} from "../../lib/utils/leetcode";
@@ -103,6 +103,7 @@ const todayData = await getQuestionOfToday(posts)
   }
 {
   currentPosts.map((data) => (
+    data.data == undefined ? null : (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
       <div class="md:col-6 lg:col-6 inline-block">
@@ -165,5 +166,5 @@ const todayData = await getQuestionOfToday(posts)
       </div>
     </div>
   </div>
-    ))
+    )))
   }

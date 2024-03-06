@@ -53,7 +53,7 @@ stack = stack[:len(stack) - 1]
 - 判断栈顶元素7是否比2大，结果为false，将7入栈；
 - 此时栈内元素为`1,2,7`
 
-![](../img/datastruct/MonotonicStack/stackpush.gif)
+![](/img/datastruct/MonotonicStack/stackpush.gif)
 
 对应的代码：
 

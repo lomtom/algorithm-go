@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+    branches: [ static ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: cd docs && npm i && npm run build
+      - name: Login to Huawei Cloud SWR
+        uses: huaweicloud/swr-login@v2.1.0
+        with:
+          region: cn-north-4
+          access-key-id: ${{ secrets.ACCESSKEY }}
+          access-key-secret: ${{ secrets.SECRETACCESSKEY }}
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=today::$(date +'%Y-%m-%d')"
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: |
+            swr.cn-north-4.myhuaweicloud.com/lomtom/algorithm:${{ steps.date.outputs.today }}
+            swr.cn-north-4.myhuaweicloud.com/lomtom/algorithm:latest
+      - name: redeploy
+        run: |
+          curl https://webhook.lomtom.cn/
+          curl https://webhook.lomtom.cn/hooks/redeploy-webhook

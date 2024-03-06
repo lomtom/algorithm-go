@@ -13,14 +13,13 @@
     "remove-darkmode": "node scripts/removeDarkmode.js && yarn format"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.2",
     "@astrojs/mdx": "^0.19.7",
+    "@astrojs/node": "^6.1.0",
     "@astrojs/react": "^2.2.1",
     "@astrojs/rss": "^2.4.3",
     "@astrojs/sitemap": "^2.0.1",
-    "@astrojs/tailwind": "^4.0.0",
-    "@astrojs/vercel": "^3.7.4",
-    "astro": "^2.9.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^3.4.3",
     "astro-auto-import": "^0.3.0",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",

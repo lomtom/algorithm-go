@@ -64,7 +64,7 @@ slug: "sort"
 
 冒泡排序是一种相对简单但效率较低的排序算法，因为在每一轮遍历中，都需要进行多次比较和交换。在最坏的情况下，需要进行 n-1 轮遍历，每轮遍历需要进行 n-i 次比较和交换，其中 n 是列表中的元素数量。
 
-![](../img/sort/bubbleSort.gif)
+![](/img/sort/bubbleSort.gif)
 
 **由于其复杂度，一般我们避免使用冒泡排序**
 
@@ -151,7 +151,7 @@ func bubbleSort2(nums []int) {
 - 将该元素与未排序区的第一个元素交换位置，将其纳入已排序区。
 - 重复上述步骤，每次在未排序区中找到最小（或最大）的元素，将其交换到已排序区的末尾。
 
-![](../img/sort/selectionSort.gif)
+![](/img/sort/selectionSort.gif)
 ```go
 // 选择排序
 func selectionSort(nums []int)  {
@@ -182,7 +182,7 @@ func selectionSort(nums []int)  {
 - 从未排序区选择一个元素，将其插入到已排序区的合适位置，使得插入后仍然保持有序。
 - 重复上述步骤，直到未排序区中的所有元素都被插入到已排序区。
 
-![](../img/sort/insertionSort.gif)
+![](/img/sort/insertionSort.gif)
 
 
 ```go
@@ -207,7 +207,7 @@ func insertionSort(nums []int)  {
 ### 归并排序
 归并排序（Merge Sort）是一种基于[分治策略](dac)的排序算法，它将一个未排序的数组划分成两个子数组，然后递归地对子数组进行排序，最后将排好序的子数组合并以得到完整的排序数组。归并排序的核心思想是将问题分解成更小的子问题，解决子问题，然后合并子问题的解来解决原始问题。
 
-![](../img/sort/mergeSort.gif)
+![](/img/sort/mergeSort.gif)
 
 核心过程：
 1. 分：将未排序的数组分解成两个子数组，通常通过将数组从中间切分来实现。分解过程一直持续（采用递归），直到每个子数组都只包含一个元素为止，因为单个元素可以被认为是有序的。
@@ -216,7 +216,7 @@ func insertionSort(nums []int)  {
 
 归并排序的关键在于合并步骤，它要求在合并两个有序的子数组时保持它们的有序性。这可以通过比较两个子数组的第一个元素，选择较小的元素放入结果数组中，然后逐个向后移动指针，继续比较和合并元素。
 
-![](../img/sort/mergeSort.png)
+![](/img/sort/mergeSort.png)
 
 ```go
 func mergeSort(nums []int) []int {
@@ -422,7 +422,7 @@ func merge(left, right []int) (res []int, count int) {
 整个过程不断地递归进行，直到每个子数组只包含一个元素或没有元素为止，排序完成。
 
 
-![](../img/sort/quickSort.gif)
+![](/img/sort/quickSort.gif)
 
 ```go
 func quickSort(nums []int, start int, end int) {
@@ -547,7 +547,7 @@ func shellSort(arr []int) {
 
 - 排序操作： 遍历输入数组，将每个元素放入到计数数组中对应的位置，并将计数数组中对应的值减1。这一步操作会将输入元素按照计数数组的顺序放入正确的位置，从而实现排序。
 
-![](../img/sort/countingSort.gif)
+![](/img/sort/countingSort.gif)
 
 计数排序的优点在于它对于一定范围内的整数排序具有很高的性能，因为它不需要比较操作。然而，计数排序的主要限制在于它需要额外的存储空间来存储计数数组，因此在输入范围较大时可能会消耗大量的内存。
 
