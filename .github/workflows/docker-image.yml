@@ -36,5 +36,4 @@ jobs:
             swr.cn-north-4.myhuaweicloud.com/lomtom/algorithm:latest
       - name: redeploy
         run: |
-          curl https://webhook.lomtom.cn/
-          curl https://webhook.lomtom.cn/hooks/redeploy-webhook
+          curl -u ${{ secrets.WEBHOOK_USER_PASS }} https://webhook.lomtom.cn/hooks/redeploy-webhook
