@@ -10,7 +10,7 @@ import {getQuestionUrl} from "../../lib/utils/leetcode";
 
 const {blog_folder,}: { blog_folder: string } = config.settings;
 const {currentPosts, index, showAc, posts} = Astro.props;
-const todayData = await getQuestionOfToday(posts)
+const todayData = await getQuestionOfToday()
 ---
 
 
