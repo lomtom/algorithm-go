@@ -10,11 +10,11 @@ const { className }: { className?: string } = Astro.props;
 
 {
   theme_switcher && (
-    <div class={`theme-switcher ${className}`}>
-      <input id="theme-switcher" data-theme-switcher type="checkbox" />
-      <label for="theme-switcher">
-        <span class="sr-only">theme switcher</span>
-        <span>
+  <div class={`theme-switcher ${className}`}>
+    <input id="theme-switcher" data-theme-switcher type="checkbox" />
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+      <span>
           <svg
             class="absolute left-[4px] top-[4px] z-10 opacity-100 dark:opacity-0"
             viewBox="0 0 56 56"
@@ -39,43 +39,41 @@ const { className }: { className?: string } = Astro.props;
             />
           </svg>
         </span>
-      </label>
-    </div>
-  )
-}
+    </label>
+  </div>
+    )
+  }
 
-<script is:inline define:vars={{ defaultTheme: default_theme }}>
-  let darkMode = defaultTheme === "dark";
-  const themeSwitch = document.querySelectorAll("[data-theme-switcher]");
-  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    darkMode = true;
+<script>
+  import { settings } from "@/config/config.json";
+  const matchMedia = window.matchMedia("(prefers-color-scheme: dark)");
+
+  matchMedia.addEventListener('change', () => toggleTheme(document.querySelectorAll("[data-theme-switcher]")));
+
+  function toggleTheme(themeSwitch: NodeListOf<Element>) {
+    const defaulTheme =  settings.default_theme ==="system" ? matchMedia.matches ? "dark" : "light" : settings.default_theme;
+    const currentTheme = localStorage.getItem("theme") || defaulTheme;
+    const isDarkTheme = currentTheme === "dark";
+    themeSwitch.forEach((sw: any) => (sw.checked = isDarkTheme));
+    document.documentElement.classList.toggle("dark", isDarkTheme);
   }
-  if (localStorage.getItem("theme") === "dark") {
-    darkMode = true;
-  } else if (localStorage.getItem("theme") === "light") {
-    darkMode = false;
-  }
-  if (darkMode) {
-    document.documentElement.classList.toggle("dark");
-  }
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    const newColorScheme = event.matches ? "dark" : "light";
-    document.documentElement.classList.toggle("dark");
-    localStorage.setItem(
-      "theme",
-      newColorScheme,
-    );
-  });
-  document.addEventListener("DOMContentLoaded", () => {
-    [].forEach.call(themeSwitch, function (ts) {
-      ts.checked = darkMode ? true : false;
-      ts.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-        localStorage.setItem(
-          "theme",
-          document.documentElement.classList.contains("dark") ? "dark" : "light"
-        );
+
+  const setDarkMode = () => {
+    const themeSwitch = document.querySelectorAll("[data-theme-switcher]");
+    toggleTheme(themeSwitch);
+    themeSwitch.forEach((sw) => {
+      sw.addEventListener("click", function () {
+        const defaulTheme =  settings.default_theme ==="system" ? matchMedia.matches ? "dark" : "light" : settings.default_theme;
+        const currentTheme = localStorage.getItem("theme") || defaulTheme;
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", newTheme);
+        toggleTheme(themeSwitch);
       });
     });
-  });
+  };
+
+  // Runs on initial navigation
+  setDarkMode();
+  // Runs on view transitions navigation
+  document.addEventListener("astro:after-swap", setDarkMode);
 </script>
