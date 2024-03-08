@@ -1,6 +1,5 @@
 import {slug} from "github-slugger";
 import {marked} from "marked";
-import {html} from "mdast-util-to-markdown/lib/handle/html";
 
 marked.use({
   mangle: false,
