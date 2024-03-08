@@ -44,7 +44,7 @@ export default defineConfig({
   image: {
     service: squooshImageService(),
   },
-  output: 'static',
+  output: 'hybrid',
   adapter: node({
     mode: "standalone"
   }),
