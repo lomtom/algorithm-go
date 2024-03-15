@@ -1,33 +1,34 @@
 package leetcode
 
-// 执行用时：56 ms, 在所有 Go 提交中击败了64.93%的用户
-// 内存消耗：7.3 MB, 在所有 Go 提交中击败了93.28%的用户
+// 执行耗时:55 ms,击败了93.83% 的Go用户
+// 内存消耗：7.3 MB,击败了93.28% 的Go用户
 func longestUnivaluePath(root *TreeNode) (ans int) {
-	max := func(a, b int) int {
-		if b > a {
-			return b
-		}
-		return a
-	}
 	var dfs func(node *TreeNode) int
 	dfs = func(node *TreeNode) int {
 		if node == nil {
 			return 0
 		}
-		left, right := dfs(node.Left), dfs(node.Right)
+		l, r := dfs(node.Left), dfs(node.Right)
 		if node.Left != nil && node.Left.Val == node.Val {
-			left = left + 1
+			l = l + 1
 		} else {
-			left = 0
+			l = 0
 		}
 		if node.Right != nil && node.Right.Val == node.Val {
-			right = right + 1
+			r = r + 1
 		} else {
-			right = 0
+			r = 0
 		}
-		ans = max(ans, left+right)
-		return max(left, right)
+		ans = max(ans, l+r)
+		return max(l, r)
 	}
 	dfs(root)
 	return
+}
+
+func max(a, b int) int {
+	if b > a {
+		return b
+	}
+	return a
 }
