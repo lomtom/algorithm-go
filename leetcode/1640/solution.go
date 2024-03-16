@@ -1,14 +1,9 @@
 package leetcode
 
-import (
-	"fmt"
-	"testing"
-)
-
 // 执行耗时:0 ms,击败了100.00% 的Go用户
 // 内存消耗:2.7 MB,击败了27.27% 的Go用户
 func canFormArray(arr []int, pieces [][]int) bool {
-	m := make(map[int][]int, 0)
+	m := make(map[int][]int)
 	for index := range pieces {
 		m[pieces[index][0]] = pieces[index]
 	}
@@ -27,10 +22,4 @@ func canFormArray(arr []int, pieces [][]int) bool {
 		}
 	}
 	return true
-}
-
-func TestCanFormArray(t *testing.T) {
-	fmt.Println(canFormArray([]int{15, 88}, [][]int{{88}, {15}}))
-	fmt.Println(canFormArray([]int{49, 18, 16}, [][]int{{16, 18, 49}}))
-	fmt.Println(canFormArray([]int{91, 4, 64, 78}, [][]int{{78}, {4, 64}, {91}}))
 }
