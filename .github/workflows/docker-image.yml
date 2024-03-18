@@ -15,7 +15,7 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: cd docs && npm config set registry http://mirrors.cloud.tencent.com/npm/ && npm i && npm run build
+        run: cd docs && npm i && npm run build
       - name: Login to Huawei Cloud SWR
         uses: huaweicloud/swr-login@v2.1.0
         with:
