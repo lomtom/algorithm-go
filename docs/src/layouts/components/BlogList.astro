@@ -2,15 +2,15 @@
 import config from "@/config/config.json";
 import {difficulty, humanize, Undifficulty, slugify} from "@/lib/utils/textConverter"
 import {getQuestionOfToday, getQuestionStats} from "@/lib/utils/leetcode"
-import { Image } from "astro:assets";
+import {Image} from "astro:assets";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
 import {difficultyClass, percent} from "../../lib/utils/textConverter";
-import {getQuestion, getQuestionUrl} from "../../lib/utils/leetcode";
+import {getQuestion} from "../../lib/utils/leetcode";
 
 
 const {blog_folder,}: { blog_folder: string } = config.settings;
 const {currentPosts, index, showAc, posts} = Astro.props;
-const todayData = await getQuestion(blog_folder,posts)
+const todayData = await getQuestion(index, blog_folder, posts)
 ---
 
 
@@ -43,7 +43,7 @@ const todayData = await getQuestion(blog_folder,posts)
 </div>
 <!--today-->
 {
-  index == "leetcode" && todayData  ? (
+  todayData.questionId == undefined  ?null: (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
       <div class="md:col-6 lg:col-6 inline-block">
@@ -83,10 +83,10 @@ const todayData = await getQuestion(blog_folder,posts)
           <div class="mr-4 inline-block">
             {
               todayData.topicTags && todayData.topicTags.length > 0 && todayData.topicTags.map((tag, index) => (
-                  <a href={`/tags/${slugify(tag)}`}
-                     class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
-                    {difficulty(tag)}
-                  </a>
+                <a href={`/tags/${slugify(tag)}`}
+                   class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                  {difficulty(tag)}
+                </a>
               ))
             }
           </div>
@@ -94,72 +94,72 @@ const todayData = await getQuestion(blog_folder,posts)
       </div>
     </div>
   </div>
-    ) : null
+    )
   }
 {
   currentPosts.map((data) => (
     data.data == undefined ? null : (
-  <div class="md:col-12">
-    <div class="bg-body dark:bg-darkmode-body">
-      <div class="md:col-6 lg:col-6 inline-block">
-        <p class="mb-3">
-          <a href={`/${blog_folder}/${data.slug}`} class="hover:text-primary">
-            <FaLink className={"mr-2 -mt-1 inline-block"}/>
-            {data.data.number}. {data.data.title}
-          </a>
-        </p>
-      </div>
-      {
-        showAc == "true" ?
-          <div class="md:col-1 lg:col-1 inline-block">
-            <ul class="mb-4">
-              <li class="mr-4 inline-block text-gray-500 text-sm">
-                {getQuestionStats(data.data.slug)}
+    <div class="md:col-12">
+      <div class="bg-body dark:bg-darkmode-body">
+        <div class="md:col-6 lg:col-6 inline-block">
+          <p class="mb-3">
+            <a href={`/${blog_folder}/${data.slug}`} class="hover:text-primary">
+              <FaLink className={"mr-2 -mt-1 inline-block"}/>
+              {data.data.number}. {data.data.title}
+            </a>
+          </p>
+        </div>
+        {
+          showAc == "true" ?
+            <div class="md:col-1 lg:col-1 inline-block">
+              <ul class="mb-4">
+                <li class="mr-4 inline-block text-gray-500 text-sm">
+                  {getQuestionStats(data.data.slug)}
+                </li>
+              </ul>
+            </div> : null
+        }
+        <div class="md:col-1 lg:col-1 inline-block">
+          <ul class="mb-4">
+            {data.data.author == "Admin" || data.data.author == undefined || data.data.author == "" ? null : (
+              <li class="mr-4 inline-block">
+                <a href={`/authors/${slugify(data.data.author)}`}>
+                  <FaRegUserCircle className={"mr-2 -mt-1 inline-block"}/>
+                  {humanize(data.data.author)}
+                </a>
               </li>
-            </ul>
-          </div> : null
-      }
-      <div class="md:col-1 lg:col-1 inline-block">
-        <ul class="mb-4">
-          {data.data.author == "Admin" || data.data.author == undefined || data.data.author == "" ? null : (
-            <li class="mr-4 inline-block">
-              <a href={`/authors/${slugify(data.data.author)}`}>
-                <FaRegUserCircle className={"mr-2 -mt-1 inline-block"}/>
-                {humanize(data.data.author)}
-              </a>
-            </li>
-          )}
-          {data.data.categories == undefined || data.data.categories.length == 0 || (data.data.categories.length == 1 && data.data.categories[0] == "others") ? null : (
-            <li class="mr-4 inline-block">
-              {
-                data.data.categories.map((category: string, index: number) => (
-                  index == 0 ?
-                    <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
-                      {category}
-                    </a> : null
-                ))
-              }
-            </li>
-          )}
-        </ul>
-      </div>
-      <div class="md:col-end-4 lg:col-end-4 inline-block">
-        <div class="mb-4">
-          {data.data.tags == undefined || data.data.tags.length == 0 || (data.data.tags.length == 1 && data.data.tags[0] == "others") ? null : (
-            <div class="mr-4 inline-block">
-              {
-                data.data.tags.map((tag: string, index: number) => (
-                  <a href={`/tags/${slugify(tag)}`}
-                     class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
-                    {difficulty(tag)}
-                  </a>
-                ))
-              }
-            </div>
-          )}
+            )}
+            {data.data.categories == undefined || data.data.categories.length == 0 || (data.data.categories.length == 1 && data.data.categories[0] == "others") ? null : (
+              <li class="mr-4 inline-block">
+                {
+                  data.data.categories.map((category: string, index: number) => (
+                    index == 0 ?
+                      <a href={`/categories/${slugify(category)}`} class={difficultyClass(category)}>
+                        {category}
+                      </a> : null
+                  ))
+                }
+              </li>
+            )}
+          </ul>
+        </div>
+        <div class="md:col-end-4 lg:col-end-4 inline-block">
+          <div class="mb-4">
+            {data.data.tags == undefined || data.data.tags.length == 0 || (data.data.tags.length == 1 && data.data.tags[0] == "others") ? null : (
+              <div class="mr-4 inline-block">
+                {
+                  data.data.tags.map((tag: string, index: number) => (
+                    <a href={`/tags/${slugify(tag)}`}
+                       class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
+                      {difficulty(tag)}
+                    </a>
+                  ))
+                }
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-    )))
+      )))
   }
