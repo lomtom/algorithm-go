@@ -51,19 +51,6 @@ async function getQuestionOfToday(): Promise<QuestionOfTodayResponse | undefined
     .catch(error => console.error('Error:', error))
 }
 
-// 判断array中的data.slug是否包含titleSlug，包含返回data.slug
-export const getQuestionUrl = (titleSlug: string, blog_folder: string, array: any[]): string => {
-  if (!titleSlug) {
-    return '';
-  }
-  for (let i = 0; i < array.length; i++) {
-    if (array[i].data.slug == titleSlug) {
-      return blog_folder + "/" + array[i].data.slug;
-    }
-  }
-  return "https://leetcode.cn/problems/" + titleSlug;
-}
-
 interface QuestionOfToday {
   questionId?: number,
   slug:string,
@@ -74,7 +61,7 @@ interface QuestionOfToday {
   topicTags: string[],
 }
 
-export const getQuestion = async (blog_folder: string, array: any[]): Promise<QuestionOfToday> => {
+export const getQuestion = async (index:string,blog_folder: string, array: any[]): Promise<QuestionOfToday> => {
   let question: QuestionOfToday = {
     title: '',
     slug: '',
@@ -82,6 +69,9 @@ export const getQuestion = async (blog_folder: string, array: any[]): Promise<Qu
     difficulty: '',
     acRate: '',
     topicTags: [],
+  }
+  if (index != "leetcode"){
+    return question;
   }
   const data = await getQuestionOfToday()
   if (!data || data.todayRecord.length == 0) {
