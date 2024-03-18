@@ -3,6 +3,8 @@ name: ci
 on:
   push:
     branches: [ main ]
+  schedule:
+    - cron: "01 16 * * *" # 北京时间0点01分执行
 jobs:
   build:
     runs-on: ubuntu-latest
