@@ -5,12 +5,12 @@ import {getQuestionOfToday, getQuestionStats} from "@/lib/utils/leetcode"
 import { Image } from "astro:assets";
 import {FaRegFolder, FaRegUserCircle, FaCalendarMinus, FaLink} from "react-icons/fa/index.js";
 import {difficultyClass, percent} from "../../lib/utils/textConverter";
-import {getQuestionUrl} from "../../lib/utils/leetcode";
+import {getQuestion, getQuestionUrl} from "../../lib/utils/leetcode";
 
 
 const {blog_folder,}: { blog_folder: string } = config.settings;
 const {currentPosts, index, showAc, posts} = Astro.props;
-const todayData = await getQuestionOfToday()
+const todayData = await getQuestion(blog_folder,posts)
 ---
 
 
@@ -43,18 +43,18 @@ const todayData = await getQuestionOfToday()
 </div>
 <!--today-->
 {
-  index == "leetcode" && todayData && todayData.todayRecord && todayData.todayRecord.length > 0 ? (
+  index == "leetcode" && todayData  ? (
   <div class="md:col-12">
     <div class="bg-body dark:bg-darkmode-body">
       <div class="md:col-6 lg:col-6 inline-block">
         <p class="mb-3">
 
-          <a href={getQuestionUrl(todayData.todayRecord[0].question.titleSlug,blog_folder,posts)}
+          <a href={todayData.titleSlug}
              target="_blank"
              class="hover:text-primary">
             <FaCalendarMinus className={"mr-2 -mt-1 inline-block"}/>
-            {todayData.todayRecord[0].question.questionId}. {todayData.todayRecord[0].question.titleCn}
-            （{percent(todayData.todayRecord[0].question.acRate)}）
+            {todayData.questionId}. {todayData.title}
+            （{percent(todayData.acRate)}）
           </a>
         </p>
       </div>
@@ -63,7 +63,7 @@ const todayData = await getQuestionOfToday()
           <div class="md:col-1 lg:col-1 inline-block">
             <ul class="mb-4">
               <li class="mr-4 inline-block  text-gray-500 text-sm">
-                {percent(todayData.todayRecord[0].question.acRate)}
+                {percent(todayData.acRate)}
               </li>
             </ul>
           </div> : null
@@ -71,9 +71,9 @@ const todayData = await getQuestionOfToday()
       <div class="md:col-1 lg:col-1 inline-block">
         <ul class="mb-4">
           <li class="mr-4 inline-block">
-            <a href={`/categories/${slugify(Undifficulty(todayData.todayRecord[0].question.difficulty))}`}
-               class={difficultyClass(todayData.todayRecord[0].question.difficulty)}>
-              {Undifficulty(todayData.todayRecord[0].question.difficulty)}
+            <a href={`/categories/${slugify(Undifficulty(todayData.difficulty))}`}
+               class={difficultyClass(todayData.difficulty)}>
+              {Undifficulty(todayData.difficulty)}
             </a>
           </li>
         </ul>
@@ -82,16 +82,11 @@ const todayData = await getQuestionOfToday()
         <div class="mb-4">
           <div class="mr-4 inline-block">
             {
-              todayData.todayRecord[0].question.topicTags && todayData.todayRecord[0].question.topicTags.length > 0 && todayData.todayRecord[0].question.topicTags.map((tag: {
-                name: string;
-                nameTranslated: string;
-                id: string;
-              }, index) => (
-                index <= 2 ? (
-                  <a href={`/tags/${slugify(tag.nameTranslated)}`}
+              todayData.topicTags && todayData.topicTags.length > 0 && todayData.topicTags.map((tag, index) => (
+                  <a href={`/tags/${slugify(tag)}`}
                      class="m-1 rounded bg-theme-light px-3 py-1 hover:bg-primary hover:text-white dark:bg-darkmode-body dark:hover:bg-darkmode-primary dark:hover:text-dark">
-                    {difficulty(tag.nameTranslated)}
-                  </a>) : null
+                    {difficulty(tag)}
+                  </a>
               ))
             }
           </div>

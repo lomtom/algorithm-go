@@ -64,6 +64,46 @@ export const getQuestionUrl = (titleSlug: string, blog_folder: string, array: an
   return "https://leetcode.cn/problems/" + titleSlug;
 }
 
+interface QuestionOfToday {
+  questionId?: number,
+  slug:string,
+  title: string,
+  titleSlug: string,
+  difficulty: string,
+  acRate: string,
+  topicTags: string[],
+}
+
+export const getQuestion = async (blog_folder: string, array: any[]): Promise<QuestionOfToday> => {
+  let question: QuestionOfToday = {
+    title: '',
+    slug: '',
+    titleSlug: '',
+    difficulty: '',
+    acRate: '',
+    topicTags: [],
+  }
+  const data = await getQuestionOfToday()
+  if (!data || data.todayRecord.length == 0) {
+    return question;
+  }
+  question.questionId = data.todayRecord[0].question.questionId;
+  question.title = data.todayRecord[0].question.titleCn;
+  question.slug=  data.todayRecord[0].question.titleSlug;
+  question.titleSlug = "https://leetcode.cn/problems/" + data.todayRecord[0].question.titleSlug;
+  question.difficulty = data.todayRecord[0].question.difficulty;
+  question.acRate = data.todayRecord[0].question.acRate;
+  question.topicTags = data.todayRecord[0].question.topicTags.filter((tag,index) =>index<=2).map((tag,index) => tag.nameTranslated);
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].data.slug == question.slug) {
+      question.titleSlug = blog_folder + "/" + array[i].data.slug;
+      question.topicTags = array[i].data.tags;
+      break;
+    }
+  }
+  return question;
+}
+
 
 interface QuestionStatsResponse {
   data: {
