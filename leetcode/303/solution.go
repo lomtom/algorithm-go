@@ -1,9 +1,6 @@
-package _03
+package leetcode
 
-import (
-	"github.com/lomtom/go-utils/assert"
-	"testing"
-)
+// 树状数组
 
 type NumArray struct {
 	nums []int
@@ -40,37 +37,25 @@ func (this *NumArray) SumRange(left int, right int) int {
 	return sum(this.nums, right+1) - sum(this.nums, left)
 }
 
-/**
- * Your NumArray object will be instantiated and called as such:
- * obj := Constructor(nums);
- * param_1 := obj.SumRange(left,right);
- */
+// 前缀和
 
-func TestNumArray(t *testing.T) {
-	type input struct {
-		nums   []int
-		indexs [][2]int
-	}
-	{
-	}
-	collections := []struct {
-		input
-		output []int
-	}{
-		{
-			input{
-				nums:   []int{-2, 0, 3, -5, 2, -1},
-				indexs: [][2]int{{0, 2}, {2, 5}, {0, 5}},
-			},
-			[]int{1, -1, -3},
-		},
-	}
-	s := assert.NewAssert(t)
-	for index := range collections {
-		obj := Constructor(collections[index].input.nums)
-		for i := range collections[index].indexs {
-			s.Equal(collections[index].output[i], obj.SumRange(collections[index].input.indexs[i][0], collections[index].input.indexs[i][1]))
-		}
+type NumArray1 struct {
+	sums []int
+}
 
+func Constructor1(nums []int) NumArray1 {
+	var sums = []int{
+		nums[0],
 	}
+	for i := 1; i < len(nums); i++ {
+		sums = append(sums, sums[i-1]+nums[i])
+	}
+	return NumArray1{sums: sums}
+}
+
+func (this *NumArray1) SumRange(left int, right int) int {
+	if left == 0 {
+		return this.sums[right]
+	}
+	return this.sums[right] - this.sums[left-1]
 }
