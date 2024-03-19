@@ -86,7 +86,6 @@ export const getQuestion = async (index:string,blog_folder: string, array: any[]
   question.topicTags = data.todayRecord[0].question.topicTags.filter((tag,index) =>index<=2).map((tag,index) => tag.nameTranslated);
   for (let i = 0; i < array.length; i++) {
     if (array[i].data.slug == question.slug) {
-      console.log(array[i].data)
       question.titleSlug = "/" + blog_folder + "/" + array[i].data.slug;
       question.topicTags = array[i].data.tags;
       break;
