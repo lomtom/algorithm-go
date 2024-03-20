@@ -77,7 +77,7 @@ export const getQuestion = async (index:string,blog_folder: string, array: any[]
   if (!data || data.todayRecord.length == 0) {
     return question;
   }
-  question.questionId = data.todayRecord[0].question.questionId;
+  question.questionId = data.todayRecord[0].question.frontendQuestionId;
   question.title = data.todayRecord[0].question.titleCn;
   question.slug=  data.todayRecord[0].question.titleSlug;
   question.titleSlug = "https://leetcode.cn/problems/" + data.todayRecord[0].question.titleSlug;
