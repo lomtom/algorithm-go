@@ -27,7 +27,7 @@ slug: "dp"
 
 ### 斐波那契数列
 
-[斐波那契数列完整讲解](https://labuladong.github.io/algo/di-ling-zh-bfe1b/dong-tai-g-1e688/#%E4%B8%80%E3%80%81%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97)
+[斐波那契数列完整讲解](https://labuladong.online/algo/essential-technique/dynamic-programming-framework-2)
 
 ### 背包问题
 
