@@ -4,6 +4,7 @@ categories:
   - 中等
 tags:
   - 数学
+  - 快速幂
 slug: powx-n
 number: 50
 ---
