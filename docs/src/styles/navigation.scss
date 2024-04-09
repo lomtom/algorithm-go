@@ -77,3 +77,16 @@ input#nav-toggle:checked ~ #nav-menu {
     }
   }
 }
+
+// 导航栏居中
+.navbar-bran {
+  width: 200px;
+}
+
+.navbar{
+  .ml-auto {
+    width: 200px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}
