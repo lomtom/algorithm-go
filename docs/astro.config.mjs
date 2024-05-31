@@ -8,7 +8,7 @@ import remarkCollapse from "remark-collapse";
 import remarkToc from "remark-toc";
 import config from "./src/config/config.json";
 
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel/serverless";
 import rehypeExternalLinks from 'rehype-external-links';
 
 // https://astro.build/config
@@ -44,8 +44,6 @@ export default defineConfig({
   image: {
     service: squooshImageService(),
   },
-  output: 'static',
-  adapter: node({
-    mode: "standalone"
-  }),
+  output: "server",
+  adapter: vercel(),
 });
