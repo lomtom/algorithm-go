@@ -10,10 +10,47 @@ const indexPageLink = currentPage === 2;
 const hasPrevPage = currentPage > 1;
 const hasNextPage = totalPages > currentPage!;
 
-let pageList: number[] = [];
-for (let i = 1; i <= totalPages; i++) {
-  pageList.push(i);
+
+function getPageList(currentPage: number, totalPages: number): string[] {
+  let pageList: string[] = [];
+
+  if (totalPages <= 7) {
+    // If the total number of pages is less than or equal to 7, display all pages
+    for (let i = 1; i <= totalPages; i++) {
+      pageList.push(i.toString());
+    }
+  } else {
+    // Always show the first page, the last page, and the current page
+    pageList.push("1");
+
+    // Determine the range of pages around the current page
+    let startPage = Math.max(2, currentPage - 2);
+    let endPage = Math.min(totalPages - 1, currentPage + 2);
+
+    // Add ellipsis if the startPage is greater than 2 (i.e., there is a gap)
+    if (startPage > 2) {
+      pageList.push("...");
+    }
+
+    // Add the range of pages around the current page
+    for (let i = startPage; i <= endPage; i++) {
+      pageList.push(i.toString());
+    }
+
+    // Add ellipsis if the endPage is less than the totalPages - 1 (i.e., there is a gap)
+    if (endPage < totalPages - 1) {
+      pageList.push("...");
+    }
+
+    // Always show the last page
+    pageList.push(totalPages.toString());
+  }
+
+  return pageList;
 }
+
+
+let pageList: string[] = getPageList(currentPage,totalPages);
 ---
 
 {
@@ -68,7 +105,7 @@ for (let i = 1; i <= totalPages; i++) {
 
       {/* page index */}
       {pageList.map((pagination, i) =>
-        pagination === currentPage ? (
+        pagination == currentPage ? (
           <span
             aria-current="page"
             class="rounded bg-primary px-4 py-2 text-white dark:bg-darkmode-primary dark:text-dark"
@@ -76,6 +113,11 @@ for (let i = 1; i <= totalPages; i++) {
             {pagination}
           </span>
         ) : (
+          pagination === '...'?
+            <span  class="rounded px-4 py-2 text-dark dark:text-darkmode-dark">
+            {pagination}
+            </span>
+            :
           <a
             href={
               i === 0
