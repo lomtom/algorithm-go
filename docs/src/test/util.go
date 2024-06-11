@@ -3,6 +3,10 @@ package test
 import (
 	md "github.com/JohannesKaufmann/html-to-markdown"
 	"github.com/go-resty/resty/v2"
+	"io"
+	"net/http"
+	"regexp"
+	"strings"
 
 	"encoding/json"
 	"fmt"
@@ -111,7 +115,7 @@ type QuestionContent struct {
 
 func GenFile(questionContent QuestionContent) error {
 	fileContent := GenContent(questionContent)
-	f := fmt.Sprintf("../content/leetcode/%s%s.md", questionContent.Data.Question.QuestionFrontendId, questionContent.Data.Question.TranslatedTitle)
+	f := fmt.Sprintf("../content/leetcode/%s%s.md", questionContent.Data.Question.QuestionFrontendId, strings.Replace(questionContent.Data.Question.TranslatedTitle, " ", "", -1))
 	create, err := os.Create(f)
 	if err != nil {
 		return err
@@ -165,7 +169,7 @@ number: %s
 		tags,
 		questionContent.Data.Question.TitleSlug,
 		questionContent.Data.Question.QuestionFrontendId,
-		questionContent.Data.Question.TranslatedContent)
+		WithImg(questionContent.Data.Question.TranslatedContent, fmt.Sprintf("%s%s", questionContent.Data.Question.QuestionFrontendId, questionContent.Data.Question.TranslatedTitle)))
 }
 
 func GenQuestionCode(resp QuestionContent) {
@@ -213,4 +217,69 @@ func GenQuestionCode(resp QuestionContent) {
 	}
 	cmd := exec.Command("git", "add", d)
 	cmd.Run()
+}
+
+func WithImg(content, title string) string {
+
+	// Regular expression to find image URLs in Markdown content
+	imgRegex := regexp.MustCompile(`!\[.*?\]\((http.*?)\)`)
+
+	// Find all image URLs
+	matches := imgRegex.FindAllStringSubmatch(content, -1)
+	if len(matches) == 0 {
+		return content
+	}
+
+	title = strings.Replace(title, " ", "", -1)
+
+	// Define the local directory to save images
+	localDir := "../../public/img/leetcode/" + title
+	replaceDir := "/img/leetcode/" + title
+	err := os.MkdirAll(localDir, os.ModePerm)
+	if err != nil {
+		fmt.Println("Error creating directory:", err)
+		return content
+	}
+	for _, match := range matches {
+		if len(match) > 1 {
+			imgURL := match[1]
+
+			// Download image
+			resp, err := http.Get(imgURL)
+			if err != nil {
+				fmt.Println("Error downloading image:", err)
+				continue
+			}
+			defer resp.Body.Close()
+
+			// Create a local file to save the image
+			fileName := filepath.Base(imgURL)
+			localPath := filepath.Join(localDir, fileName)
+			out, err := os.Create(localPath)
+			if err != nil {
+				fmt.Println("Error creating file:", err)
+				continue
+			}
+			defer out.Close()
+
+			// Copy the image to the local file
+			_, err = io.Copy(out, resp.Body)
+			if err != nil {
+				fmt.Println("Error saving image:", err)
+				continue
+			}
+
+			replacePath := filepath.Join(replaceDir, fileName)
+			cmd := exec.Command("git", "add", localPath)
+			err = cmd.Run()
+			if err != nil {
+				fmt.Println(err)
+				return ""
+			}
+			// Replace the remote URL with the local path in the content
+			content = strings.Replace(content, imgURL, replacePath, -1)
+		}
+	}
+
+	return content
 }

@@ -4,9 +4,9 @@ import (
 	"testing"
 )
 
-const slug = "maximum-number-of-operations-with-the-same-score-i"
+const slug = "maximum-number-of-balloons"
 
-func TestQuestionContent(t *testing.T) {
+func TestDocument(t *testing.T) {
 	resp := getContent(slug)
 	err := GenFile(resp)
 	if err != nil {
@@ -15,7 +15,7 @@ func TestQuestionContent(t *testing.T) {
 	}
 }
 
-func TestMkdir(t *testing.T) {
+func TestQuestion(t *testing.T) {
 	resp := getContent(slug)
 	GenQuestionCode(resp)
 }
