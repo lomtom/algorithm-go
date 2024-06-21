@@ -79,15 +79,23 @@ func getContent(slug string) QuestionContent {
 		SetResult(&resp).
 		Post(url)
 
-	converter := md.NewConverter("", true, nil)
+	if IsHTMLFragment(resp.Data.Question.TranslatedContent) {
+		converter := md.NewConverter("", true, nil)
 
-	markdown, err := converter.ConvertString(resp.Data.Question.TranslatedContent)
-	if err != nil {
-		log.Fatal(err)
+		markdown, err := converter.ConvertString(resp.Data.Question.TranslatedContent)
+		if err != nil {
+			log.Fatal(err)
+		}
+		resp.Data.Question.TranslatedContent = markdown
 	}
-	resp.Data.Question.TranslatedContent = markdown
 	resp.Data.Question.Difficulty = m[resp.Data.Question.Difficulty]
+	resp.Data.Question.QuestionFrontendId = strings.Replace(resp.Data.Question.QuestionFrontendId, " ", "", -1)
 	return resp
+}
+
+// IsHTMLFragment 判断字符串是否为HTML片段
+func IsHTMLFragment(input string) bool {
+	return strings.Contains(input, "<p>") && strings.Contains(input, "</p>")
 }
 
 type QuestionContent struct {
