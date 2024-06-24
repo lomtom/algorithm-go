@@ -3,7 +3,6 @@ package leetcode
 import (
 	"fmt"
 	"strings"
-	"testing"
 )
 
 func solveEquation(equation string) string {
@@ -55,12 +54,3 @@ func solveEquation(equation string) string {
 
 //执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
 //内存消耗：1.8 MB, 在所有 Go 提交中击败了78.95%的用户
-
-// "2x=x"
-// "x=x+2"
-// "x+5-3+x=6+x-2"
-// "2x=x"
-// "0x=0"
-func TestSolveEquation(t *testing.T) {
-	fmt.Println(solveEquation("-x=1"))
-}
