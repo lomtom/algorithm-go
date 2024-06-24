@@ -1,10 +1,5 @@
 package leetcode
 
-import (
-	"fmt"
-	"testing"
-)
-
 // 方法一：暴力解法
 //执行用时：320 ms, 在所有 Go 提交中击败了5.01%的用户
 //内存消耗：6.3 MB, 在所有 Go 提交中击败了100.00%的用户
@@ -41,8 +36,4 @@ func nextGreaterElements(nums []int) []int {
 		stack = append(stack, i%l)
 	}
 	return ans
-}
-
-func TestNextGreaterElements(t *testing.T) {
-	fmt.Println(nextGreaterElements([]int{1, 2, 1}))
 }
