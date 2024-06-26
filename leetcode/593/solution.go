@@ -1,10 +1,7 @@
 package leetcode
 
-import (
-	"github.com/lomtom/go-utils/assert"
-	"testing"
-)
-
+// 执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：2.1 MB, 在所有 Go 提交中击败了100.00%的用户
 func validSquare(p1 []int, p2 []int, p3 []int, p4 []int) bool {
 	if p1[0] == p2[0] && p2[0] == p3[0] && p3[0] == p4[0] && p1[1] == p2[1] && p2[1] == p3[1] && p3[1] == p4[1] {
 		return false
@@ -30,78 +27,4 @@ func validSquare(p1 []int, p2 []int, p3 []int, p4 []int) bool {
 		return true
 	}
 	return false
-}
-
-// 执行用时：0 ms, 在所有 Go 提交中击败了100.00%的用户
-// 内存消耗：2.1 MB, 在所有 Go 提交中击败了100.00%的用户
-func TestValidSquare(t *testing.T) {
-	type input struct {
-		p1 []int
-		p2 []int
-		p3 []int
-		p4 []int
-	}
-	collections := []struct {
-		input
-		output bool
-	}{
-		{
-			input{
-				[]int{1, 1},
-				[]int{0, 1},
-				[]int{1, 2},
-				[]int{0, 0},
-			},
-			false,
-		},
-		{
-			input{
-				[]int{0, 0},
-				[]int{1, 1},
-				[]int{1, 0},
-				[]int{0, 1},
-			},
-			true,
-		},
-		{
-			input{
-				[]int{0, 0},
-				[]int{1, 1},
-				[]int{1, 0},
-				[]int{0, 12},
-			},
-			false,
-		},
-		{
-			input{
-				[]int{1, 0},
-				[]int{-1, 0},
-				[]int{0, 1},
-				[]int{0, -1},
-			},
-			true,
-		},
-		{
-			input{
-				[]int{0, 0},
-				[]int{0, 0},
-				[]int{0, 0},
-				[]int{0, 0},
-			},
-			false,
-		},
-		{
-			input{
-				[]int{0, 1},
-				[]int{1, 2},
-				[]int{0, 2},
-				[]int{0, 0},
-			},
-			false,
-		},
-	}
-	s := assert.NewAssert(t)
-	for index := range collections {
-		s.Equal(collections[index].output, validSquare(collections[index].input.p1, collections[index].input.p2, collections[index].input.p3, collections[index].input.p4))
-	}
 }
