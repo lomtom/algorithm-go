@@ -52,6 +52,8 @@ features:
         url: "/greedy"
       - name: "动态规划"
         url: "/dp"
+      - name: "并查集"
+        url: "/djs"
     button:
       enable: false
       label: "Get Started Now"
