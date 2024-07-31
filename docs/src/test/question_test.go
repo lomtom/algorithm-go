@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-const slug = "6CE719"
+const slug = "minimum-rectangles-to-cover-points"
 
 // 文档
 func TestDocument(t *testing.T) {

@@ -1,19 +1,18 @@
 package test
 
 import (
+	"encoding/json"
+	"fmt"
 	md "github.com/JohannesKaufmann/html-to-markdown"
 	"github.com/go-resty/resty/v2"
 	"io"
-	"net/http"
-	"regexp"
-	"strings"
-
-	"encoding/json"
-	"fmt"
 	"log"
+	"net/http"
 	"os"
 	"os/exec"
 	"path/filepath"
+	"regexp"
+	"strings"
 )
 
 var m = map[string]string{
@@ -121,9 +120,22 @@ type QuestionContent struct {
 	} `json:"data"`
 }
 
+func (q QuestionContent) getDocumentPath() string {
+	return fmt.Sprintf("../content/leetcode/%s%s.md", q.Data.Question.QuestionFrontendId, strings.Replace(q.Data.Question.TranslatedTitle, " ", "", -1))
+}
+
+func (q QuestionContent) getQuestionPath() string {
+	dir := "../../../leetcode"
+	number := q.Data.Question.QuestionFrontendId
+	return filepath.Join(dir, number)
+}
+
 func GenFile(questionContent QuestionContent) error {
 	fileContent := GenContent(questionContent)
-	f := fmt.Sprintf("../content/leetcode/%s%s.md", questionContent.Data.Question.QuestionFrontendId, strings.Replace(questionContent.Data.Question.TranslatedTitle, " ", "", -1))
+	f := questionContent.getDocumentPath()
+	if _, err := os.Stat(f); err == nil {
+		return nil
+	}
 	create, err := os.Create(f)
 	if err != nil {
 		return err
@@ -140,7 +152,7 @@ func GenContent(questionContent QuestionContent) string {
 		tags += `
   - ` + questionContent.Data.Question.TopicTags[index].TranslatedName
 	}
-
+	questionContent.RewriteContent()
 	return fmt.Sprintf(
 		`---
 title: %s
@@ -181,9 +193,7 @@ number: %s
 }
 
 func GenQuestionCode(resp QuestionContent) {
-	dir := "../../../leetcode"
-	number := resp.Data.Question.QuestionFrontendId
-	d := filepath.Join(dir, number)
+	d := resp.getQuestionPath()
 	if _, err := os.Stat(d); err != nil {
 		err = os.Mkdir(d, os.ModePerm)
 		if err != nil {
@@ -191,7 +201,7 @@ func GenQuestionCode(resp QuestionContent) {
 			return
 		}
 	}
-	solution := filepath.Join(dir, number, "solution.go")
+	solution := filepath.Join(d, "solution.go")
 	if _, err := os.Stat(solution); err != nil {
 		create, err := os.Create(solution)
 		if err != nil {
@@ -210,7 +220,7 @@ func GenQuestionCode(resp QuestionContent) {
 			return
 		}
 	}
-	solution = filepath.Join(dir, number, "solution_test.go")
+	solution = filepath.Join(d, "solution_test.go")
 	if _, err := os.Stat(solution); err != nil {
 		create, err := os.Create(solution)
 		if err != nil {
@@ -251,6 +261,12 @@ func WithImg(content, title string) string {
 	for _, match := range matches {
 		if len(match) > 1 {
 			imgURL := match[1]
+			// Create a local file to save the image
+			fileName := filepath.Base(imgURL)
+			localPath := filepath.Join(localDir, fileName)
+			if _, err := os.Stat(localPath); err == nil {
+				continue
+			}
 
 			// Download image
 			resp, err := http.Get(imgURL)
@@ -260,9 +276,6 @@ func WithImg(content, title string) string {
 			}
 			defer resp.Body.Close()
 
-			// Create a local file to save the image
-			fileName := filepath.Base(imgURL)
-			localPath := filepath.Join(localDir, fileName)
 			out, err := os.Create(localPath)
 			if err != nil {
 				fmt.Println("Error creating file:", err)
@@ -290,4 +303,41 @@ func WithImg(content, title string) string {
 	}
 
 	return content
+}
+
+func (q *QuestionContent) RewriteContent() {
+	if strings.Contains(q.Data.Question.TranslatedContent, "```") {
+		return
+	}
+	fmt.Println("没有找到代码块，已自动调整，请检查")
+	var (
+		preIndex  int = -1
+		lastIndex int = -1
+	)
+	lines := strings.Split(q.Data.Question.TranslatedContent, "\n")
+	for index := 0; index < len(lines); index++ {
+		if strings.Contains(lines[index], "**示例") || strings.Contains(lines[index], "**提示：**") {
+			if preIndex == -1 {
+				for index+1 < len(lines) && (len(lines[index+1]) == 0 || strings.HasPrefix(lines[index+1], "![")) {
+					index++
+				}
+				preIndex = index
+				continue
+			}
+			lastIndex = index
+		}
+		if preIndex != -1 && lastIndex != -1 {
+			for i := preIndex; i < lastIndex; i++ {
+				lines[i] = strings.ReplaceAll(lines[i], "**", "")
+			}
+			lines[preIndex] = lines[preIndex] + "\n```"
+			lines[lastIndex] = "```\n" + lines[lastIndex]
+			for index+1 < len(lines) && (len(lines[index+1]) == 0 || strings.HasPrefix(lines[index+1], "![")) {
+				index++
+			}
+			preIndex = index
+			lastIndex = -1
+		}
+	}
+	q.Data.Question.TranslatedContent = strings.Join(lines, "\n")
 }
