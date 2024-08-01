@@ -327,7 +327,7 @@ func (q *QuestionContent) RewriteContent() {
 			lastIndex = index
 		}
 		if preIndex != -1 && lastIndex != -1 {
-			for i := preIndex; i < lastIndex; i++ {
+			for i := preIndex + 1; i < lastIndex; i++ {
 				lines[i] = strings.ReplaceAll(lines[i], "**", "")
 				if strings.HasPrefix(lines[i], ">") {
 					lines[i] = strings.Replace(lines[i], ">", "", 1)
