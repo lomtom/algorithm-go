@@ -2,6 +2,7 @@
 title: 气温变化趋势
 categories:
   - 简单
+  - LCP
 tags: 
   - 数组
 slug: 6CE719
@@ -17,27 +18,30 @@ number: LCP61
 
 已知 `temperatureA[i]` 和 `temperatureB[i]` 分别表示第 `i` 天两地区的气温。
 组委会希望找到一段天数尽可能多，且两地气温变化趋势相同的时间举办嘉年华活动。请分析并返回两地气温变化趋势**相同的最大连续天数**。
-> 即最大的 `n`，使得第 `i~i+n` 天之间，两地气温变化趋势相同
+
+即最大的 `n`，使得第 `i~i+n` 天之间，两地气温变化趋势相同
 
 **示例 1：**
->输入：
->`temperatureA = [21,18,18,18,31]`
->`temperatureB = [34,32,16,16,17]`
->
->输出：`2`
->
->解释：如下表所示， 第 `2～4` 天两地气温变化趋势相同，且持续时间最长，因此返回 `4-2=2`
+```
+输入：
+`temperatureA = [21,18,18,18,31]`
+`temperatureB = [34,32,16,16,17]`
 
-![image.png](/img/leetcode/LCP61气温变化趋势/1663902654-hlrSvs-image.png){:width=1000px}
+输出：`2`
+
+解释：如下表所示， 第 `2～4` 天两地气温变化趋势相同，且持续时间最长，因此返回 `4-2=2`
+```
+![image.png](/img/leetcode/LCP61气温变化趋势/1663902654-hlrSvs-image.png)
 
 
 **示例 2：**
->输入：
->`temperatureA = [5,10,16,-6,15,11,3]`
->`temperatureB = [16,22,23,23,25,3,-16]`
->
->输出：`3`
+```
+输入：
+`temperatureA = [5,10,16,-6,15,11,3]`
+`temperatureB = [16,22,23,23,25,3,-16]`
 
+输出：`3`
+```
 **提示：**
 - `2 <= temperatureA.length == temperatureB.length <= 1000`
 - `-20 <= temperatureA[i], temperatureB[i] <= 40`
