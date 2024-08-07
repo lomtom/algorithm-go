@@ -160,7 +160,10 @@ func (ds *DisjointSet) Union(x, y int) {
 
 ### 例题
 
-1. [LeetCode 547. 省份数量](/leetcode/number-of-provinces)
+1. [LeetCode 128. 最长连续序列](/leetcode/longest-consecutive-sequence)
+2. [LeetCode 547. 省份数量](/leetcode/number-of-provinces)
+2. [LeetCode 990. 等式方程的可满足性](/leetcode/satisfiability-of-equality-equations)
+3. [LeetCode 1319. 连通网络的操作次数](/leetcode/number-of-operations-to-make-network-connected)
 
 ### 参考资料
 
