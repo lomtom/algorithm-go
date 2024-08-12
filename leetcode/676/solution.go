@@ -1,9 +1,7 @@
-package _76
+package leetcode
 
-import (
-	"github.com/lomtom/go-utils/assert"
-	"testing"
-)
+// 执行用时：8 ms, 在所有 Go 提交中击败了100.00%的用户
+// 内存消耗：6.8 MB, 在所有 Go 提交中击败了74.42%的用户
 
 type MagicDictionary struct {
 	m map[int][]string
@@ -45,42 +43,3 @@ func (this *MagicDictionary) Search(searchWord string) bool {
  * obj.BuildDict(dictionary);
  * param_2 := obj.Search(searchWord);
  */
-
-/*
-*
-执行用时：8 ms, 在所有 Go 提交中击败了100.00%的用户
-内存消耗：6.8 MB, 在所有 Go 提交中击败了74.42%的用户
-*/
-func TestMagicDictionary(t *testing.T) {
-	type input struct {
-		dictionary  []string
-		searchWords []string
-	}
-	collections := []struct {
-		input
-		output []bool
-	}{
-		{
-			input{
-				[]string{"hello", "leetcode"},
-				[]string{
-					"hello",
-					"hhllo",
-					"hell",
-					"leetcoded",
-				},
-			},
-			[]bool{
-				false, true, false, false,
-			},
-		},
-	}
-	s := assert.NewAssert(t)
-	obj := Constructor()
-	for index := range collections {
-		obj.BuildDict(collections[index].input.dictionary)
-		for index2, value := range collections[index].input.searchWords {
-			s.Equal(collections[index].output[index2], obj.Search(value))
-		}
-	}
-}
