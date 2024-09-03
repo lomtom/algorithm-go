@@ -131,6 +131,10 @@ func (q QuestionContent) getQuestionPath() string {
 }
 
 func GenFile(questionContent QuestionContent) error {
+	if questionContent.Data.Question.QuestionFrontendId == "" {
+		panic("题目ID为空")
+		return nil
+	}
 	fileContent := GenContent(questionContent)
 	f := questionContent.getDocumentPath()
 	if _, err := os.Stat(f); err == nil {
@@ -193,6 +197,10 @@ number: %s
 }
 
 func GenQuestionCode(resp QuestionContent) {
+	if resp.Data.Question.QuestionFrontendId == "" {
+		panic("题目ID为空")
+		return
+	}
 	d := resp.getQuestionPath()
 	if _, err := os.Stat(d); err != nil {
 		err = os.Mkdir(d, os.ModePerm)
