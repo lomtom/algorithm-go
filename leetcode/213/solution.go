@@ -1,10 +1,5 @@
 package leetcode
 
-import (
-	"github.com/lomtom/go-utils/assert"
-	"testing"
-)
-
 // 执行耗时:0 ms,击败了100.00% 的Go用户
 // 内存消耗:1.9 MB,击败了73.53% 的Go用户
 func robII(nums []int) int {
@@ -33,31 +28,4 @@ func robII(nums []int) int {
 		}
 	}
 	return max(second1, second2)
-}
-
-func TestRobII(t *testing.T) {
-	collections := []struct {
-		input  []int
-		output int
-	}{
-		{
-			[]int{200, 3, 140, 20, 10},
-			340,
-		},
-		{
-			[]int{2, 3, 2},
-			3,
-		},
-		{
-			[]int{1, 2, 3, 1},
-			4,
-		},
-		{[]int{1, 2, 3},
-			3,
-		},
-	}
-	s := assert.NewAssert(t)
-	for index := range collections {
-		s.Equal(collections[index].output, robII(collections[index].input))
-	}
 }
