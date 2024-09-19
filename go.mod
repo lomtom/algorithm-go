@@ -1,6 +1,6 @@
 module algorithm
 
-go 1.19
+go 1.21
 
 require github.com/lomtom/go-utils v0.1.6
 
