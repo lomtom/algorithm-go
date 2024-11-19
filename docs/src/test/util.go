@@ -181,13 +181,13 @@ number: %s
 
 **复杂度：**
 
-- 时间复杂度：O(N * M)
+- 时间复杂度：O(n)
 - 空间复杂度：O(1)
 
 **执行结果：**
 
-- 执行耗时:1 ms,击败了40.84 的Go用户
-- 内存消耗:2.4 MB,击败了28.50 的Go用户
+- 执行耗时:0 ms,击败了100.00 的Go用户
+- 内存消耗:2.4 MB,击败了99.83 的Go用户
 `, questionContent.Data.Question.TranslatedTitle,
 		questionContent.Data.Question.Difficulty,
 		tags,
