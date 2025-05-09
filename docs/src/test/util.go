@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"path"
 	"path/filepath"
 	"regexp"
 	"strings"
@@ -130,6 +131,10 @@ func (q QuestionContent) getQuestionPath() string {
 	return filepath.Join(dir, number)
 }
 
+func (q QuestionContent) getQuestionName() string {
+	return path.Join(q.getQuestionPath(), "solution.go")
+}
+
 func GenFile(questionContent QuestionContent) error {
 	if questionContent.Data.Question.QuestionFrontendId == "" {
 		panic("题目ID为空")
@@ -157,6 +162,27 @@ func GenContent(questionContent QuestionContent) string {
   - ` + questionContent.Data.Question.TopicTags[index].TranslatedName
 	}
 	questionContent.RewriteContent()
+
+	file, err := os.ReadFile(questionContent.getQuestionName())
+	if err != nil {
+		panic(err)
+	}
+	code := string(file)
+	// 逐行读取
+	var flag bool
+	var codeContent = []string{
+		"```go",
+	}
+	for _, line := range strings.Split(code, "\n") {
+		if strings.Contains(line, "func") {
+			flag = true
+		}
+		if flag && line != "" {
+			codeContent = append(codeContent, line)
+		}
+	}
+	codeContent = append(codeContent, "```")
+	code = strings.Join(codeContent, "\n")
 	return fmt.Sprintf(
 		`---
 title: %s
@@ -179,6 +205,9 @@ number: %s
 **思路：**
 
 
+%s
+
+
 **复杂度：**
 
 - 时间复杂度：O(n)
@@ -193,7 +222,7 @@ number: %s
 		tags,
 		questionContent.Data.Question.TitleSlug,
 		questionContent.Data.Question.QuestionFrontendId,
-		WithImg(questionContent.Data.Question.TranslatedContent, fmt.Sprintf("%s%s", questionContent.Data.Question.QuestionFrontendId, questionContent.Data.Question.TranslatedTitle)))
+		WithImg(questionContent.Data.Question.TranslatedContent, fmt.Sprintf("%s%s", questionContent.Data.Question.QuestionFrontendId, questionContent.Data.Question.TranslatedTitle)), code)
 }
 
 func GenQuestionCode(resp QuestionContent) {
