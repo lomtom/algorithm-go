@@ -31,7 +31,6 @@ func (this *WordDictionary) Search(word string) bool {
 	if len(word) == 0 {
 		return this.IsEnd
 	}
-	now := word[0] - 'a'
 	if word[0] == '.' {
 		for index := range this.WordDictionaries {
 			if v := this.WordDictionaries[index]; v != nil {
@@ -41,6 +40,7 @@ func (this *WordDictionary) Search(word string) bool {
 			}
 		}
 	} else {
+		now := word[0] - 'a'
 		if v := this.WordDictionaries[now]; v != nil {
 			return v.Search(word[1:])
 		}
